@@ -85,9 +85,8 @@ Since a DVR is a valuation ring, its ideals are linearly ordered by inclusion. -
 example : ValuationRing R := inferInstance
 
 -- The ideals of a valuation ring are totally ordered by inclusion.
-example (I J : Ideal R) : I ≤ J ∨ J ≤ I := by
-  have : PreValuationRing R := inferInstance
-  exact (ValuationRing.le_total_ideal (A := R)).total I J
+example (I J : Ideal R) : I ≤ J ∨ J ≤ I :=
+  (ValuationRing.le_total_ideal (A := R)).total I J
 
 /-! ### Claim 6: Maximal ideal 𝔪 = (π) — unique maximal and only nonzero prime
 
