@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_2
+import SutherlandNumberTheoryLecture1.Chapter1.Definition1_2
 import Mathlib.Algebra.Order.AbsoluteValue.Basic
 import Mathlib.Algebra.Order.Ring.IsNonarchimedean
 import Mathlib.NumberTheory.Ostrowski

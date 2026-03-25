@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1Draft2.Chapter1.Lemma1_4
+import SutherlandNumberTheoryLecture1.Chapter1.Lemma1_4
 import Mathlib.Algebra.CharP.Basic
 import Mathlib.Algebra.CharP.Lemmas
 import Mathlib.Algebra.Order.AbsoluteValue.Basic

@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_26
+import SutherlandNumberTheoryLecture1.Chapter1.Definition1_26
 import Mathlib.NumberTheory.NumberField.Basic
 import Mathlib.LinearAlgebra.Dimension.Free
 

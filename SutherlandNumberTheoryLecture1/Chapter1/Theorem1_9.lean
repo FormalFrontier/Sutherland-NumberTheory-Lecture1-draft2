@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_7
+import SutherlandNumberTheoryLecture1.Chapter1.Definition1_7
 import Mathlib.NumberTheory.NumberField.ProductFormula
 
 /-!

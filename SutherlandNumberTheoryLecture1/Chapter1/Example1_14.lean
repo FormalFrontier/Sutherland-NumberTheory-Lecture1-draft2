@@ -1,5 +1,5 @@
-import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_10
-import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_13
+import SutherlandNumberTheoryLecture1.Chapter1.Definition1_10
+import SutherlandNumberTheoryLecture1.Chapter1.Definition1_13
 import Mathlib.RingTheory.Localization.AtPrime.Basic
 import Mathlib.RingTheory.LocalRing.ResidueField.Basic
 import Mathlib.RingTheory.Ideal.NatInt

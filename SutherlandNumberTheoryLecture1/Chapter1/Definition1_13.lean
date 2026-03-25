@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_12
+import SutherlandNumberTheoryLecture1.Chapter1.Definition1_12
 import Mathlib.RingTheory.LocalRing.ResidueField.Basic
 
 /-!

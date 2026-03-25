@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_10
+import SutherlandNumberTheoryLecture1.Chapter1.Definition1_10
 import Mathlib.RingTheory.DiscreteValuationRing.Basic
 import Mathlib.RingTheory.Noetherian.Basic
 import Mathlib.RingTheory.PrincipalIdealDomain

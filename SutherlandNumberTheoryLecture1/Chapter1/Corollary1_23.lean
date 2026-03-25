@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1Draft2.Chapter1.Proposition1_22
+import SutherlandNumberTheoryLecture1.Chapter1.Proposition1_22
 import Mathlib.Algebra.GCDMonoid.IntegrallyClosed
 import Mathlib.RingTheory.UniqueFactorizationDomain.Basic
 import Mathlib.RingTheory.UniqueFactorizationDomain.GCDMonoid

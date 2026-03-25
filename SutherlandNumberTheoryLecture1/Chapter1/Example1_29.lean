@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1Draft2.Chapter1.Proposition1_28
+import SutherlandNumberTheoryLecture1.Chapter1.Proposition1_28
 import Mathlib.NumberTheory.Zsqrtd.Basic
 import Mathlib.RingTheory.IntegralClosure.IsIntegral.Basic
 import Mathlib.RingTheory.IntegralClosure.Algebra.Basic

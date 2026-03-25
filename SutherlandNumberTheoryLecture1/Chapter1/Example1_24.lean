@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_19
+import SutherlandNumberTheoryLecture1.Chapter1.Definition1_19
 import Mathlib.NumberTheory.Zsqrtd.Basic
 import Mathlib.RingTheory.IntegralClosure.IntegrallyClosed
 import Mathlib.Analysis.SpecialFunctions.Pow.Real

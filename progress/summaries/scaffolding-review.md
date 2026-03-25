@@ -10,7 +10,7 @@
 
 Ran automated scan:
 ```bash
-grep -rn ':= sorry\|:= by sorry' SutherlandNumberTheoryLecture1Draft2/ --include='*.lean' \
+grep -rn ':= sorry\|:= by sorry' SutherlandNumberTheoryLecture1/ --include='*.lean' \
   | grep -v 'theorem \|lemma '
 ```
 **Result: zero matches.** No definition-level sorries exist. All `def`, `abbrev`, `noncomputable def`, and `instance` bodies have real implementations.

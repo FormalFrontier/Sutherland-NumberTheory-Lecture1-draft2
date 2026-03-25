@@ -15,7 +15,7 @@ Triage of all 27 `proof_polished` items from Chapter 1 for upstreaming to Mathli
 |-------|-------|
 | **Item ID** | `Chapter1/Lemma1_4` |
 | **Declaration** | `sutherland_lemma1_4` |
-| **File** | `SutherlandNumberTheoryLecture1Draft2/Chapter1/Lemma1_4.lean` |
+| **File** | `SutherlandNumberTheoryLecture1/Chapter1/Lemma1_4.lean` |
 | **Suggested Mathlib module** | `Mathlib.Algebra.Order.AbsoluteValue.Nonarchimedean` (new file) or `Mathlib.Analysis.Normed.Field.Ultra` |
 
 **Lean statement:**
@@ -42,7 +42,7 @@ appealing to `IsUltrametricDist`. This is a gap between the `AbsoluteValue` and
 |-------|-------|
 | **Item ID** | `Chapter1/Corollary1_5` |
 | **Declarations** | `sutherland_corollary1_5_posChar`, `sutherland_corollary1_5_finite` |
-| **File** | `SutherlandNumberTheoryLecture1Draft2/Chapter1/Corollary1_5.lean` |
+| **File** | `SutherlandNumberTheoryLecture1/Chapter1/Corollary1_5.lean` |
 | **Suggested Mathlib module** | `Mathlib.Algebra.Order.AbsoluteValue.Nonarchimedean` (new file) or `Mathlib.Analysis.Normed.Field.Ultra` |
 
 **Lean statements:**
@@ -70,7 +70,7 @@ nonzero `x`. Both are standard textbook results absent from Mathlib's API.
 |-------|-------|
 | **Item ID** | `Chapter1/Proposition1_28` |
 | **Declaration** | `sutherland_prop1_28` |
-| **File** | `SutherlandNumberTheoryLecture1Draft2/Chapter1/Proposition1_28.lean` |
+| **File** | `SutherlandNumberTheoryLecture1/Chapter1/Proposition1_28.lean` |
 | **Suggested Mathlib module** | `Mathlib.FieldTheory.Minpoly.IsIntegrallyClosed` |
 
 **Lean statement:**

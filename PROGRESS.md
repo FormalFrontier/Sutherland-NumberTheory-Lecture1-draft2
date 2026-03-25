@@ -64,8 +64,8 @@ Human-facing summary of all completed stages. Generated 2026-03-25.
 
 **Completed:** 2026-03-25 (PR #24)
 
-- Created `SutherlandNumberTheoryLecture1Draft2/Chapter1.lean` root import
-- Created 28 `.lean` files under `SutherlandNumberTheoryLecture1Draft2/Chapter1/`
+- Created `SutherlandNumberTheoryLecture1/Chapter1.lean` root import
+- Created 28 `.lean` files under `SutherlandNumberTheoryLecture1/Chapter1/`
 - All 28 formalizable items have real definitions (no definition-level sorries)
 - `lake build` succeeded with 3,144 jobs, zero errors
 - Promoted all 28 items: `extracted` → `scaffolded`
