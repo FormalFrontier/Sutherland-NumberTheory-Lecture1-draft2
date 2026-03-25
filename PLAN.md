@@ -316,7 +316,7 @@ gh pr list --state open \
 
 ### Stage 3.1: Lean Scaffolding
 
-The Lean project was created at the repo root by `ff init` in Stage 1.2 and Mathlib was built then. Create `.lean` files for each formalizable item (theorems, definitions, lemmas — not discussion blobs).
+The Lean project was created at the repo root by `ff init` in Stage 1.2 and Mathlib was built then. Create `.lean` files for each formalizable item — theorems, definitions, lemmas, and any discussion blob that contains formalizable mathematical claims (characterizations, constructions, non-trivial verifications, named concepts). Discussion blobs that are purely motivational, historical, or set up notation already handled elsewhere can be skipped, but the decision must be explicit: update `progress/items.json` with status `non_formalizable` and a `reason` field.
 
 Scaffolding can begin per-item as soon as that item's Stage 2.6 (reference attachment) is merged — it does not need to wait for all of Phase 2 to complete.
 
@@ -326,7 +326,8 @@ The orchestrating agent creates the file structure and then creates issues for w
 
 1. Create the skeleton: root file `{Title}.lean` importing all chapter files, chapter files `{Title}/Chapter1.lean` importing all items in the chapter. Commit this to `main`.
 2. Create `gh label create scaffolding --color 1d76db` (ignore error if exists).
-3. Create one issue per item:
+3. **Assess discussion blobs.** For each discussion-type item in `items.json`, read the blob and determine whether it contains formalizable mathematical claims (characterizations, constructions, named concepts, non-trivial verifications). If yes, it gets a scaffolding issue like any other item. If no, update `progress/items.json` with status `non_formalizable` and a `reason` field explaining why. This assessment must happen before scaffolding issues are created, so discussion items with formalizable content get assigned to agents.
+4. Create one issue per item (including discussion items assessed as formalizable in step 3):
    - Title: `Scaffold <ItemID>`
    - Body: link to the blob file, the item's entry in `research/mathlib-coverage.json` and `research/external-sources.json`
    - Label: `scaffolding`
@@ -422,6 +423,10 @@ theorem ostrowski (f : AbsoluteValue ℚ ℝ) (hf : f.IsNontrivial) :=
 
 The module docstring (`/-! ... -/`) should still explain the textbook item, its mathematical content, and the Mathlib correspondence. The `recall`/`example` then serves as the machine-checked evidence that the correspondence is correct.
 
+> **`recall` covers a single Mathlib declaration, not an entire blob.** If a blob introduces concept X and Mathlib has `X` under name `Y`, then `recall Y` covers that ONE claim. But if the blob also defines concept Z, states theorem W, and constructs object Q, those need separate Lean declarations. Read the blob sentence by sentence — each mathematical claim needs its own line item in the .lean file.
+>
+> **Watch for non-trivial equivalences.** If the textbook defines concept X one way and Mathlib defines it a different (equivalent) way, the equivalence itself is a mathematical claim that should be formalized as a `theorem`, not silently glossed over by the `recall`. Example: the textbook defines a DVR as "the valuation ring of a discrete valuation on Frac(A)" while Mathlib defines it as "a local PID that is not a field" — the equivalence is a substantive theorem that must appear in the .lean file.
+
 Each item file should contain:
 - A doc-string with the natural language statement from the book
 - Appropriate imports from earlier items or library dependencies
@@ -430,6 +435,51 @@ Each item file should contain:
 - For instances already in Mathlib: `example ... := inferInstance`
 - For definitions not in Mathlib: a full construction (proof obligations within the definition may use `sorry`). Auxiliary definitions may be needed, which should happen during scaffolding.
 - For theorems/lemmas not in Mathlib: a sorry'd proof with the precise Lean statement
+
+#### Coverage completeness (mandatory)
+
+**Every mathematical claim in the blob must have a corresponding Lean declaration in the .lean file.** A single `recall` does not "cover" a blob that contains five distinct concepts. Read the blob sentence by sentence and ensure each claim is addressed:
+
+- Defines a mathematical object → needs a `def`, `recall`, or `example`
+- States a mathematical fact (theorem, lemma, characterization, equivalence) → needs a `theorem`, `lemma`, `recall`, or `example`
+- Constructs a mathematical object from another (e.g., "defining |x|_v := c^{v(x)} yields a nonarchimedean absolute value") → needs a `def` + `theorem`
+- Introduces a named concept (e.g., "value group", "discrete valuation") → needs a `def`, `abbrev`, or `recall`
+
+If a claim is genuinely out of scope (e.g., requires infrastructure far beyond the book's level), it must be marked with a `-- TODO: <claim from blob>` comment in the .lean file, so the gap is visible rather than silently dropped.
+
+**Example — bad vs. good coverage for a definition blob with ~8 claims:**
+
+Bad (3 recalls for a blob defining valuations, value groups, discrete valuations, valuation rings, DVRs, and the construction of absolute values from valuations):
+```lean
+recall AddValuation ...
+recall IsDiscreteValuationRing ...
+recall ValuationRing ...
+```
+
+Good (every claim in the blob is addressed):
+```lean
+-- Valuation as group homomorphism with ultrametric inequality
+recall Valuation (k : Type*) [DivisionRing k] (Γ₀ : Type*) ...
+
+-- Value group: image of valuation in the target group
+recall Valuation.ValueGroup ...   -- or def if not in Mathlib
+
+-- Discrete valuation: value group isomorphic to ℤ
+def IsDiscreteValuation ... -- or recall if in Mathlib
+
+-- Construction: valuation → nonarchimedean absolute value via c^{v(x)}
+noncomputable def Valuation.toAbsoluteValue ... := ...
+theorem Valuation.toAbsoluteValue_isNonarchimedean ...
+
+-- Valuation ring
+recall ValuationRing ...
+
+-- DVR: integral domain that is valuation ring of discrete valuation on Frac(A)
+recall IsDiscreteValuationRing ...
+-- Note: Mathlib defines DVR as local PID + not a field;
+-- equivalence with "valuation ring of a discrete valuation" is:
+recall DiscreteValuationRing.TFAE ...  -- or theorem if not in Mathlib
+```
 
 **Output:** `{Title}/Chapter1/01_01_Theorem.lean`, etc.
 
@@ -441,7 +491,15 @@ Before beginning proof work (Stage 3.3) on an item, a separate verification issu
 
 Can begin per-item as soon as that item's scaffolding (Stage 3.1) is merged.
 
-The review agent should update `progress/items.json` with the status transition, and submits a PR with any fixes. The review agent should check that the formalized statement or definition agrees with the literal text of the item blob, and uses the API from libraries appropriately. It must also check that no *data* is sorried, only proof obligations. The agent may create new issues if problems with the data scaffolding are discovered: sometimes getting definition right can be difficult, and may require large excursions to set up preliminary material, which may even not be explained in the book, or available in Mathlib. Do the research, and get it done anyway!
+The review agent should update `progress/items.json` with the status transition, and submits a PR with any fixes. The review must perform an explicit **coverage audit**:
+
+1. **Enumerate claims:** List every mathematical claim in the blob — definitions, theorems, constructions, characterizations, named concepts. A "claim" is any sentence that defines, states, constructs, or names something mathematical.
+2. **Map to Lean:** For each claim, identify which Lean declaration in the .lean file addresses it.
+3. **Flag gaps:** Any claim without a corresponding Lean declaration is a coverage gap. The review **fails** unless every gap has either a Lean declaration added or an explicit `-- TODO: <claim from blob>` comment with justification.
+4. **Check non-trivial equivalences:** If a `recall` is used but the Mathlib definition differs from the textbook definition, verify that the equivalence is stated as a theorem.
+5. **Check definition integrity:** No *data* is sorried, only proof obligations.
+
+The agent may create new issues if problems with the data scaffolding are discovered: sometimes getting definition right can be difficult, and may require large excursions to set up preliminary material, which may even not be explained in the book, or available in Mathlib. Do the research, and get it done anyway!
 
 #### Status transitions
 
