@@ -1,6 +1,7 @@
 import SutherlandNumberTheoryLecture1Draft2.Chapter1.Proposition1_22
 import Mathlib.Algebra.GCDMonoid.IntegrallyClosed
 import Mathlib.RingTheory.UniqueFactorizationDomain.Basic
+import Mathlib.RingTheory.UniqueFactorizationDomain.GCDMonoid
 
 /-!
 ## Corollary 1.23 — UFDs are Integrally Closed
@@ -17,9 +18,9 @@ In Mathlib: `GCDMonoid.toIsIntegrallyClosed`.
 theorem sutherland_corollary1_23 (A : Type*) [CommRing A] [IsDomain A]
     [UniqueFactorizationMonoid A] :
     IsIntegrallyClosed A := by
-  -- GCDMonoid.toIsIntegrallyClosed applies for GCDMonoids; UFD → GCDMonoid instance
-  -- is noncomputable so we use sorry here
-  sorry
+  -- UniqueFactorizationMonoid.toGCDMonoid is noncomputable; we use it explicitly
+  haveI : GCDMonoid A := UniqueFactorizationMonoid.toGCDMonoid A
+  exact GCDMonoid.toIsIntegrallyClosed
 
 /-- **Corollary 1.23** (Sutherland). Every PID is integrally closed. -/
 theorem sutherland_corollary1_23_pid (A : Type*) [CommRing A] [IsDomain A]

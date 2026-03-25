@@ -2,6 +2,7 @@ import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_17
 import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_19
 import Mathlib.RingTheory.IntegralClosure.IsIntegral.Basic
 import Mathlib.RingTheory.IntegralClosure.Algebra.Basic
+import Mathlib.RingTheory.IntegralClosure.IsIntegralClosure.Basic
 
 /-!
 ## Proposition 1.20 — Transitivity of Integrality
@@ -17,5 +18,6 @@ theorem sutherland_prop1_20 {A B C : Type*} [CommRing A] [CommRing B] [CommRing 
     [Algebra A B] [Algebra B C] [Algebra A C] [IsScalarTower A B C]
     (hBA : Algebra.IsIntegral A B) (hCB : Algebra.IsIntegral B C) :
     Algebra.IsIntegral A C := by
-  -- In Mathlib: Algebra.IsIntegral.trans (uses typeclass inference, not explicit args)
-  sorry
+  haveI : Algebra.IsIntegral A B := hBA
+  haveI : Algebra.IsIntegral B C := hCB
+  exact Algebra.IsIntegral.trans B

@@ -18,7 +18,14 @@ so it is integral over `ℤ` (Example 1.24).
 The minimal polynomial is `x² - x - 1 ∈ ℤ[x]`. -/
 theorem goldenRatio_isIntegral :
     IsIntegral ℤ ((1 + Real.sqrt 5) / 2 : ℝ) := by
-  sorry
+  open Polynomial in
+  refine ⟨X ^ 2 - X - 1, ?_, ?_⟩
+  · have h1 : (X ^ 2 - X - 1 : ℤ[X]).natDegree = 2 := by compute_degree!
+    unfold Monic leadingCoeff
+    rw [h1]
+    simp [coeff_X, coeff_one]
+  · simp [eval₂_sub, eval₂_pow, eval₂_X, eval₂_one]
+    nlinarith [Real.sq_sqrt (show (5 : ℝ) ≥ 0 by norm_num)]
 
 /-- `ℤ[√5]` is not integrally closed (Example 1.24). -/
 theorem zsqrtd5_not_integrallyClosed :

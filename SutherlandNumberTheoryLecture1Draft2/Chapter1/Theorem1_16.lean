@@ -16,17 +16,24 @@ import Mathlib.RingTheory.PrincipalIdealDomain
 7. `A` is a maximal noetherian ring of dimension 1 (Artinian-Rees criterion).
 
 Multiple directions are proved in Mathlib; the full 7-way equivalence requires assembly.
+The Mathlib definition of `IsDiscreteValuationRing` is exactly a local PID that is not a field,
+so conditions (1) and (3) are definitionally equivalent.
 -/
 
-/-- **Theorem 1.16** (Sutherland). A noetherian local ring with nonzero principal maximal
-ideal is a DVR. This is one direction of the 7-way characterization. -/
+/-- **Theorem 1.16** (Sutherland). A local PID that is not a field is a DVR.
+This is the definition of DVR in Mathlib: `IsDiscreteValuationRing`. -/
 theorem sutherland_theorem1_16_localPID_isDVR (A : Type*) [CommRing A] [IsDomain A]
     [IsLocalRing A] [IsPrincipalIdealRing A] (hfield : ¬IsField A) :
     IsDiscreteValuationRing A := by
-  sorry
+  constructor
+  -- need: maximalIdeal A ≠ ⊥, which holds iff A is not a field
+  intro h
+  apply hfield
+  rw [IsLocalRing.isField_iff_maximalIdeal_eq]
+  exact h
 
 /-- **Theorem 1.16** (Sutherland). A DVR is a local PID that is not a field. -/
 theorem sutherland_theorem1_16_isDVR_implies_localPID (A : Type*) [CommRing A] [IsDomain A]
     [IsDiscreteValuationRing A] :
-    IsLocalRing A ∧ IsPrincipalIdealRing A ∧ ¬IsField A := by
-  sorry
+    IsLocalRing A ∧ IsPrincipalIdealRing A ∧ ¬IsField A :=
+  ⟨inferInstance, inferInstance, IsDiscreteValuationRing.not_isField A⟩
