@@ -137,8 +137,8 @@ Identify every piece of content in the book and assign it to a blob. The goal is
 
 #### Identifier scheme
 
-- Numbered items: `Chapter3/Theorem3.1`, `Chapter3/Definition3.2`
-- Discussion text between items: `Chapter3/Discussion_after_3.2` (covering all text from after Definition 3.2 until the next numbered item)
+- Numbered items: `Chapter3/03.01.Theorem`, `Chapter3/03.02.Definition`
+- Discussion text between items: `Chapter3/03.02a.Discussion` (covering all text from after Definition 3.2 until the next numbered item)
 - Chapter introductions (text before the first numbered item): `Chapter3/Introduction`
 - Frontmatter blobs: `Frontmatter/Preface`, `Frontmatter/Notation`, `Frontmatter/TableOfContents`
 - Backmatter blobs: `Backmatter/Bibliography`, `Backmatter/Index`
@@ -174,7 +174,7 @@ Types: `theorem`, `lemma`, `proposition`, `corollary`, `definition`, `example`, 
 
 Split the page-level markdown into per-blob files, one file per item in `items.json`.
 
-**Output:** `blobs/Chapter1/Definition1.1.md`, `blobs/Chapter1/Discussion_after_1.1.md`, ...
+**Output:** `blobs/Chapter1/01.01.Definition.md`, `blobs/Chapter1/01.01a.Discussion.md`, ...
 
 **Verify:**
 - One blob file per item in `items.json`
@@ -316,7 +316,7 @@ Each agent assigned to a scaffolding issue:
 Each item gets its own file:
 - Root file: `{Title}.lean` importing all chapter files
 - Chapter files: `{Title}/Chapter1.lean` importing all items in the chapter
-- Item files: `{Title}/Chapter1/Theorem1_1.lean`
+- Item files: `{Title}/Chapter1/01_01_Theorem.lean`
 
 #### Definitions vs. theorems: the critical distinction
 
@@ -354,7 +354,7 @@ Each item file should contain:
 - For definitions: a full construction (proof obligations within the definition may use `sorry`). Auxiliary definitions may be needed, which should happen during scaffolding. 
 - For theorems/lemmas: a sorry'd proof with the precise Lean statement
 
-**Output:** `{Title}/Chapter1/Theorem1_1.lean`, etc.
+**Output:** `{Title}/Chapter1/01_01_Theorem.lean`, etc.
 
 **Verify:** `lake build` succeeds (everything compiles with sorries).
 

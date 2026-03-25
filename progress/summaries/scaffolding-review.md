@@ -22,32 +22,32 @@ grep -rn ':= sorry\|:= by sorry' SutherlandNumberTheoryLecture1/ --include='*.le
 ### Complete (no proof sorries): 6 items
 | Item | Notes |
 |------|-------|
-| Theorem1_8 | Proved via `Rat.AbsoluteValue.equiv_real_or_padic` |
-| Theorem1_9 | Proved via `NumberField.prod_abs_eq_one` |
-| Corollary1_21 | Proved via `integralClosure.isIntegralClosure` |
-| Proposition1_18 | Proved via Mathlib instances |
-| Proposition1_22 | Proved via `Int.instIsIntegrallyClosed` |
-| Remark1_27 | Rank computations proved |
+| 01.08.Theorem | Proved via `Rat.AbsoluteValue.equiv_real_or_padic` |
+| 01.09.Theorem | Proved via `NumberField.prod_abs_eq_one` |
+| 01.21.Corollary | Proved via `integralClosure.isIntegralClosure` |
+| 01.18.Proposition | Proved via Mathlib instances |
+| 01.22.Proposition | Proved via `Int.instIsIntegrallyClosed` |
+| 01.27.Remark | Rank computations proved |
 
 ### Pure definitions (no proofs needed): 10 items
-Definition1_2, Definition1_6, Definition1_7, Definition1_10, Definition1_11, Definition1_12,
-Definition1_13, Definition1_17, Definition1_19, Definition1_26
+01.02.Definition, 01.06.Definition, 01.07.Definition, 01.10.Definition, 01.11.Definition, 01.12.Definition,
+01.13.Definition, 01.17.Definition, 01.19.Definition, 01.26.Definition
 
 ### Partial (proof sorries present, definitions complete): 12 items
 | Item | Sorry description |
 |------|------------------|
-| Corollary1_5 | Absolute values over char p and finite fields |
-| Example1_3 | p-adic norm nonarchimedean |
-| Lemma1_4 | Converse direction (boundedness → nonarchimedean) |
-| Example1_14 | Primeness of (p) in ℤ |
-| Example1_15 | Power series ring is DVR |
-| Theorem1_16 | Both directions of DVR ↔ local PID |
-| Proposition1_20 | Transitivity of integrality (Mathlib: `Algebra.IsIntegral.trans`) |
-| Corollary1_23 | UFDs are integrally closed |
-| Example1_24 | φ = (1+√5)/2 integral, ℤ[√5] not integrally closed |
-| Proposition1_25 | Valuation rings integrally closed (Mathlib: `ValuationRing.isIntegrallyClosed`) |
-| Proposition1_28 | Integrality and minimal polynomials |
-| Example1_29 | (1+√7)/2 not integral over ℤ |
+| 01.05.Corollary | Absolute values over char p and finite fields |
+| 01.03.Example | p-adic norm nonarchimedean |
+| 01.04.Lemma | Converse direction (boundedness → nonarchimedean) |
+| 01.14.Example | Primeness of (p) in ℤ |
+| 01.15.Example | Power series ring is DVR |
+| 01.16.Theorem | Both directions of DVR ↔ local PID |
+| 01.20.Proposition | Transitivity of integrality (Mathlib: `Algebra.IsIntegral.trans`) |
+| 01.23.Corollary | UFDs are integrally closed |
+| 01.24.Example | φ = (1+√5)/2 integral, ℤ[√5] not integrally closed |
+| 01.25.Proposition | Valuation rings integrally closed (Mathlib: `ValuationRing.isIntegrallyClosed`) |
+| 01.28.Proposition | Integrality and minimal polynomials |
+| 01.29.Example | (1+√7)/2 not integral over ℤ |
 
 ---
 
@@ -55,12 +55,12 @@ Definition1_13, Definition1_17, Definition1_19, Definition1_26
 
 | Item | Blob text matches Lean statement? | Notes |
 |------|----------------------------------|-------|
-| Definition1_2 | ✓ | `abbrev SutherlandAbsoluteValue = AbsoluteValue k ℝ`; nonarchimedean via `IsNonarchimedean` |
-| Theorem1_16 | ✓ | 7-way equivalence correctly stated; two sorry'd directions scaffold the full theorem |
-| Proposition1_20 | ✓ | Transitivity tower `C/B/A` correctly formalized; comment points to Mathlib's `Algebra.IsIntegral.trans` |
-| Example1_24 | ✓ | `φ = (1+√5)/2` integral via `x²-x-1`; `Zsqrtd 5` used for ℤ[√5] |
-| Proposition1_25 | ✓ | Statement exactly matches book; comment notes Mathlib instance available |
-| Proposition1_28 | ✓ | Minimal polynomial characterization correctly stated |
+| 01.02.Definition | ✓ | `abbrev SutherlandAbsoluteValue = AbsoluteValue k ℝ`; nonarchimedean via `IsNonarchimedean` |
+| 01.16.Theorem | ✓ | 7-way equivalence correctly stated; two sorry'd directions scaffold the full theorem |
+| 01.20.Proposition | ✓ | Transitivity tower `C/B/A` correctly formalized; comment points to Mathlib's `Algebra.IsIntegral.trans` |
+| 01.24.Example | ✓ | `φ = (1+√5)/2` integral via `x²-x-1`; `Zsqrtd 5` used for ℤ[√5] |
+| 01.25.Proposition | ✓ | Statement exactly matches book; comment notes Mathlib instance available |
+| 01.28.Proposition | ✓ | Minimal polynomial characterization correctly stated |
 
 ---
 
@@ -78,8 +78,8 @@ No GitHub issues need to be created for definition-level problems.
 
 Next step: Stage 3.2 proof work. Priority:
 1. **Tier 1** (direct Mathlib — likely 1-2 lines each):
-   - `Proposition1_20`: use `Algebra.IsIntegral.trans`
-   - `Proposition1_25`: use `ValuationRing.isIntegrallyClosed` instance
-   - `Corollary1_23`: UFDs integrally closed — Mathlib instance
-2. **Tier 2** (Mathlib with assembly): `Theorem1_16`, `Lemma1_4`, `Corollary1_5`
-3. **Tier 3** (original proofs): `Example1_24`, `Example1_29`, `Proposition1_28`
+   - `01.20.Proposition`: use `Algebra.IsIntegral.trans`
+   - `01.25.Proposition`: use `ValuationRing.isIntegrallyClosed` instance
+   - `01.23.Corollary`: UFDs integrally closed — Mathlib instance
+2. **Tier 2** (Mathlib with assembly): `01.16.Theorem`, `01.04.Lemma`, `01.05.Corollary`
+3. **Tier 3** (original proofs): `01.24.Example`, `01.29.Example`, `01.28.Proposition`

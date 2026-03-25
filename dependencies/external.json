@@ -1,77 +1,102 @@
 [
   {
     "id": "fundamental-theorem-arithmetic",
-    "description": "Fundamental Theorem of Arithmetic: every nonzero integer factors uniquely as a product of primes (up to sign and order). Used to define the p-adic valuation v_p and justify that every x ∈ ℚ× writes as ±∏q q^{e_q} uniquely.",
-    "items": ["Chapter1/Introduction", "Chapter1/Section1_3_Intro", "Chapter1/Definition1_7"],
+    "description": "Fundamental Theorem of Arithmetic: every nonzero integer factors uniquely as a product of primes (up to sign and order). Used to define the p-adic valuation v_p and justify that every x \u2208 \u211a\u00d7 writes as \u00b1\u220fq q^{e_q} uniquely.",
+    "items": [
+      "Chapter1/01.00.Introduction",
+      "Chapter1/01.03s.Introduction",
+      "Chapter1/01.07.Definition"
+    ],
     "category": "undergraduate prerequisite"
   },
   {
     "id": "ring-field-basics",
     "description": "Basic commutative ring and field theory: ring homomorphisms, ideals, integral domains, fraction fields, units, quotient rings. Assumed throughout without proof.",
     "items": [
-      "Chapter1/Remark1_1",
-      "Chapter1/Definition1_10",
-      "Chapter1/Discussion_after_Definition1_10",
-      "Chapter1/Definition1_11",
-      "Chapter1/Discussion_after_Definition1_11",
-      "Chapter1/Definition1_12",
-      "Chapter1/Definition1_13",
-      "Chapter1/Discussion_after_Definition1_13"
+      "Chapter1/01.01.Remark",
+      "Chapter1/01.10.Definition",
+      "Chapter1/01.10a.Discussion",
+      "Chapter1/01.11.Definition",
+      "Chapter1/01.11a.Discussion",
+      "Chapter1/01.12.Definition",
+      "Chapter1/01.13.Definition",
+      "Chapter1/01.13a.Discussion"
     ],
     "category": "undergraduate prerequisite"
   },
   {
     "id": "noetherian-pid-ufd-dimension",
     "description": "Noetherian rings, principal ideal domains (PIDs), unique factorization domains (UFDs), and Krull dimension of a ring. Used in the characterizations of DVRs in Theorem 1.16 and in Corollary 1.23.",
-    "items": ["Chapter1/Theorem1_16", "Chapter1/Corollary1_23"],
+    "items": [
+      "Chapter1/01.16.Theorem",
+      "Chapter1/01.23.Corollary"
+    ],
     "category": "undergraduate prerequisite"
   },
   {
     "id": "formal-power-series-laurent-series",
     "description": "Formal power series ring k[[t]] and Laurent series field k((t)): construction, ring/field structure, and the valuation given by the order of vanishing at 0.",
-    "items": ["Chapter1/Example1_15"],
+    "items": [
+      "Chapter1/01.15.Example"
+    ],
     "category": "undergraduate prerequisite"
   },
   {
     "id": "minimal-polynomial",
-    "description": "Minimal polynomial of an algebraic element α over a field K: the unique monic irreducible polynomial f ∈ K[x] with f(α) = 0. Used in Proposition 1.28 and Example 1.29.",
-    "items": ["Chapter1/Proposition1_28", "Chapter1/Example1_29"],
+    "description": "Minimal polynomial of an algebraic element \u03b1 over a field K: the unique monic irreducible polynomial f \u2208 K[x] with f(\u03b1) = 0. Used in Proposition 1.28 and Example 1.29.",
+    "items": [
+      "Chapter1/01.28.Proposition",
+      "Chapter1/01.29.Example"
+    ],
     "category": "undergraduate prerequisite"
   },
   {
     "id": "algebraic-closure",
     "description": "Algebraic closure of a field: every polynomial has a root. Used in the proof of Proposition 1.18 (taking the algebraic closure of the fraction field of A to split f and g) and in Proposition 1.28 (splitting field for the minimal polynomial, yielding conjugates).",
-    "items": ["Chapter1/Proposition1_18", "Chapter1/Proposition1_28"],
+    "items": [
+      "Chapter1/01.18.Proposition",
+      "Chapter1/01.28.Proposition"
+    ],
     "category": "undergraduate prerequisite"
   },
   {
     "id": "symmetric-functions-resultant",
-    "description": "Elementary symmetric polynomials and the fact that symmetric polynomials in the roots of f ∈ A[x] lie in A. Used in the proof of Proposition 1.18 to show h = ∏(z − (α_i + β_j)) lies in A[z].",
-    "items": ["Chapter1/Proposition1_18"],
+    "description": "Elementary symmetric polynomials and the fact that symmetric polynomials in the roots of f \u2208 A[x] lie in A. Used in the proof of Proposition 1.18 to show h = \u220f(z \u2212 (\u03b1_i + \u03b2_j)) lies in A[z].",
+    "items": [
+      "Chapter1/01.18.Proposition"
+    ],
     "category": "undergraduate prerequisite"
   },
   {
     "id": "transitivity-integrality",
-    "description": "Transitivity of integrality: if C/B/A is a tower with B integral over A and C integral over B, then C is integral over A. The book defers the proof to [1, Thm. 10.27] (Altman–Kleiman) or [2, Cor. 5.4] (Atiyah–MacDonald).",
-    "items": ["Chapter1/Proposition1_20"],
+    "description": "Transitivity of integrality: if C/B/A is a tower with B integral over A and C integral over B, then C is integral over A. The book defers the proof to [1, Thm. 10.27] (Altman\u2013Kleiman) or [2, Cor. 5.4] (Atiyah\u2013MacDonald).",
+    "items": [
+      "Chapter1/01.20.Proposition"
+    ],
     "category": "result from external source"
   },
   {
     "id": "local-fields-completions",
-    "description": "Completions of fields with respect to absolute values, p-adic numbers ℚ_p, and more generally local fields. Mentioned in the Introduction as the broader context and goal; developed in Serre [3].",
-    "items": ["Chapter1/Introduction"],
+    "description": "Completions of fields with respect to absolute values, p-adic numbers \u211a_p, and more generally local fields. Mentioned in the Introduction as the broader context and goal; developed in Serre [3].",
+    "items": [
+      "Chapter1/01.00.Introduction"
+    ],
     "category": "result from external source"
   },
   {
     "id": "function-fields-global-fields",
-    "description": "Function fields over finite fields F_q(t), global fields (number fields and function fields), and their analogy with ℤ. Mentioned in the Introduction as broader context.",
-    "items": ["Chapter1/Introduction"],
+    "description": "Function fields over finite fields F_q(t), global fields (number fields and function fields), and their analogy with \u2124. Mentioned in the Introduction as broader context.",
+    "items": [
+      "Chapter1/01.00.Introduction"
+    ],
     "category": "folklore/well-known fact"
   },
   {
     "id": "rational-root-test",
-    "description": "Rational root theorem: if r/s ∈ ℚ (in lowest terms) is a root of a monic integer polynomial, then s = ±1. Used explicitly in the proof of Proposition 1.22.",
-    "items": ["Chapter1/Proposition1_22"],
+    "description": "Rational root theorem: if r/s \u2208 \u211a (in lowest terms) is a root of a monic integer polynomial, then s = \u00b11. Used explicitly in the proof of Proposition 1.22.",
+    "items": [
+      "Chapter1/01.22.Proposition"
+    ],
     "category": "undergraduate prerequisite"
   }
 ]

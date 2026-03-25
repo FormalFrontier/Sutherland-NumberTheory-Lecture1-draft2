@@ -88,13 +88,13 @@ Human-facing summary of all completed stages. Generated 2026-03-25.
 
 - Filled proof sorries for 27 of 28 items using Mathlib APIs and original proofs
 - Key results proved:
-  - `Proposition1_20` — transitivity of integrality (`Algebra.IsIntegral.trans`)
-  - `Proposition1_25` — valuation rings are integrally closed (chain: `ValuationRing → IsBezout → GCDMonoid → IsIntegrallyClosed`)
-  - `Corollary1_23` — UFDs are integrally closed (`GCDMonoid.toIsIntegrallyClosed`)
-  - `Lemma1_4` — nonarchimedean iff bounded on ℕ (original proof filling a Mathlib gap)
-  - `Corollary1_5` — absolute values in positive characteristic; trivial on finite fields
-  - `Theorem1_16` — DVR ↔ local PID (Mathlib definitional equivalence)
-- `Example1_24` (ℤ[√5] not integrally closed): proof completed in PR #56
+  - `01.20.Proposition` — transitivity of integrality (`Algebra.IsIntegral.trans`)
+  - `01.25.Proposition` — valuation rings are integrally closed (chain: `ValuationRing → IsBezout → GCDMonoid → IsIntegrallyClosed`)
+  - `01.23.Corollary` — UFDs are integrally closed (`GCDMonoid.toIsIntegrallyClosed`)
+  - `01.04.Lemma` — nonarchimedean iff bounded on ℕ (original proof filling a Mathlib gap)
+  - `01.05.Corollary` — absolute values in positive characteristic; trivial on finite fields
+  - `01.16.Theorem` — DVR ↔ local PID (Mathlib definitional equivalence)
+- `01.24.Example` (ℤ[√5] not integrally closed): proof completed in PR #56
 
 ---
 
@@ -112,10 +112,10 @@ Human-facing summary of all completed stages. Generated 2026-03-25.
 **Completed:** 2026-03-25 (PR #45, PR #52)
 
 - Simplified tactics and reduced proof size in 4 files:
-  - `Proposition1_20.lean`: one-liner term-mode proof
-  - `Proposition1_25.lean`: `Classical.choice inferInstance` replacing 3-line `Nonempty` dance
-  - `Theorem1_16.lean`: anonymous constructor replacing 5-line tactic block
-  - `Definition1_7.lean`: removed unnecessary named binding to silence linter warning
+  - `01.20.Proposition.lean`: one-liner term-mode proof
+  - `01.25.Proposition.lean`: `Classical.choice inferInstance` replacing 3-line `Nonempty` dance
+  - `01.16.Theorem.lean`: anonymous constructor replacing 5-line tactic block
+  - `01.07.Definition.lean`: removed unnecessary named binding to silence linter warning
 - All 27 items advanced to `proof_polished`
 - Build clean (zero warnings on polished items)
 
@@ -132,9 +132,9 @@ Human-facing summary of all completed stages. Generated 2026-03-25.
 
 | Item | Declaration | Reason |
 |------|-------------|--------|
-| `Lemma1_4` | `sutherland_lemma1_4` | Full iff (nonarchimedean ↔ bounded on ℕ) for abstract `AbsoluteValue`; gap between `AbsoluteValue` and `NormedField` APIs |
-| `Corollary1_5` | `sutherland_corollary1_5_posChar`, `sutherland_corollary1_5_finite` | `AbsoluteValue` + `CharP` / `Fintype` results absent from Mathlib |
-| `Proposition1_28` | `sutherland_prop1_28` | Full iff for minimal polynomial characterization of integrality; Mathlib has only the forward direction |
+| `01.04.Lemma` | `sutherland_lemma1_4` | Full iff (nonarchimedean ↔ bounded on ℕ) for abstract `AbsoluteValue`; gap between `AbsoluteValue` and `NormedField` APIs |
+| `01.05.Corollary` | `sutherland_corollary1_5_posChar`, `sutherland_corollary1_5_finite` | `AbsoluteValue` + `CharP` / `Fintype` results absent from Mathlib |
+| `01.28.Proposition` | `sutherland_prop1_28` | Full iff for minimal polynomial characterization of integrality; Mathlib has only the forward direction |
 
 ---
 
