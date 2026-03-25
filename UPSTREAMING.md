@@ -1,9 +1,8 @@
 # Upstreaming Analysis — Stage 3.6
 
-Triage of all 27 `proof_polished` items from Chapter 1 for upstreaming to Mathlib.
+Triage of all 28 `proof_polished` items from Chapter 1 for upstreaming to Mathlib.
 
-**Summary:** 3 items are candidates; 24 are rejected. `Example1_24` is `definition_verified`
-(not yet `proof_polished`) and is not covered here.
+**Summary:** 3 items are candidates; 25 are rejected.
 
 ---
 
@@ -120,6 +119,7 @@ completion of the minpoly API.
 | `Chapter1/Proposition1_25` | Three-line proof chaining `ValuationRing → IsBezout → GCDMonoid → IsIntegrallyClosed`; all steps are existing Mathlib instances |
 | `Chapter1/Definition1_26` | Pure definition; `NumberField`, `RingOfIntegers` already exist in Mathlib |
 | `Chapter1/Remark1_27` | `Module.Free` instance is `inferInstance`; rank result is one-line delegation to `NumberField.RingOfIntegers.rank` |
+| `Chapter1/Example1_24` | Concrete computations (`(1+√5)/2` is integral; `ℤ[√5]` not integrally closed); too specific for Mathlib's API |
 | `Chapter1/Example1_29` | Concrete computation (`(1 + √7)/2 ∉ ℤ`); too specific for Mathlib's API |
 
 ---
