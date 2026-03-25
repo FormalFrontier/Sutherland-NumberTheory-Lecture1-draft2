@@ -42,8 +42,8 @@
   },
   {
     "id": "Chapter1/01_07_Definition",
-    "status": "needs_scaffolding",
-    "reason": "coverage gap: Rat.AbsoluteValue.padic not recalled"
+    "status": "proof_polished",
+    "reason": "recalls padicValRat, padicNorm, Rat.AbsoluteValue.padic — sorry-free"
   },
   {
     "id": "Chapter1/01_08_Theorem",
@@ -61,8 +61,8 @@
   },
   {
     "id": "Chapter1/01_10_Definition",
-    "status": "needs_scaffolding",
-    "reason": "coverage gap: value group, discrete valuation, valuation-to-absolute-value construction, DVR equivalence all missing"
+    "status": "proof_polished",
+    "reason": "recalls Valuation, AddValuation, valueGroup, IsRankOneDiscrete, IsDiscreteValuationRing, ValuationRing, not_isField — sorry-free"
   },
   {
     "id": "Chapter1/01_10a_Discussion",
@@ -100,8 +100,8 @@
   },
   {
     "id": "Chapter1/01_15_Example",
-    "status": "scaffolded",
-    "reason": "recall PowerSeries.order/order_mul/order_eq_emultiplicity_X; v_alpha documented as out-of-scope"
+    "status": "proof_polished",
+    "reason": "DVR+ValuationRing instances, recalls PowerSeries.order/order_mul/order_eq_emultiplicity_X — sorry-free"
   },
   {
     "id": "Chapter1/01_05s_Introduction",
