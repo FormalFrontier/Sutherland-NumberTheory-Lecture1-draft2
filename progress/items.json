@@ -91,8 +91,7 @@
   },
   {
     "id": "Chapter1/01_13a_Discussion",
-    "status": "needs_scaffolding",
-    "reason": "discussion blob with formalizable claims: DVR→valuation construction, extension to fraction field, uniqueness of discrete valuation"
+    "status": "proof_polished"
   },
   {
     "id": "Chapter1/01_14_Example",
@@ -160,7 +159,7 @@
   {
     "id": "Chapter1/01_24a_Discussion",
     "status": "non_formalizable",
-    "reason": "One-liner corollary of 01_25_Proposition (valuation rings integrally closed). DVR → valuation ring → integrally closed follows via instance chain. Can be added as example line in 01_10a or 01_11a when those are scaffolded."
+    "reason": "One-liner corollary of 01_25_Proposition (valuation rings integrally closed). DVR \u2192 valuation ring \u2192 integrally closed follows via instance chain. Can be added as example line in 01_10a or 01_11a when those are scaffolded."
   },
   {
     "id": "Chapter1/01_25_Proposition",
