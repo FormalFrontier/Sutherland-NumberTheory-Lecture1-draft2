@@ -13,11 +13,11 @@
   },
   {
     "id": "Chapter1/Definition1_2",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Example1_3",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Lemma1_4",
@@ -29,7 +29,7 @@
   },
   {
     "id": "Chapter1/Definition1_6",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Section1_3_Intro",
@@ -37,15 +37,15 @@
   },
   {
     "id": "Chapter1/Definition1_7",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Theorem1_8",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Theorem1_9",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Section1_4_Intro",
@@ -53,7 +53,7 @@
   },
   {
     "id": "Chapter1/Definition1_10",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Discussion_after_Definition1_10",
@@ -61,7 +61,7 @@
   },
   {
     "id": "Chapter1/Definition1_11",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Discussion_after_Definition1_11",
@@ -69,11 +69,11 @@
   },
   {
     "id": "Chapter1/Definition1_12",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Definition1_13",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Discussion_after_Definition1_13",
@@ -81,11 +81,11 @@
   },
   {
     "id": "Chapter1/Example1_14",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Example1_15",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Section1_5_Intro",
@@ -93,7 +93,7 @@
   },
   {
     "id": "Chapter1/Theorem1_16",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Section1_6_Intro",
@@ -101,31 +101,31 @@
   },
   {
     "id": "Chapter1/Definition1_17",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Proposition1_18",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Definition1_19",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Proposition1_20",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Corollary1_21",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Proposition1_22",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Corollary1_23",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Example1_24",
@@ -137,23 +137,23 @@
   },
   {
     "id": "Chapter1/Proposition1_25",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Definition1_26",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Remark1_27",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Proposition1_28",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/Example1_29",
-    "status": "definition_verified"
+    "status": "sorry_free"
   },
   {
     "id": "Chapter1/References",
