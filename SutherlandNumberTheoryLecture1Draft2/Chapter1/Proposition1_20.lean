@@ -17,7 +17,5 @@ In Mathlib: `Algebra.IsIntegral.trans`.
 theorem sutherland_prop1_20 {A B C : Type*} [CommRing A] [CommRing B] [CommRing C]
     [Algebra A B] [Algebra B C] [Algebra A C] [IsScalarTower A B C]
     (hBA : Algebra.IsIntegral A B) (hCB : Algebra.IsIntegral B C) :
-    Algebra.IsIntegral A C := by
-  haveI : Algebra.IsIntegral A B := hBA
-  haveI : Algebra.IsIntegral B C := hCB
-  exact Algebra.IsIntegral.trans B
+    Algebra.IsIntegral A C :=
+  haveI := hBA; haveI := hCB; Algebra.IsIntegral.trans (A := B)
