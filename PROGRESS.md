@@ -84,9 +84,9 @@ Human-facing summary of all completed stages. Generated 2026-03-25.
 
 ## Stage 3.3: Proof Filling
 
-**Completed:** 2026-03-25 (PRs #37, #42, #52, #56)
+**Completed:** 2026-03-25 (PRs #37, #42, #52, #56, #62, #70)
 
-- Filled proof sorries for 27 of 28 items using Mathlib APIs and original proofs
+- Filled proof sorries for all 28 numbered items using Mathlib APIs and original proofs
 - Key results proved:
   - `01_20_Proposition` — transitivity of integrality (`Algebra.IsIntegral.trans`)
   - `01_25_Proposition` — valuation rings are integrally closed (chain: `ValuationRing → IsBezout → GCDMonoid → IsIntegrallyClosed`)
@@ -109,24 +109,24 @@ Human-facing summary of all completed stages. Generated 2026-03-25.
 
 ## Stage 3.5: Proof Polishing
 
-**Completed:** 2026-03-25 (PR #45, PR #52)
+**Completed:** 2026-03-25 (PR #45, PR #52, PR #69)
 
 - Simplified tactics and reduced proof size in 4 files:
   - `01_20_Proposition.lean`: one-liner term-mode proof
   - `01_25_Proposition.lean`: `Classical.choice inferInstance` replacing 3-line `Nonempty` dance
   - `01_16_Theorem.lean`: anonymous constructor replacing 5-line tactic block
   - `01_07_Definition.lean`: removed unnecessary named binding to silence linter warning
-- All 27 items advanced to `proof_polished`
+- All numbered items advanced to `proof_polished`
 - Build clean (zero warnings on polished items)
 
 ---
 
 ## Stage 3.6: Upstreaming Analysis
 
-**Completed:** 2026-03-25 (PR #53)
+**Completed:** 2026-03-25 (PR #53, PR #69)
 
 - `UPSTREAMING.md` written at repository root
-- Triaged all 27 `proof_polished` items; 3 candidates identified, 24 rejected
+- Triaged all `proof_polished` items; 4 candidates identified, 24 rejected
 
 ### Upstreaming Candidates
 
@@ -134,7 +134,34 @@ Human-facing summary of all completed stages. Generated 2026-03-25.
 |------|-------------|--------|
 | `01_04_Lemma` | `sutherland_lemma1_4` | Full iff (nonarchimedean ↔ bounded on ℕ) for abstract `AbsoluteValue`; gap between `AbsoluteValue` and `NormedField` APIs |
 | `01_05_Corollary` | `sutherland_corollary1_5_posChar`, `sutherland_corollary1_5_finite` | `AbsoluteValue` + `CharP` / `Fintype` results absent from Mathlib |
+| `01_24_Example` | `zsqrtd5_not_integrallyClosed` | No `IsIntegrallyClosed` result for `Zsqrtd` in Mathlib |
 | `01_28_Proposition` | `sutherland_prop1_28` | Full iff for minimal polynomial characterization of integrality; Mathlib has only the forward direction |
+
+---
+
+## Coverage Gap Remediation
+
+**Completed:** 2026-03-25 (PRs #83, #84, #85, #86, #88, #89, #90, #96, #98)
+
+A coverage audit identified 8 items with incomplete formalization (discussion blobs missing Lean files, definitions missing recalls). This phase addressed all gaps:
+
+- **01_07_Definition** (PR #84): Added `Rat.AbsoluteValue.padic` recall
+- **01_10_Definition** (PR #84): Added 6 declarations — `Valuation` recall, `valueGroup` recall, `IsRankOneDiscrete` example, `not_isField` recall, valuation→absolute value documentation, cross-reference comments
+- **01_10a_Discussion** (PR #83): Created `.lean` file with all 6 claims — `IsDomain` instance, `AddValuation.map_inv`, `ValuationRing` property, `isUnit_iff_valuation_eq_one`, unit group, valuation trichotomy
+- **01_11a_Discussion** (PR #90): Created `.lean` file with all 6 claims — uniformizer characterization, unique factorization, PID+UFD instances, `ideal_eq_span_pow_irreducible`, total order on ideals, maximal ideal = (π) and unique nonzero prime
+- **01_13a_Discussion** (PR #86): Created `.lean` file with all 5 claims — `addVal`, `maximalIdeal`, `equivValuationSubring`, `isRankOneDiscrete`, uniformizer ↔ generator
+- **01_15_Example** (PR #89): Added `PowerSeries.order`, `order_mul`, `order_eq_emultiplicity_X` recalls
+- **01_27_Remark** (PR #85, #98): Added `NumberField.Order` structure definition; proved `NumberField.Order.le_ringOfIntegers` (last sorry in codebase)
+- **CI fix** (PR #88): Fixed docgen-action failure on v4.29.0-rc8 toolchain
+- **Final audit** (PR #96): Reconciled all items.json statuses with actual file states
+
+---
+
+## File Renaming
+
+**Completed:** 2026-03-25 (PR #71)
+
+- Renamed all item `.lean` files to sortable naming convention (e.g., `Lemma1_4.lean` → `01_04_Lemma.lean`)
 
 ---
 
@@ -142,12 +169,13 @@ Human-facing summary of all completed stages. Generated 2026-03-25.
 
 | Status | Count | Notes |
 |--------|-------|-------|
-| `proof_polished` | 28 | All 28 formalizable items |
-| `extracted` | 12 | Non-formalizable items (discussions, section intros, reference lists) — permanently at this status |
+| `proof_polished` | 31 | All 31 formalizable items (28 numbered + 3 discussion blobs) |
+| `non_formalizable` | 1 | `01_24a_Discussion` — one-liner corollary covered by instance chain |
+| `extracted` | 8 | Section intros + reference list — permanently at this status |
 | **Total** | **40** | All Chapter 1 items accounted for |
 
 ---
 
 ## Build Status
 
-`lake build` passes on `main`. All 28 `proof_polished` items compile with zero warnings.
+`lake build` passes on `main`. All 31 formalizable items compile with zero errors, zero sorries, zero warnings.
