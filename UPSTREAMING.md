@@ -90,6 +90,14 @@ IsIntegral A α`) requires that `minpoly K α ≠ 0` (which follows from `L/K` b
 finite) and then deduces integrality from the monic polynomial. This is a useful
 completion of the minpoly API.
 
+**Phase 2 deep research (2026-03-25):** Exhaustive search of
+`Mathlib/FieldTheory/Minpoly/IsIntegrallyClosed.lean` confirms:
+- Forward direction: `isIntegrallyClosed_eq_field_fractions'` (line 59) — `IsIntegral R s → minpoly K s = (minpoly R s).map (algebraMap R K)`
+- Related iffs exist for *leading coefficient* conditions (`isIntegral_iff_isUnit_leadingCoeff`, `isIntegral_iff_leadingCoeff_dvd`) but NOT for the minpoly-map-equality characterization
+- `minpoly.ne_zero_iff` in `Basic.lean` gives `minpoly A x ≠ 0 ↔ IsIntegral A x` but this is distinct from the map-equality iff
+- No backward direction (`minpoly map equality → IsIntegral`) found anywhere in Mathlib
+- **Verdict: confirmed candidate** — the full iff is a genuine gap in Mathlib's minpoly API
+
 ---
 
 ### 01_24_Example — ℤ[√5] is Not Integrally Closed
@@ -115,6 +123,14 @@ Frac(Zsqrtd 5)` which satisfies `X² - X - 1 = 0` over `Zsqrtd 5` but has no pre
 in `Zsqrtd 5` (since `2 * a = ⟨1, 1⟩` has no solution — parity contradiction on the
 real part). This is a concrete, self-contained example of a non-integrally-closed ring
 that would fit naturally alongside `GaussianInt` in the `Zsqrtd` namespace.
+
+**Phase 2 deep research (2026-03-25):** Exhaustive search confirms:
+- `Mathlib/NumberTheory/Zsqrtd/` contains 4 files: `Basic.lean`, `GaussianInt.lean`, `ToReal.lean`, `QuadraticReciprocity.lean` — none mention `IntegrallyClosed`
+- No `¬IsIntegrallyClosed` results exist anywhere in Mathlib (not just for Zsqrtd)
+- `Mathlib/Counterexamples/` has no counterexamples about integrally closed rings
+- No `FractionRing` instances specific to `Zsqrtd` exist (uses generic `IsDomain` machinery via `Nonsquare`)
+- `Zsqrtd 5` does not appear in Mathlib at all
+- **Verdict: confirmed candidate** — this would be Mathlib's first concrete counterexample of a ring that is not integrally closed
 
 ---
 
