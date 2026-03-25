@@ -8,7 +8,7 @@ build_cache_dir = ".lake"          # Build cache to rsync into worktrees
 protected_files = ["PLAN.md"]      # Files agents may not modify in PRs
 
 [claude]
-model = "sonnet"                    # Claude model to use
+model = "opus"                      # Claude model to use
 quota_check = "~/.claude/skills/claude-usage/claude-available-model"
 quota_retry_seconds = 60           # Sleep duration when quota unavailable
 isolated_config = true             # Use isolated CLAUDE_CONFIG_DIR for agents
@@ -24,7 +24,7 @@ cache_create = 6.25
 # Built-in strategies: "queue_balance", "round_robin"
 # Or a path to a custom script (receives env vars, prints worker type name)
 strategy = "queue_balance"
-min_queue = 3                      # queue_balance: below this → planner-type
+min_queue = 1                      # queue_balance: below this → planner-type
 
 [monitor]
 poll_interval = 2                  # Seconds between status updates
