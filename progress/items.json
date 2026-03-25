@@ -159,8 +159,8 @@
   },
   {
     "id": "Chapter1/01_24a_Discussion",
-    "status": "needs_scaffolding",
-    "reason": "discussion blob with formalizable claim: every DVR is integrally closed"
+    "status": "non_formalizable",
+    "reason": "One-liner corollary of 01_25_Proposition (valuation rings integrally closed). DVR → valuation ring → integrally closed follows via instance chain. Can be added as example line in 01_10a or 01_11a when those are scaffolded."
   },
   {
     "id": "Chapter1/01_25_Proposition",
