@@ -84,7 +84,7 @@ Human-facing summary of all completed stages. Generated 2026-03-25.
 
 ## Stage 3.3: Proof Filling
 
-**Completed:** 2026-03-25 (PRs #37, #42, #52; concurrent work on #32/#35 for Example1_24)
+**Completed:** 2026-03-25 (PRs #37, #42, #52, #56)
 
 - Filled proof sorries for 27 of 28 items using Mathlib APIs and original proofs
 - Key results proved:
@@ -94,7 +94,7 @@ Human-facing summary of all completed stages. Generated 2026-03-25.
   - `Lemma1_4` — nonarchimedean iff bounded on ℕ (original proof filling a Mathlib gap)
   - `Corollary1_5` — absolute values in positive characteristic; trivial on finite fields
   - `Theorem1_16` — DVR ↔ local PID (Mathlib definitional equivalence)
-- `Example1_24` (ℤ[√5] not integrally closed) remains at `definition_verified`; handled by concurrent agents
+- `Example1_24` (ℤ[√5] not integrally closed): proof completed in PR #56
 
 ---
 
@@ -142,8 +142,7 @@ Human-facing summary of all completed stages. Generated 2026-03-25.
 
 | Status | Count | Notes |
 |--------|-------|-------|
-| `proof_polished` | 27 | All formalizable items except Example1_24 |
-| `definition_verified` | 1 | `Example1_24` — ℤ[√5] not integrally closed; proof in progress |
+| `proof_polished` | 28 | All 28 formalizable items |
 | `extracted` | 12 | Non-formalizable items (discussions, section intros, reference lists) — permanently at this status |
 | **Total** | **40** | All Chapter 1 items accounted for |
 
@@ -151,5 +150,4 @@ Human-facing summary of all completed stages. Generated 2026-03-25.
 
 ## Build Status
 
-`lake build` passes on `main`. All 27 `proof_polished` items compile with zero warnings.
-`Example1_24` compiles with a `sorry` placeholder for its proof.
+`lake build` passes on `main`. All 28 `proof_polished` items compile with zero warnings.
