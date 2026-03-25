@@ -1,190 +1,190 @@
 [
   {
-    "id": "Chapter1/Introduction",
+    "id": "Chapter1/01.00.Introduction",
     "status": "extracted"
   },
   {
-    "id": "Chapter1/Remark1_1",
+    "id": "Chapter1/01.01.Remark",
     "status": "extracted"
   },
   {
-    "id": "Chapter1/Section1_2_Intro",
+    "id": "Chapter1/01.02s.Introduction",
     "status": "extracted"
   },
   {
-    "id": "Chapter1/Definition1_2",
+    "id": "Chapter1/01.02.Definition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Example1_3",
+    "id": "Chapter1/01.03.Example",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Lemma1_4",
+    "id": "Chapter1/01.04.Lemma",
     "status": "proof_polished",
     "upstreaming_status": "candidate"
   },
   {
-    "id": "Chapter1/Corollary1_5",
+    "id": "Chapter1/01.05.Corollary",
     "status": "proof_polished",
     "upstreaming_status": "candidate"
   },
   {
-    "id": "Chapter1/Definition1_6",
+    "id": "Chapter1/01.06.Definition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Section1_3_Intro",
+    "id": "Chapter1/01.03s.Introduction",
     "status": "extracted"
   },
   {
-    "id": "Chapter1/Definition1_7",
+    "id": "Chapter1/01.07.Definition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Theorem1_8",
+    "id": "Chapter1/01.08.Theorem",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Theorem1_9",
+    "id": "Chapter1/01.09.Theorem",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Section1_4_Intro",
+    "id": "Chapter1/01.04s.Introduction",
     "status": "extracted"
   },
   {
-    "id": "Chapter1/Definition1_10",
+    "id": "Chapter1/01.10.Definition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Discussion_after_Definition1_10",
+    "id": "Chapter1/01.10a.Discussion",
     "status": "extracted"
   },
   {
-    "id": "Chapter1/Definition1_11",
+    "id": "Chapter1/01.11.Definition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Discussion_after_Definition1_11",
+    "id": "Chapter1/01.11a.Discussion",
     "status": "extracted"
   },
   {
-    "id": "Chapter1/Definition1_12",
+    "id": "Chapter1/01.12.Definition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Definition1_13",
+    "id": "Chapter1/01.13.Definition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Discussion_after_Definition1_13",
+    "id": "Chapter1/01.13a.Discussion",
     "status": "extracted"
   },
   {
-    "id": "Chapter1/Example1_14",
+    "id": "Chapter1/01.14.Example",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Example1_15",
+    "id": "Chapter1/01.15.Example",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Section1_5_Intro",
+    "id": "Chapter1/01.05s.Introduction",
     "status": "extracted"
   },
   {
-    "id": "Chapter1/Theorem1_16",
+    "id": "Chapter1/01.16.Theorem",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Section1_6_Intro",
+    "id": "Chapter1/01.06s.Introduction",
     "status": "extracted"
   },
   {
-    "id": "Chapter1/Definition1_17",
+    "id": "Chapter1/01.17.Definition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Proposition1_18",
+    "id": "Chapter1/01.18.Proposition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Definition1_19",
+    "id": "Chapter1/01.19.Definition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Proposition1_20",
+    "id": "Chapter1/01.20.Proposition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Corollary1_21",
+    "id": "Chapter1/01.21.Corollary",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Proposition1_22",
+    "id": "Chapter1/01.22.Proposition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Corollary1_23",
+    "id": "Chapter1/01.23.Corollary",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Example1_24",
+    "id": "Chapter1/01.24.Example",
     "status": "proof_polished",
     "upstreaming_status": "candidate"
   },
   {
-    "id": "Chapter1/Discussion_after_Example1_24",
+    "id": "Chapter1/01.24a.Discussion",
     "status": "extracted"
   },
   {
-    "id": "Chapter1/Proposition1_25",
+    "id": "Chapter1/01.25.Proposition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Definition1_26",
+    "id": "Chapter1/01.26.Definition",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Remark1_27",
+    "id": "Chapter1/01.27.Remark",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/Proposition1_28",
+    "id": "Chapter1/01.28.Proposition",
     "status": "proof_polished",
     "upstreaming_status": "candidate"
   },
   {
-    "id": "Chapter1/Example1_29",
+    "id": "Chapter1/01.29.Example",
     "status": "proof_polished",
     "upstreaming_status": "rejected"
   },
   {
-    "id": "Chapter1/References",
+    "id": "Chapter1/01.99.References",
     "status": "extracted"
   }
 ]

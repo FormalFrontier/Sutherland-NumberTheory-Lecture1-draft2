@@ -1,14 +1,16 @@
 {
-  "notes": "External sources for items that are NOT fully covered by Mathlib and need non-Mathlib support for formalization. Items with full Mathlib coverage are omitted here — see mathlib-coverage.json.",
+  "notes": "External sources for items that are NOT fully covered by Mathlib and need non-Mathlib support for formalization. Items with full Mathlib coverage are omitted here \u2014 see mathlib-coverage.json.",
   "items": [
     {
-      "id": "Chapter1/Lemma1_4",
-      "gaps": ["The converse direction: |n| ≤ 1 for all n ∈ ℕ ⟹ absolute value is non-archimedean"],
+      "id": "Chapter1/01.04.Lemma",
+      "gaps": [
+        "The converse direction: |n| \u2264 1 for all n \u2208 \u2115 \u27f9 absolute value is non-archimedean"
+      ],
       "sources": [
         {
           "type": "natural-language",
-          "reference": "Neukirch, Algebraic Number Theory, Chapter II §1",
-          "notes": "Standard proof: if |n| ≤ 1 for all n, then by binomial theorem |x+y|^N = |(x+y)^N| = |∑ C(N,k) x^k y^(N-k)| ≤ (N+1) max(|x|,|y|)^N; take N-th roots and N→∞."
+          "reference": "Neukirch, Algebraic Number Theory, Chapter II \u00a71",
+          "notes": "Standard proof: if |n| \u2264 1 for all n, then by binomial theorem |x+y|^N = |(x+y)^N| = |\u2211 C(N,k) x^k y^(N-k)| \u2264 (N+1) max(|x|,|y|)^N; take N-th roots and N\u2192\u221e."
         },
         {
           "type": "natural-language",
@@ -19,7 +21,7 @@
       ]
     },
     {
-      "id": "Chapter1/Corollary1_5",
+      "id": "Chapter1/01.05.Corollary",
       "gaps": [
         "The statement: every absolute value on a field of positive characteristic is non-archimedean",
         "The statement: the only absolute value on a finite field is the trivial one"
@@ -27,13 +29,13 @@
       "sources": [
         {
           "type": "natural-language",
-          "reference": "Neukirch, Algebraic Number Theory, Chapter II §1, Remark after Def 1.1",
-          "notes": "Standard result: in characteristic p, n·1 = 0 for some n ≥ 1, so |n| = 0. Then Lemma1_4 applies."
+          "reference": "Neukirch, Algebraic Number Theory, Chapter II \u00a71, Remark after Def 1.1",
+          "notes": "Standard result: in characteristic p, n\u00b71 = 0 for some n \u2265 1, so |n| = 0. Then 01.04.Lemma applies."
         }
       ]
     },
     {
-      "id": "Chapter1/Theorem1_16",
+      "id": "Chapter1/01.16.Theorem",
       "gaps": [
         "The full 7-way equivalence for DVRs as stated in the lecture. Mathlib has several of these but not all bundled as a single theorem."
       ],
@@ -51,41 +53,41 @@
       ]
     },
     {
-      "id": "Chapter1/Example1_24",
+      "id": "Chapter1/01.24.Example",
       "gaps": [
-        "Concrete computation: (1+√5)/2 satisfies x² - x - 1 = 0 (integral over ℤ), but is not in ℤ[√5]"
+        "Concrete computation: (1+\u221a5)/2 satisfies x\u00b2 - x - 1 = 0 (integral over \u2124), but is not in \u2124[\u221a5]"
       ],
       "sources": [
         {
           "type": "natural-language",
           "reference": "Sutherland lecture notes, Example 1.24",
-          "notes": "The computation x = (1+√5)/2 satisfies x² - x - 1 = 0 showing integrality over ℤ; then argue it lies in the integral closure ℤ[(1+√5)/2] ⊃ ℤ[√5], showing ℤ[√5] ≠ its own integral closure."
+          "notes": "The computation x = (1+\u221a5)/2 satisfies x\u00b2 - x - 1 = 0 showing integrality over \u2124; then argue it lies in the integral closure \u2124[(1+\u221a5)/2] \u2283 \u2124[\u221a5], showing \u2124[\u221a5] \u2260 its own integral closure."
         }
       ]
     },
     {
-      "id": "Chapter1/Example1_29",
+      "id": "Chapter1/01.29.Example",
       "gaps": [
-        "Concrete computation: α = (1+√7)/2 has minimal polynomial x² - x - 3/2 ∉ ℤ[x]"
+        "Concrete computation: \u03b1 = (1+\u221a7)/2 has minimal polynomial x\u00b2 - x - 3/2 \u2209 \u2124[x]"
       ],
       "sources": [
         {
           "type": "natural-language",
           "reference": "Sutherland lecture notes, Example 1.29",
-          "notes": "Compute: α = (1+√7)/2, α² = (1+2√7+7)/4 = (8+2√7)/4 = 2 + √7/2. Then α² - α = 2 + √7/2 - 1/2 - √7/2 = 3/2. So α satisfies x² - x - 3/2 = 0. Since the constant term 3/2 ∉ ℤ, the min poly has non-integer coefficients and α is not integral over ℤ."
+          "notes": "Compute: \u03b1 = (1+\u221a7)/2, \u03b1\u00b2 = (1+2\u221a7+7)/4 = (8+2\u221a7)/4 = 2 + \u221a7/2. Then \u03b1\u00b2 - \u03b1 = 2 + \u221a7/2 - 1/2 - \u221a7/2 = 3/2. So \u03b1 satisfies x\u00b2 - x - 3/2 = 0. Since the constant term 3/2 \u2209 \u2124, the min poly has non-integer coefficients and \u03b1 is not integral over \u2124."
         }
       ]
     },
     {
-      "id": "Chapter1/Remark1_27",
+      "id": "Chapter1/01.27.Remark",
       "gaps": [
-        "Formalization of the concept of an 'order' in a finite-dimensional ℚ-algebra (sub-ℤ-algebra that is a free ℤ-module of rank [K:ℚ])",
-        "Proof that 𝒪_K is a maximal order"
+        "Formalization of the concept of an 'order' in a finite-dimensional \u211a-algebra (sub-\u2124-algebra that is a free \u2124-module of rank [K:\u211a])",
+        "Proof that \ud835\udcaa_K is a maximal order"
       ],
       "sources": [
         {
           "type": "natural-language",
-          "reference": "Neukirch, Algebraic Number Theory, Chapter I §2",
+          "reference": "Neukirch, Algebraic Number Theory, Chapter I \u00a72",
           "notes": "Detailed treatment of orders in number fields."
         },
         {
@@ -100,13 +102,13 @@
     {
       "id": "symmetric-functions-resultant",
       "gaps": [
-        "Specific lemma: if α_1,...,α_n are roots of f ∈ A[x] and β_1,...,β_m are roots of g ∈ A[x] in the algebraic closure, then ∏(z - (α_i + β_j)) ∈ A[z]"
+        "Specific lemma: if \u03b1_1,...,\u03b1_n are roots of f \u2208 A[x] and \u03b2_1,...,\u03b2_m are roots of g \u2208 A[x] in the algebraic closure, then \u220f(z - (\u03b1_i + \u03b2_j)) \u2208 A[z]"
       ],
       "sources": [
         {
           "type": "natural-language",
-          "reference": "Neukirch, Algebraic Number Theory, Chapter I §2, Proof of Prop 2.2",
-          "notes": "The coefficients of ∏(z-(α_i+β_j)) are symmetric polynomials in the α_i and β_j hence expressible as polynomials in the elementary symmetric polynomials of the α_i and β_j, which lie in A."
+          "reference": "Neukirch, Algebraic Number Theory, Chapter I \u00a72, Proof of Prop 2.2",
+          "notes": "The coefficients of \u220f(z-(\u03b1_i+\u03b2_j)) are symmetric polynomials in the \u03b1_i and \u03b2_j hence expressible as polynomials in the elementary symmetric polynomials of the \u03b1_i and \u03b2_j, which lie in A."
         }
       ]
     },
@@ -125,7 +127,7 @@
         {
           "type": "lean-library",
           "reference": "Mathlib.NumberTheory.Padics",
-          "notes": "ℚ_p and ℤ_p are available; general local field theory is partial in Mathlib."
+          "notes": "\u211a_p and \u2124_p are available; general local field theory is partial in Mathlib."
         }
       ]
     }

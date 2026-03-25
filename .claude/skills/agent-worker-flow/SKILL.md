@@ -153,7 +153,7 @@ Then claim one of the sub-issues and work on that instead.
 A good decomposition is more valuable than a failed heroic attempt.
 
 **One item per issue (strict):** If an issue covers more than one formalizable item
-(e.g., "Fill Lemma1_4 and Corollary1_5"), decompose it immediately before starting work.
+(e.g., "Fill 01.04.Lemma and 01.05.Corollary"), decompose it immediately before starting work.
 Multi-item issues attract concurrent agents who race on the same files, causing merge
 conflicts and duplicate work. Split first, then claim one sub-issue.
 

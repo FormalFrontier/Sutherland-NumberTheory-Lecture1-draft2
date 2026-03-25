@@ -56,13 +56,13 @@
 
 ### Stage 3.3: Proof Filling (PRs #37, #42, #52, #56)
 
-**Worked well:** The tiered classification from Stage 2 guided effort correctly. Tier 1 items (Proposition1_20, Proposition1_25, Corollary1_23) were genuinely one-liners. Tier 2 items (Theorem1_16, Lemma1_4) required assembly but found Mathlib APIs for each step.
+**Worked well:** The tiered classification from Stage 2 guided effort correctly. Tier 1 items (01.20.Proposition, 01.25.Proposition, 01.23.Corollary) were genuinely one-liners. Tier 2 items (01.16.Theorem, 01.04.Lemma) required assembly but found Mathlib APIs for each step.
 
 **Hardest items:**
-- **Lemma1_4** (backward direction of nonarchimedean iff): Required bridging between `AbsoluteValue` and `NormedField` APIs. The book's proof sketch was not directly formalizable; the agent had to find an indirect route via `IsUltrametricDist`.
-- **Example1_24** (ℤ[√5] not integrally closed): Required working in `FractionRing (Zsqrtd 5)`, building an explicit element `φ = ⟨1,1⟩/2`, showing integrality, applying `IsIntegrallyClosed`, and deriving a contradiction via an integer arithmetic argument. This was the most technically complex proof in the project.
+- **01.04.Lemma** (backward direction of nonarchimedean iff): Required bridging between `AbsoluteValue` and `NormedField` APIs. The book's proof sketch was not directly formalizable; the agent had to find an indirect route via `IsUltrametricDist`.
+- **01.24.Example** (ℤ[√5] not integrally closed): Required working in `FractionRing (Zsqrtd 5)`, building an explicit element `φ = ⟨1,1⟩/2`, showing integrality, applying `IsIntegrallyClosed`, and deriving a contradiction via an integer arithmetic argument. This was the most technically complex proof in the project.
 
-**Coordination failure:** Three agents worked independently on Example1_24 (issues #32, #35, and the session that merged #56), producing PRs #58 and #59 both conflicting with the already-merged #56. The root cause was that issue #35 remained open after #56 merged, and the coordination system used issue-open as the signal for unclaimed work. When issue labels and PR merges are decoupled from issue closure, duplicate work happens.
+**Coordination failure:** Three agents worked independently on 01.24.Example (issues #32, #35, and the session that merged #56), producing PRs #58 and #59 both conflicting with the already-merged #56. The root cause was that issue #35 remained open after #56 merged, and the coordination system used issue-open as the signal for unclaimed work. When issue labels and PR merges are decoupled from issue closure, duplicate work happens.
 
 **Lesson learned:** After a PR merges that closes an issue, ensure the issue is actually closed. The `coordination create-pr` command closes the issue via "Closes #N" in the PR body, but if multiple PRs reference the same issue number, only one will close it on merge.
 
@@ -74,15 +74,15 @@
 
 ### Stage 3.5: Proof Polishing (PRs #45, #52)
 
-**Worked well:** Four items had meaningful simplifications. The one-liner term-mode proof for Proposition1_20 and the `Classical.choice inferInstance` pattern for Proposition1_25 are good examples of post-hoc cleanup that reduces noise.
+**Worked well:** Four items had meaningful simplifications. The one-liner term-mode proof for 01.20.Proposition and the `Classical.choice inferInstance` pattern for 01.25.Proposition are good examples of post-hoc cleanup that reduces noise.
 
-**Friction:** PR #45 and PR #46/#47 (Lemma1_4 + Corollary1_5 from Stage 3.3f) had merge conflicts, requiring a conflict-resolution PR (#52). Concurrent proof work on different files should be fine, but when two PRs touch the same imports or the same file, conflicts arise.
+**Friction:** PR #45 and PR #46/#47 (01.04.Lemma + 01.05.Corollary from Stage 3.3f) had merge conflicts, requiring a conflict-resolution PR (#52). Concurrent proof work on different files should be fine, but when two PRs touch the same imports or the same file, conflicts arise.
 
 **Lesson learned:** Stage 3.5 polishing should claim items explicitly so two agents don't polish the same file. The coordination system handles this for issues but not for "file-level" work that isn't tracked in an issue.
 
 ### Stage 3.6: Upstreaming Analysis (PR #53)
 
-**Worked well:** Three genuine candidates identified (Lemma1_4, Corollary1_5, Proposition1_28). The analysis was thorough — specific Mathlib search paths documented, reasons for rejection stated, suggested target modules named.
+**Worked well:** Three genuine candidates identified (01.04.Lemma, 01.05.Corollary, 01.28.Proposition). The analysis was thorough — specific Mathlib search paths documented, reasons for rejection stated, suggested target modules named.
 
 **Friction:** None notable. This is a research + documentation task well-suited to a single session.
 
@@ -106,16 +106,16 @@
 
 **Pattern 1: Mathlib is more complete than it appears.** Many items that looked like they needed original proofs turned out to have direct Mathlib analogues. The key was searching by concept rather than by name — e.g., searching for `IsIntegrallyClosed` rather than "integrally closed ring."
 
-**Pattern 2: Abstract API gaps require bridging.** The `AbsoluteValue` vs. `NormedField` API split caused genuine friction for Lemma1_4 and Corollary1_5. Mathlib's API is not uniformly developed across abstraction levels — results available for concrete types or normed structures may not exist for abstract algebraic structures.
+**Pattern 2: Abstract API gaps require bridging.** The `AbsoluteValue` vs. `NormedField` API split caused genuine friction for 01.04.Lemma and 01.05.Corollary. Mathlib's API is not uniformly developed across abstraction levels — results available for concrete types or normed structures may not exist for abstract algebraic structures.
 
-**Pattern 3: Definitional equalities are powerful.** Theorem1_16 (DVR ↔ local PID) was proved in one line because Mathlib's `IsDiscreteValuationRing` is *defined* as a local PID that is not a field. Understanding when something is definitionally true (vs. requiring a nontrivial proof) is key to efficient formalization.
+**Pattern 3: Definitional equalities are powerful.** 01.16.Theorem (DVR ↔ local PID) was proved in one line because Mathlib's `IsDiscreteValuationRing` is *defined* as a local PID that is not a field. Understanding when something is definitionally true (vs. requiring a nontrivial proof) is key to efficient formalization.
 
 **Pattern 4: `FractionRing` algebra is tricky.** Working in `FractionRing R` requires careful use of `IsFractionRing.injective` to transport results back to `R`. The `field_simp` + `linear_combination` pattern reliably handles fraction clearing when you have the right hypotheses.
 
 **Hardest items and why:**
-1. **Example1_24** — Required working in a non-standard fraction ring, building an explicit algebraic element, and producing a contradiction via integer arithmetic. Four agents attempted it before success.
-2. **Lemma1_4** — Backward direction required indirect proof via `NormedField` machinery that is conceptually at a different abstraction level than the statement.
-3. **Proposition1_28** — Full iff for minimal polynomial characterization; the backward direction required connecting `minpoly K α ≠ 0` to `IsIntegral A α`.
+1. **01.24.Example** — Required working in a non-standard fraction ring, building an explicit algebraic element, and producing a contradiction via integer arithmetic. Four agents attempted it before success.
+2. **01.04.Lemma** — Backward direction required indirect proof via `NormedField` machinery that is conceptually at a different abstraction level than the statement.
+3. **01.28.Proposition** — Full iff for minimal polynomial characterization; the backward direction required connecting `minpoly K α ≠ 0` to `IsIntegral A α`.
 
 ---
 
@@ -131,13 +131,13 @@
 
 ### Coordination failures
 
-**Example1_24 duplicate work:** Three sessions ended up working on the same theorem because issue #35 remained open after PR #56 merged. The issue title mentioned both Example1_24 and Example1_29; PR #56 closed issue #32 (which covered only Example1_24). Issue #35 remained open, and subsequent agents saw it as unclaimed work.
+**01.24.Example duplicate work:** Three sessions ended up working on the same theorem because issue #35 remained open after PR #56 merged. The issue title mentioned both 01.24.Example and 01.29.Example; PR #56 closed issue #32 (which covered only 01.24.Example). Issue #35 remained open, and subsequent agents saw it as unclaimed work.
 
-**Root cause:** Issues that cover multiple items create ambiguity. When one item from an issue is completed in a separate PR, the issue stays open, attracting more agents. This happened because issues #32 and #35 covered the same item (Example1_24) from different angles.
+**Root cause:** Issues that cover multiple items create ambiguity. When one item from an issue is completed in a separate PR, the issue stays open, attracting more agents. This happened because issues #32 and #35 covered the same item (01.24.Example) from different angles.
 
 **Fix:** Each issue should cover exactly one formalizable item. "Multi-item" issues should be split immediately during planning, not consolidated for efficiency.
 
-**Concurrent PR conflicts (PRs #46/#47):** Two agents wrote proofs for Lemma1_4 and Corollary1_5 in the same session, producing conflicting PRs. The conflict was resolved in PR #52. This happened because issue #42 covered both items together.
+**Concurrent PR conflicts (PRs #46/#47):** Two agents wrote proofs for 01.04.Lemma and 01.05.Corollary in the same session, producing conflicting PRs. The conflict was resolved in PR #52. This happened because issue #42 covered both items together.
 
 **Fix:** Same as above — one issue per item prevents concurrent-PR conflicts on the same file.
 
@@ -159,11 +159,11 @@
 
 ```markdown
 ### Issue scope check
-If the issue covers more than one formalizable item (e.g., "Fill Lemma1_4 and Corollary1_5"),
+If the issue covers more than one formalizable item (e.g., "Fill 01.04.Lemma and 01.05.Corollary"),
 decompose it immediately:
 ```bash
-echo "..." | coordination plan --label feature "Fill Lemma1_4 (nonarchimedean iff)"
-echo "..." | coordination plan --label feature "Fill Corollary1_5 (char p absolute values)"
+echo "..." | coordination plan --label feature "Fill 01.04.Lemma (nonarchimedean iff)"
+echo "..." | coordination plan --label feature "Fill 01.05.Corollary (char p absolute values)"
 coordination skip <parent-issue> "Decomposed into #X, #Y — one issue per item"
 ```
 This prevents concurrent-PR merge conflicts and duplicate work.
@@ -193,8 +193,8 @@ The following lesson from this project is worth adding to the project-level CLAU
 
 ## 5. Overall Assessment
 
-This project demonstrated that the FormalFrontier pipeline can take a mathematics textbook chapter from PDF to fully-formalized Lean in a single day using parallel multi-agent work. The 16-PR, 28-item formalization proceeded smoothly except for the Example1_24 coordination failure, which is fixable with the "one issue per item" rule.
+This project demonstrated that the FormalFrontier pipeline can take a mathematics textbook chapter from PDF to fully-formalized Lean in a single day using parallel multi-agent work. The 16-PR, 28-item formalization proceeded smoothly except for the 01.24.Example coordination failure, which is fixable with the "one issue per item" rule.
 
 The pipeline stages are well-designed. The biggest bottleneck was Stage 3.3 (proof filling) for hard items, which required multi-attempt agent work. The coordination system held up well under concurrent load. The main systemic weakness is that issues covering multiple items are a coordination hazard.
 
-The three upstreaming candidates (Lemma1_4, Corollary1_5, Proposition1_28) represent genuine additions to Mathlib — these gaps between the `AbsoluteValue` and `NormedField` API layers, and the missing full-iff for the minpoly characterization, are worth contributing back.
+The three upstreaming candidates (01.04.Lemma, 01.05.Corollary, 01.28.Proposition) represent genuine additions to Mathlib — these gaps between the `AbsoluteValue` and `NormedField` API layers, and the missing full-iff for the minpoly characterization, are worth contributing back.

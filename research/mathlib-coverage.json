@@ -1,25 +1,25 @@
 {
   "items": [
     {
-      "id": "Chapter1/Introduction",
+      "id": "Chapter1/01.00.Introduction",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Contextual introduction to the lecture. No formalizable mathematical content."
     },
     {
-      "id": "Chapter1/Remark1_1",
+      "id": "Chapter1/01.01.Remark",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Motivating remark about absolute values on number fields. No direct Mathlib coverage."
     },
     {
-      "id": "Chapter1/Section1_2_Intro",
+      "id": "Chapter1/01.02s.Introduction",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Section introduction text. No formalizable content."
     },
     {
-      "id": "Chapter1/Definition1_2",
+      "id": "Chapter1/01.02.Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -30,13 +30,13 @@
         {
           "name": "IsNonarchimedean",
           "file": "Mathlib.Algebra.Order.Ring.IsNonarchimedean",
-          "notes": "Predicate `IsNonarchimedean f` for the strong triangle inequality f(a+b) ≤ max(f a, f b)."
+          "notes": "Predicate `IsNonarchimedean f` for the strong triangle inequality f(a+b) \u2264 max(f a, f b)."
         }
       ],
       "notes": "AbsoluteValue covers both archimedean and non-archimedean cases; IsNonarchimedean captures the extra condition."
     },
     {
-      "id": "Chapter1/Example1_3",
+      "id": "Chapter1/01.03.Example",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -47,24 +47,24 @@
         {
           "name": "AbsoluteValue.trivial",
           "file": "Mathlib.Algebra.Order.AbsoluteValue.Basic",
-          "notes": "The trivial absolute value (0 ↦ 0, else 1)."
+          "notes": "The trivial absolute value (0 \u21a6 0, else 1)."
         },
         {
           "name": "Rat.AbsoluteValue.padic",
           "file": "Mathlib.NumberTheory.Ostrowski",
-          "notes": "The p-adic absolute value on ℚ as an AbsoluteValue ℚ ℝ."
+          "notes": "The p-adic absolute value on \u211a as an AbsoluteValue \u211a \u211d."
         }
       ],
-      "notes": "Examples of absolute values: standard |·|_∞, trivial, and p-adic."
+      "notes": "Examples of absolute values: standard |\u00b7|_\u221e, trivial, and p-adic."
     },
     {
-      "id": "Chapter1/Lemma1_4",
+      "id": "Chapter1/01.04.Lemma",
       "coverage_status": "partial",
       "mathlib_declarations": [
         {
           "name": "IsNonarchimedean.apply_natCast_le_one_of_isNonarchimedean",
           "file": "Mathlib.Algebra.Order.Ring.IsNonarchimedean",
-          "notes": "Forward direction: if f is nonarchimedean with f 1 = 1 then f (n : ℕ) ≤ 1 for all n."
+          "notes": "Forward direction: if f is nonarchimedean with f 1 = 1 then f (n : \u2115) \u2264 1 for all n."
         },
         {
           "name": "AbsoluteValue.IsNontrivial",
@@ -72,22 +72,22 @@
           "notes": "Used in Ostrowski's theorem; the bounded-on-naturals condition appears in the proof."
         }
       ],
-      "notes": "The forward direction (non-arch ⟹ |n|≤1 for all n) is in Mathlib. The converse (|n|≤1 for all n ⟹ non-arch) appears implicitly in Ostrowski's proof but is not a standalone lemma. Needs to be formalized here."
+      "notes": "The forward direction (non-arch \u27f9 |n|\u22641 for all n) is in Mathlib. The converse (|n|\u22641 for all n \u27f9 non-arch) appears implicitly in Ostrowski's proof but is not a standalone lemma. Needs to be formalized here."
     },
     {
-      "id": "Chapter1/Corollary1_5",
+      "id": "Chapter1/01.05.Corollary",
       "coverage_status": "partial",
       "mathlib_declarations": [
         {
           "name": "CharP.cast_eq_zero_iff",
           "file": "Mathlib.Algebra.CharP.Defs",
-          "notes": "Character of a ring; used to show n · 1 = 0 in positive characteristic."
+          "notes": "Character of a ring; used to show n \u00b7 1 = 0 in positive characteristic."
         }
       ],
-      "notes": "The corollary (positive characteristic ⟹ all absolute values non-archimedean; finite field ⟹ only trivial absolute value) does not have a direct Mathlib theorem. Follows from Lemma1_4 + CharP facts. Needs to be formalized here."
+      "notes": "The corollary (positive characteristic \u27f9 all absolute values non-archimedean; finite field \u27f9 only trivial absolute value) does not have a direct Mathlib theorem. Follows from 01.04.Lemma + CharP facts. Needs to be formalized here."
     },
     {
-      "id": "Chapter1/Definition1_6",
+      "id": "Chapter1/01.06.Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -99,57 +99,57 @@
       "notes": "IsEquiv formalizes the equivalence relation on absolute values."
     },
     {
-      "id": "Chapter1/Section1_3_Intro",
+      "id": "Chapter1/01.03s.Introduction",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Section introduction. No formalizable content."
     },
     {
-      "id": "Chapter1/Definition1_7",
+      "id": "Chapter1/01.07.Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
           "name": "padicValNat",
           "file": "Mathlib.NumberTheory.Padics.PadicVal.Defs",
-          "notes": "p-adic valuation on ℕ: padicValNat p n is the exponent of p in n."
+          "notes": "p-adic valuation on \u2115: padicValNat p n is the exponent of p in n."
         },
         {
           "name": "padicValInt",
           "file": "Mathlib.NumberTheory.Padics.PadicVal.Defs",
-          "notes": "p-adic valuation on ℤ."
+          "notes": "p-adic valuation on \u2124."
         },
         {
           "name": "padicValRat",
           "file": "Mathlib.NumberTheory.Padics.PadicVal.Defs",
-          "notes": "p-adic valuation on ℚ (as an integer-valued function)."
+          "notes": "p-adic valuation on \u211a (as an integer-valued function)."
         },
         {
           "name": "padicNorm",
           "file": "Mathlib.NumberTheory.Padics.PadicNorm",
-          "notes": "The p-adic absolute value |x|_p = p^(-v_p(x)) on ℚ."
+          "notes": "The p-adic absolute value |x|_p = p^(-v_p(x)) on \u211a."
         },
         {
           "name": "Rat.AbsoluteValue.padic",
           "file": "Mathlib.NumberTheory.Ostrowski",
-          "notes": "The p-adic absolute value packaged as AbsoluteValue ℚ ℝ."
+          "notes": "The p-adic absolute value packaged as AbsoluteValue \u211a \u211d."
         }
       ],
-      "notes": "Full Mathlib coverage of the p-adic valuation and absolute value on ℚ."
+      "notes": "Full Mathlib coverage of the p-adic valuation and absolute value on \u211a."
     },
     {
-      "id": "Chapter1/Theorem1_8",
+      "id": "Chapter1/01.08.Theorem",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
           "name": "Rat.AbsoluteValue.equiv_real_or_padic",
           "file": "Mathlib.NumberTheory.Ostrowski",
-          "notes": "Ostrowski's theorem: every nontrivial absolute value on ℚ is equivalent to |·|_∞ or |·|_p for some prime p."
+          "notes": "Ostrowski's theorem: every nontrivial absolute value on \u211a is equivalent to |\u00b7|_\u221e or |\u00b7|_p for some prime p."
         }
       ],
-      "notes": "Ostrowski's theorem is fully proved in Mathlib for ℚ."
+      "notes": "Ostrowski's theorem is fully proved in Mathlib for \u211a."
     },
     {
-      "id": "Chapter1/Theorem1_9",
+      "id": "Chapter1/01.09.Theorem",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -158,22 +158,22 @@
           "notes": "Product formula for number fields: for nonzero x in K, the product over all places of the normalized absolute value |x|_v equals 1."
         }
       ],
-      "notes": "The product formula for ℚ is a special case of the number field product formula. The lecture statement (∏_{p≤∞} |x|_p = 1 for x ∈ ℚ×) follows directly."
+      "notes": "The product formula for \u211a is a special case of the number field product formula. The lecture statement (\u220f_{p\u2264\u221e} |x|_p = 1 for x \u2208 \u211a\u00d7) follows directly."
     },
     {
-      "id": "Chapter1/Section1_4_Intro",
+      "id": "Chapter1/01.04s.Introduction",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Section introduction. No formalizable content."
     },
     {
-      "id": "Chapter1/Definition1_10",
+      "id": "Chapter1/01.10.Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
           "name": "Valuation",
           "file": "Mathlib.RingTheory.Valuation.Basic",
-          "notes": "Structure for valuations: ring homomorphism k× → Γ₀ satisfying v(x+y) ≥ min(v(x),v(y)). Discrete valuations use Γ₀ = ℤ with WithTop."
+          "notes": "Structure for valuations: ring homomorphism k\u00d7 \u2192 \u0393\u2080 satisfying v(x+y) \u2265 min(v(x),v(y)). Discrete valuations use \u0393\u2080 = \u2124 with WithTop."
         },
         {
           "name": "IsDiscreteValuationRing",
@@ -183,25 +183,25 @@
         {
           "name": "Valuation.integer",
           "file": "Mathlib.RingTheory.Valuation.Basic",
-          "notes": "The valuation ring {x : k | v(x) ≥ 0} of a valuation v on a field k."
+          "notes": "The valuation ring {x : k | v(x) \u2265 0} of a valuation v on a field k."
         }
       ],
       "notes": "Valuation and DVR are both fully covered in Mathlib."
     },
     {
-      "id": "Chapter1/Discussion_after_Definition1_10",
+      "id": "Chapter1/01.10a.Discussion",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Discussion text explaining connection between valuations and absolute values. No formalizable content."
     },
     {
-      "id": "Chapter1/Definition1_11",
+      "id": "Chapter1/01.11.Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
           "name": "ValuationRing",
           "file": "Mathlib.RingTheory.Valuation.ValuationRing",
-          "notes": "Class: integral domain where for any pair of elements, one divides the other (equivalently: for all x in FracField, x ∈ A or x⁻¹ ∈ A)."
+          "notes": "Class: integral domain where for any pair of elements, one divides the other (equivalently: for all x in FracField, x \u2208 A or x\u207b\u00b9 \u2208 A)."
         },
         {
           "name": "PreValuationRing",
@@ -209,16 +209,16 @@
           "notes": "Weaker version without domain assumption."
         }
       ],
-      "notes": "ValuationRing matches the lecture definition (A is a valuation ring iff for all x ∈ K, x ∈ A or x⁻¹ ∈ A)."
+      "notes": "ValuationRing matches the lecture definition (A is a valuation ring iff for all x \u2208 K, x \u2208 A or x\u207b\u00b9 \u2208 A)."
     },
     {
-      "id": "Chapter1/Discussion_after_Definition1_11",
+      "id": "Chapter1/01.11a.Discussion",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Discussion text. No formalizable content."
     },
     {
-      "id": "Chapter1/Definition1_12",
+      "id": "Chapter1/01.12.Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -230,47 +230,47 @@
       "notes": "Local ring is fully covered."
     },
     {
-      "id": "Chapter1/Definition1_13",
+      "id": "Chapter1/01.13.Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
           "name": "IsLocalRing.ResidueField",
           "file": "Mathlib.RingTheory.LocalRing.ResidueField.Defs",
-          "notes": "Definition: R ⧸ maximalIdeal R as a field."
+          "notes": "Definition: R \u29f8 maximalIdeal R as a field."
         },
         {
           "name": "IsLocalRing.residue",
           "file": "Mathlib.RingTheory.LocalRing.ResidueField.Defs",
-          "notes": "The quotient map R →+* ResidueField R."
+          "notes": "The quotient map R \u2192+* ResidueField R."
         }
       ],
       "notes": "Residue field is fully covered."
     },
     {
-      "id": "Chapter1/Discussion_after_Definition1_13",
+      "id": "Chapter1/01.13a.Discussion",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Discussion text. No formalizable content."
     },
     {
-      "id": "Chapter1/Example1_14",
+      "id": "Chapter1/01.14.Example",
       "coverage_status": "partial",
       "mathlib_declarations": [
         {
           "name": "Localization.AtPrime",
           "file": "Mathlib.RingTheory.Localization.AtPrime",
-          "notes": "The localization of ℤ at a prime ideal (p), giving ℤ_(p) = {a/b : p ∤ b}."
+          "notes": "The localization of \u2124 at a prime ideal (p), giving \u2124_(p) = {a/b : p \u2224 b}."
         },
         {
           "name": "IsLocalRing.ResidueField",
           "file": "Mathlib.RingTheory.LocalRing.ResidueField.Defs",
-          "notes": "The residue field of ℤ_(p) is ℤ/pℤ ≅ 𝔽_p."
+          "notes": "The residue field of \u2124_(p) is \u2124/p\u2124 \u2245 \ud835\udd3d_p."
         }
       ],
-      "notes": "The construction of ℤ_(p) as a localization is in Mathlib; the identification of maximal ideal as (p) and residue field as 𝔽_p needs to be made explicit."
+      "notes": "The construction of \u2124_(p) as a localization is in Mathlib; the identification of maximal ideal as (p) and residue field as \ud835\udd3d_p needs to be made explicit."
     },
     {
-      "id": "Chapter1/Example1_15",
+      "id": "Chapter1/01.15.Example",
       "coverage_status": "partial",
       "mathlib_declarations": [
         {
@@ -289,16 +289,16 @@
           "notes": "Order of vanishing at 0 for a power series; gives the t-adic valuation."
         }
       ],
-      "notes": "Basic constructions are in Mathlib. The specific valuation on k((t)) with value group ℤ and valuation ring k[[t]] can be assembled from these pieces."
+      "notes": "Basic constructions are in Mathlib. The specific valuation on k((t)) with value group \u2124 and valuation ring k[[t]] can be assembled from these pieces."
     },
     {
-      "id": "Chapter1/Section1_5_Intro",
+      "id": "Chapter1/01.05s.Introduction",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Section introduction. No formalizable content."
     },
     {
-      "id": "Chapter1/Theorem1_16",
+      "id": "Chapter1/01.16.Theorem",
       "coverage_status": "partial",
       "mathlib_declarations": [
         {
@@ -314,19 +314,19 @@
         {
           "name": "IsDedekindDomain.isDVR_of_onlyOnePrime",
           "file": "Mathlib.RingTheory.DedekindDomain.DVR",
-          "notes": "Characterizes DVRs among Dedekind domains (noetherian integrally closed dim ≤ 1)."
+          "notes": "Characterizes DVRs among Dedekind domains (noetherian integrally closed dim \u2264 1)."
         }
       ],
       "notes": "Several of the equivalences in Theorem 1.16 are provable from Mathlib. The full 7-way equivalence stated in the lecture needs to be assembled from multiple Mathlib lemmas."
     },
     {
-      "id": "Chapter1/Section1_6_Intro",
+      "id": "Chapter1/01.06s.Introduction",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Section introduction. No formalizable content."
     },
     {
-      "id": "Chapter1/Definition1_17",
+      "id": "Chapter1/01.17.Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -343,7 +343,7 @@
       "notes": "Full Mathlib coverage."
     },
     {
-      "id": "Chapter1/Proposition1_18",
+      "id": "Chapter1/01.18.Proposition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -360,7 +360,7 @@
       "notes": "The lecture proof uses algebraic closure and symmetric polynomials (external deps); Mathlib's proofs are self-contained and direct."
     },
     {
-      "id": "Chapter1/Definition1_19",
+      "id": "Chapter1/01.19.Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -377,7 +377,7 @@
       "notes": "Full Mathlib coverage."
     },
     {
-      "id": "Chapter1/Proposition1_20",
+      "id": "Chapter1/01.20.Proposition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -389,7 +389,7 @@
       "notes": "Transitivity of integrality is fully in Mathlib."
     },
     {
-      "id": "Chapter1/Corollary1_21",
+      "id": "Chapter1/01.21.Corollary",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -401,24 +401,24 @@
       "notes": "The corollary (integral closure is integrally closed) is in Mathlib."
     },
     {
-      "id": "Chapter1/Proposition1_22",
+      "id": "Chapter1/01.22.Proposition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
           "name": "GCDMonoid.toIsIntegrallyClosed",
           "file": "Mathlib.Algebra.GCDMonoid.IntegrallyClosed",
-          "notes": "Every GCD monoid (in particular every UFD, and hence every PID, and hence ℤ) is integrally closed."
+          "notes": "Every GCD monoid (in particular every UFD, and hence every PID, and hence \u2124) is integrally closed."
         },
         {
           "name": "Int.instIsIntegrallyClosed",
           "file": "Mathlib.Algebra.GCDMonoid.IntegrallyClosed",
-          "notes": "Instance: ℤ is integrally closed (derived from GCDMonoid)."
+          "notes": "Instance: \u2124 is integrally closed (derived from GCDMonoid)."
         }
       ],
-      "notes": "ℤ is a GCDMonoid in Mathlib, so IsIntegrallyClosed ℤ follows automatically. The lecture proves it directly using the rational root test."
+      "notes": "\u2124 is a GCDMonoid in Mathlib, so IsIntegrallyClosed \u2124 follows automatically. The lecture proves it directly using the rational root test."
     },
     {
-      "id": "Chapter1/Corollary1_23",
+      "id": "Chapter1/01.23.Corollary",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -432,22 +432,22 @@
           "notes": "Every UFD is a GCDMonoid."
         }
       ],
-      "notes": "UFD ⟹ integrally closed follows from these two instances."
+      "notes": "UFD \u27f9 integrally closed follows from these two instances."
     },
     {
-      "id": "Chapter1/Example1_24",
+      "id": "Chapter1/01.24.Example",
       "coverage_status": "none",
       "mathlib_declarations": [],
-      "notes": "Counterexample showing ℤ[√5] is not integrally closed (since (1+√5)/2 is integral over ℤ but not in ℤ[√5]). No direct Mathlib coverage; needs concrete computation."
+      "notes": "Counterexample showing \u2124[\u221a5] is not integrally closed (since (1+\u221a5)/2 is integral over \u2124 but not in \u2124[\u221a5]). No direct Mathlib coverage; needs concrete computation."
     },
     {
-      "id": "Chapter1/Discussion_after_Example1_24",
+      "id": "Chapter1/01.24a.Discussion",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Discussion text. No formalizable content."
     },
     {
-      "id": "Chapter1/Proposition1_25",
+      "id": "Chapter1/01.25.Proposition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -464,36 +464,36 @@
       "notes": "Full Mathlib coverage."
     },
     {
-      "id": "Chapter1/Definition1_26",
+      "id": "Chapter1/01.26.Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
           "name": "NumberField",
           "file": "Mathlib.NumberTheory.NumberField.Basic",
-          "notes": "Class: a field K with CharZero and [FiniteDimensional ℚ K] — i.e. a finite extension of ℚ."
+          "notes": "Class: a field K with CharZero and [FiniteDimensional \u211a K] \u2014 i.e. a finite extension of \u211a."
         },
         {
           "name": "RingOfIntegers",
           "file": "Mathlib.NumberTheory.NumberField.Basic",
-          "notes": "Definition: 𝓞 K = integralClosure ℤ K, the ring of integers of the number field K."
+          "notes": "Definition: \ud835\udcde K = integralClosure \u2124 K, the ring of integers of the number field K."
         }
       ],
       "notes": "Number fields and their rings of integers are fully covered in Mathlib."
     },
     {
-      "id": "Chapter1/Remark1_27",
+      "id": "Chapter1/01.27.Remark",
       "coverage_status": "partial",
       "mathlib_declarations": [
         {
           "name": "NumberField.RingOfIntegers.isIntegrallyClosed",
           "file": "Mathlib.NumberTheory.NumberField.Basic",
-          "notes": "𝓞 K is integrally closed in K."
+          "notes": "\ud835\udcde K is integrally closed in K."
         }
       ],
-      "notes": "The remark discusses 𝒪_K as the maximal order (free ℤ-module of rank [K:ℚ]). The finiteness/freeness of 𝒪_K as a ℤ-module is in Mathlib. The 'order' concept (sub-ℤ-algebra that is a free ℤ-module of rank n) is not a standalone Mathlib type."
+      "notes": "The remark discusses \ud835\udcaa_K as the maximal order (free \u2124-module of rank [K:\u211a]). The finiteness/freeness of \ud835\udcaa_K as a \u2124-module is in Mathlib. The 'order' concept (sub-\u2124-algebra that is a free \u2124-module of rank n) is not a standalone Mathlib type."
     },
     {
-      "id": "Chapter1/Proposition1_28",
+      "id": "Chapter1/01.28.Proposition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -504,7 +504,7 @@
         {
           "name": "IsIntegrallyClosed.isIntegral_iff_leadingCoeff_dvd",
           "file": "Mathlib.FieldTheory.Minpoly.IsIntegrallyClosed",
-          "notes": "For integrally closed R with fraction field K, x ∈ L is integral over R iff the minimal polynomial of x over K has coefficients in R."
+          "notes": "For integrally closed R with fraction field K, x \u2208 L is integral over R iff the minimal polynomial of x over K has coefficients in R."
         },
         {
           "name": "IsIntegrallyClosed.minpoly.unique",
@@ -512,16 +512,16 @@
           "notes": "Characterizes the minimal polynomial over an integrally closed ring."
         }
       ],
-      "notes": "The key result (α integral over A iff min poly ∈ A[x]) is covered by these lemmas."
+      "notes": "The key result (\u03b1 integral over A iff min poly \u2208 A[x]) is covered by these lemmas."
     },
     {
-      "id": "Chapter1/Example1_29",
+      "id": "Chapter1/01.29.Example",
       "coverage_status": "none",
       "mathlib_declarations": [],
-      "notes": "Computation showing (1+√7)/2 has minimal polynomial x² - x - 3/2 ∉ ℤ[x], hence not integral over ℤ. No direct Mathlib coverage; needs a concrete computation."
+      "notes": "Computation showing (1+\u221a7)/2 has minimal polynomial x\u00b2 - x - 3/2 \u2209 \u2124[x], hence not integral over \u2124. No direct Mathlib coverage; needs a concrete computation."
     },
     {
-      "id": "Chapter1/References",
+      "id": "Chapter1/01.99.References",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Reference list. No formalizable content."
@@ -545,7 +545,7 @@
         {
           "name": "Int.instUniqueFactorizationMonoid",
           "file": "Mathlib.RingTheory.UniqueFactorizationDomain",
-          "notes": "ℤ is a UFD."
+          "notes": "\u2124 is a UFD."
         }
       ],
       "notes": "The Fundamental Theorem of Arithmetic is fully in Mathlib."
@@ -670,7 +670,7 @@
           "notes": "Resultant of two polynomials."
         }
       ],
-      "notes": "Symmetric polynomials and resultants are in Mathlib. The specific use in Prop 1.18 (the product ∏(z - (α_i + β_j)) has integer coefficients) can likely be assembled from these. Mathlib's proof of IsIntegral.add doesn't use this approach directly."
+      "notes": "Symmetric polynomials and resultants are in Mathlib. The specific use in Prop 1.18 (the product \u220f(z - (\u03b1_i + \u03b2_j)) has integer coefficients) can likely be assembled from these. Mathlib's proof of IsIntegral.add doesn't use this approach directly."
     },
     {
       "id": "transitivity-integrality",
@@ -691,7 +691,7 @@
         {
           "name": "Padic",
           "file": "Mathlib.NumberTheory.Padics.PadicNumbers",
-          "notes": "The p-adic numbers ℚ_p as a field completion."
+          "notes": "The p-adic numbers \u211a_p as a field completion."
         },
         {
           "name": "UniformSpace.Completion",
@@ -699,7 +699,7 @@
           "notes": "Abstract completion of a uniform space."
         }
       ],
-      "notes": "ℚ_p is fully in Mathlib. General local fields (completions of global fields) and their theory are less developed. The p-adic integers ℤ_p as a DVR/local ring is available."
+      "notes": "\u211a_p is fully in Mathlib. General local fields (completions of global fields) and their theory are less developed. The p-adic integers \u2124_p as a DVR/local ring is available."
     },
     {
       "id": "function-fields-global-fields",
@@ -720,7 +720,7 @@
         {
           "name": "Polynomial.isInteger_of_is_root_of_monic",
           "file": "Mathlib.RingTheory.Polynomial.RationalRoot",
-          "notes": "If r/s (in lowest terms) is a root of a monic integer polynomial, then s = ±1 (i.e. the root is actually an integer)."
+          "notes": "If r/s (in lowest terms) is a root of a monic integer polynomial, then s = \u00b11 (i.e. the root is actually an integer)."
         },
         {
           "name": "Polynomial.isLocalization_rat_root",
