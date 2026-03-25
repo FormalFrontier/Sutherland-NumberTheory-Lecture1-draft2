@@ -53,4 +53,9 @@ Every element of an order is integral over `ℤ` (since it lies in a finitely ge
 theorem NumberField.Order.le_ringOfIntegers {K : Type*} [Field K] [NumberField K]
     (O : NumberField.Order K) (x : K) (hx : x ∈ O.carrier) :
     x ∈ (algebraMap (NumberField.RingOfIntegers K) K).range := by
-  sorry
+  haveI := O.free
+  have hfin : Module.Finite ℤ O.carrier :=
+    Module.finite_of_finrank_pos (O.rank_eq ▸ Module.finrank_pos (R := ℚ) (M := K))
+  have hint : IsIntegral ℤ (⟨x, hx⟩ : O.carrier) := IsIntegral.of_finite ℤ _
+  rw [RingHom.mem_range]
+  exact IsIntegralClosure.isIntegral_iff.mp (hint.algebraMap (R := ℤ))

@@ -174,8 +174,8 @@
   },
   {
     "id": "Chapter1/01_27_Remark",
-    "status": "scaffolded",
-    "reason": "Order definition added, maximality theorem stated with sorry"
+    "status": "proof_polished",
+    "reason": "Order definition and maximality theorem fully proved"
   },
   {
     "id": "Chapter1/01_28_Proposition",
