@@ -326,7 +326,7 @@ The orchestrating agent creates the file structure and then creates issues for w
 
 1. Create the skeleton: root file `{Title}.lean` importing all chapter files, chapter files `{Title}/Chapter1.lean` importing all items in the chapter. Commit this to `main`.
 2. Create `gh label create scaffolding --color 1d76db` (ignore error if exists).
-3. **Assess discussion blobs.** For each discussion-type item in `items.json`, read the blob and determine whether it contains formalizable mathematical claims (characterizations, constructions, named concepts, non-trivial verifications). If yes, it gets a scaffolding issue like any other item. If no, update `progress/items.json` with status `non_formalizable` and a `reason` field explaining why. This assessment must happen before scaffolding issues are created, so discussion items with formalizable content get assigned to agents.
+3. **Assess discussion blobs.** For each discussion-type item in `items.json`, read the blob and determine whether it contains formalizable mathematical claims (characterizations, constructions, named concepts, non-trivial verifications). The assessor must list every candidate mathematical claim in the blob and classify each as formalizable or not, with a reason for each exclusion. If any claim is formalizable, the blob gets a scaffolding issue like any other item. If no claim is formalizable, update `progress/items.json` with status `non_formalizable` and a `reason` field that includes the enumerated claims and why each was excluded. `non_formalizable` assessments are subject to Stage 3.2 review — a reviewer must verify the claim enumeration is complete and the exclusion reasons are sound.
 4. Create one issue per item (including discussion items assessed as formalizable in step 3):
    - Title: `Scaffold <ItemID>`
    - Body: link to the blob file, the item's entry in `research/mathlib-coverage.json` and `research/external-sources.json`
@@ -438,14 +438,16 @@ Each item file should contain:
 
 #### Coverage completeness (mandatory)
 
-**Every mathematical claim in the blob must have a corresponding Lean declaration in the .lean file.** A single `recall` does not "cover" a blob that contains five distinct concepts. Read the blob sentence by sentence and ensure each claim is addressed:
+**Every new mathematical claim in the blob must have a corresponding Lean declaration in the .lean file.** A single `recall` does not "cover" a blob that contains five distinct concepts. Read the blob sentence by sentence and ensure each claim is addressed:
 
-- Defines a mathematical object → needs a `def`, `recall`, or `example`
-- States a mathematical fact (theorem, lemma, characterization, equivalence) → needs a `theorem`, `lemma`, `recall`, or `example`
+- Defines a new mathematical object → needs a `def`, `recall`, or `example`
+- States a new mathematical fact (theorem, lemma, characterization, equivalence) → needs a `theorem`, `lemma`, `recall`, or `example`
 - Constructs a mathematical object from another (e.g., "defining |x|_v := c^{v(x)} yields a nonarchimedean absolute value") → needs a `def` + `theorem`
-- Introduces a named concept (e.g., "value group", "discrete valuation") → needs a `def`, `abbrev`, or `recall`
+- Introduces a named concept not already formalized (e.g., "value group", "discrete valuation") → needs a `def`, `abbrev`, or `recall`
 
-If a claim is genuinely out of scope (e.g., requires infrastructure far beyond the book's level), it must be marked with a `-- TODO: <claim from blob>` comment in the .lean file, so the gap is visible rather than silently dropped.
+A "claim" is a sentence that introduces a new concept, statement, construction, or equivalence — not a restatement of something already established. Claims already formalized in an earlier item's .lean file can be satisfied by importing that item and adding a comment citing the declaration, rather than duplicating it locally.
+
+If a claim cannot be formalized yet (e.g., requires infrastructure not currently available), add a `-- TODO: <claim from blob>` comment in the .lean file **and** create a GitHub issue for it. The item's status remains `needs_definition` until all TODO comments are resolved — visible incompleteness is better than silent omission, but it does not pass scaffolding review.
 
 **Example — bad vs. good coverage for a definition blob with ~8 claims:**
 
@@ -491,13 +493,15 @@ Before beginning proof work (Stage 3.3) on an item, a separate verification issu
 
 Can begin per-item as soon as that item's scaffolding (Stage 3.1) is merged.
 
-The review agent should update `progress/items.json` with the status transition, and submits a PR with any fixes. The review must perform an explicit **coverage audit**:
+The review agent should update `progress/items.json` with the status transition, and submits a PR with any fixes. The review must perform an explicit **coverage audit**, included in the PR body as a checklist:
 
-1. **Enumerate claims:** List every mathematical claim in the blob — definitions, theorems, constructions, characterizations, named concepts. A "claim" is any sentence that defines, states, constructs, or names something mathematical.
-2. **Map to Lean:** For each claim, identify which Lean declaration in the .lean file addresses it.
-3. **Flag gaps:** Any claim without a corresponding Lean declaration is a coverage gap. The review **fails** unless every gap has either a Lean declaration added or an explicit `-- TODO: <claim from blob>` comment with justification.
-4. **Check non-trivial equivalences:** If a `recall` is used but the Mathlib definition differs from the textbook definition, verify that the equivalence is stated as a theorem.
+1. **Enumerate claims:** List every new mathematical claim in the blob — definitions, theorems, constructions, characterizations, named concepts. A "claim" is a sentence that introduces a new concept, statement, construction, or equivalence not already formalized in an earlier item. Mere restatements of earlier definitions or informal motivational sentences are not claims.
+2. **Map to Lean:** For each claim, identify which Lean declaration in the .lean file addresses it. A claim formalized in an earlier item's .lean file can be satisfied by importing that item and citing the declaration — no local duplication needed.
+3. **Flag gaps:** Any claim without a corresponding Lean declaration is a coverage gap. The review **fails** if any gap exists. Every gap must be resolved by adding a Lean declaration. If a claim cannot be formalized yet, the item remains at `needs_definition` with a GitHub issue — `-- TODO` comments are acceptable as markers but do not satisfy the coverage audit.
+4. **Check non-trivial equivalences:** Whenever the textbook wording and the recalled Mathlib declaration are not definitionally equal (after unfolding notation), the .lean file must contain an explicit bridging `theorem` or a review note explaining why no bridge is needed (e.g., the definitions unfold to the same thing).
 5. **Check definition integrity:** No *data* is sorried, only proof obligations.
+
+The coverage audit checklist must appear in the review PR body so it is permanently visible, not performed only mentally.
 
 The agent may create new issues if problems with the data scaffolding are discovered: sometimes getting definition right can be difficult, and may require large excursions to set up preliminary material, which may even not be explained in the book, or available in Mathlib. Do the research, and get it done anyway!
 
@@ -740,8 +744,9 @@ Each status is set by a specific stage:
 | `proof_polished` | Stage 3.5 | Proof cleaned up to Mathlib quality |
 
 Special statuses (set during review):
-- `needs_definition` — the item has a definition-level sorry that must be resolved before downstream theorems are meaningful
+- `needs_definition` — the item has a definition-level sorry or coverage gap that must be resolved before downstream theorems are meaningful
 - `attention_needed` — requires specialized agent attention (e.g., wrong statement, repeated failures)
+- `non_formalizable` — discussion blob assessed as containing no formalizable claims (must include enumerated claims and exclusion reasons; subject to Stage 3.2 review; terminal status if review confirms)
 
 ```json
 {
