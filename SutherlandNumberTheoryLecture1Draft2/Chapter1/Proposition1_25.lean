@@ -1,7 +1,8 @@
 import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_11
 import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_19
 import Mathlib.RingTheory.Valuation.ValuationRing
-import Mathlib.RingTheory.Valuation.IntegrallyClosed
+import Mathlib.RingTheory.PrincipalIdealDomain
+import Mathlib.Algebra.GCDMonoid.IntegrallyClosed
 
 /-!
 ## Proposition 1.25 — Valuation Rings are Integrally Closed
@@ -12,10 +13,16 @@ import Mathlib.RingTheory.Valuation.IntegrallyClosed
 If `α ∉ A`, then `α⁻¹ ∈ A`. Multiplying `αⁿ + ... + a₀ = 0` by `α^{-(n-1)}`
 gives `α ∈ A`, contradiction.
 
-In Mathlib: `ValuationRing.isIntegrallyClosed` or the instance `instIsIntegrallyClosed`.
+In Mathlib: Every valuation ring is a Bézout domain (`IsBezout`), and every Bézout
+domain is a GCD domain (`GCDMonoid`), and every GCD domain is integrally closed
+(`GCDMonoid.toIsIntegrallyClosed`).
 -/
 
 /-- **Proposition 1.25** (Sutherland). Every valuation ring is integrally closed. -/
 theorem sutherland_prop1_25 (A : Type*) [CommRing A] [IsDomain A] [ValuationRing A] :
     IsIntegrallyClosed A := by
-  sorry
+  -- ValuationRing → IsBezout → Nonempty (GCDMonoid) → IsIntegrallyClosed
+  haveI : Nonempty (GCDMonoid A) := inferInstance
+  obtain ⟨hg⟩ := ‹Nonempty (GCDMonoid A)›
+  haveI : GCDMonoid A := hg
+  exact GCDMonoid.toIsIntegrallyClosed
