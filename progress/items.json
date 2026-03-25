@@ -101,8 +101,8 @@
   },
   {
     "id": "Chapter1/01_15_Example",
-    "status": "needs_scaffolding",
-    "reason": "coverage gap: explicit valuation on k((t)) and order of vanishing not formalized"
+    "status": "scaffolded",
+    "reason": "recall PowerSeries.order/order_mul/order_eq_emultiplicity_X; v_alpha documented as out-of-scope"
   },
   {
     "id": "Chapter1/01_05s_Introduction",
