@@ -43,6 +43,7 @@
   {
     "id": "Chapter1/01_07_Definition",
     "status": "proof_polished",
+    "upstreaming_status": "mathlib_covered",
     "reason": "recalls padicValRat, padicNorm, Rat.AbsoluteValue.padic — sorry-free"
   },
   {
@@ -62,11 +63,13 @@
   {
     "id": "Chapter1/01_10_Definition",
     "status": "proof_polished",
+    "upstreaming_status": "mathlib_covered",
     "reason": "recalls Valuation, AddValuation, valueGroup, IsRankOneDiscrete, IsDiscreteValuationRing, ValuationRing, not_isField — sorry-free"
   },
   {
     "id": "Chapter1/01_10a_Discussion",
     "status": "proof_polished",
+    "upstreaming_status": "rejected",
     "reason": "all 6 claims formalized: IsDomain instance, AddValuation.map_inv, ValuationRing property, isUnit_iff_valuation_eq_one, unit group, valuation_trichotomy"
   },
   {
@@ -77,6 +80,7 @@
   {
     "id": "Chapter1/01_11a_Discussion",
     "status": "proof_polished",
+    "upstreaming_status": "rejected",
     "reason": "all 6 claims formalized: uniformizer characterization, unique factorization, PID+UFD instances, ideal_eq_span_pow_irreducible, total order on ideals, maximal ideal = (π) and unique nonzero prime"
   },
   {
@@ -91,7 +95,8 @@
   },
   {
     "id": "Chapter1/01_13a_Discussion",
-    "status": "proof_polished"
+    "status": "proof_polished",
+    "upstreaming_status": "mathlib_covered"
   },
   {
     "id": "Chapter1/01_14_Example",
@@ -101,6 +106,7 @@
   {
     "id": "Chapter1/01_15_Example",
     "status": "proof_polished",
+    "upstreaming_status": "mathlib_covered",
     "reason": "DVR+ValuationRing instances, recalls PowerSeries.order/order_mul/order_eq_emultiplicity_X — sorry-free"
   },
   {
@@ -174,6 +180,7 @@
   {
     "id": "Chapter1/01_27_Remark",
     "status": "proof_polished",
+    "upstreaming_status": "rejected",
     "reason": "Order definition and maximality theorem fully proved"
   },
   {
