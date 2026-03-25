@@ -47,7 +47,7 @@ private lemma fta_prod_nat (n : ℕ) (hn : n ≠ 0) :
   have h_eq : ∀ p ∈ n.primeFactors, p ^ padicValNat p n = p ^ n.factorization p :=
     fun p hp => by rw [Nat.factorization_def n (Nat.prime_of_mem_primeFactors hp)]
   rw [Finset.prod_congr rfl h_eq]
-  exact Nat.factorization_prod_pow_eq_self hn
+  exact Nat.prod_factorization_pow_eq_self hn
 
 private lemma fta_prod_rat (n : ℕ) (hn : n ≠ 0) :
     ∏ p ∈ n.primeFactors, (p : ℚ) ^ padicValNat p n = (n : ℚ) := by
