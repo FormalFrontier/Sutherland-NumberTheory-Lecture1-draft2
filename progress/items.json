@@ -24,12 +24,12 @@
   {
     "id": "Chapter1/01_04_Lemma",
     "status": "proof_polished",
-    "upstreaming_status": "candidate"
+    "upstreaming_status": "confirmed_candidate"
   },
   {
     "id": "Chapter1/01_05_Corollary",
     "status": "proof_polished",
-    "upstreaming_status": "candidate"
+    "upstreaming_status": "confirmed_candidate"
   },
   {
     "id": "Chapter1/01_06_Definition",
@@ -44,7 +44,7 @@
     "id": "Chapter1/01_07_Definition",
     "status": "proof_polished",
     "upstreaming_status": "mathlib_covered",
-    "reason": "recalls padicValRat, padicNorm, Rat.AbsoluteValue.padic — sorry-free"
+    "reason": "recalls padicValRat, padicNorm, Rat.AbsoluteValue.padic \u2014 sorry-free"
   },
   {
     "id": "Chapter1/01_08_Theorem",
@@ -64,7 +64,7 @@
     "id": "Chapter1/01_10_Definition",
     "status": "proof_polished",
     "upstreaming_status": "mathlib_covered",
-    "reason": "recalls Valuation, AddValuation, valueGroup, IsRankOneDiscrete, IsDiscreteValuationRing, ValuationRing, not_isField — sorry-free"
+    "reason": "recalls Valuation, AddValuation, valueGroup, IsRankOneDiscrete, IsDiscreteValuationRing, ValuationRing, not_isField \u2014 sorry-free"
   },
   {
     "id": "Chapter1/01_10a_Discussion",
@@ -81,7 +81,7 @@
     "id": "Chapter1/01_11a_Discussion",
     "status": "proof_polished",
     "upstreaming_status": "rejected",
-    "reason": "all 6 claims formalized: uniformizer characterization, unique factorization, PID+UFD instances, ideal_eq_span_pow_irreducible, total order on ideals, maximal ideal = (π) and unique nonzero prime"
+    "reason": "all 6 claims formalized: uniformizer characterization, unique factorization, PID+UFD instances, ideal_eq_span_pow_irreducible, total order on ideals, maximal ideal = (\u03c0) and unique nonzero prime"
   },
   {
     "id": "Chapter1/01_12_Definition",
@@ -107,7 +107,7 @@
     "id": "Chapter1/01_15_Example",
     "status": "proof_polished",
     "upstreaming_status": "mathlib_covered",
-    "reason": "DVR+ValuationRing instances, recalls PowerSeries.order/order_mul/order_eq_emultiplicity_X — sorry-free"
+    "reason": "DVR+ValuationRing instances, recalls PowerSeries.order/order_mul/order_eq_emultiplicity_X \u2014 sorry-free"
   },
   {
     "id": "Chapter1/01_05s_Introduction",
