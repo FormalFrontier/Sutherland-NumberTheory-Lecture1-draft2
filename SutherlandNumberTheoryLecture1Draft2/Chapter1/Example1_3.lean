@@ -23,9 +23,8 @@ In Mathlib: `Rat.AbsoluteValue.real`. -/
 noncomputable def standardAbsoluteValue : AbsoluteValue ℚ ℝ := Rat.AbsoluteValue.real
 
 /-- The trivial absolute value on `ℚ` (Example 1.3).
-In Mathlib: `AbsoluteValue.trivial` (note: this is `AbsoluteValue ℚ ℤ≥0` or similar).
-We use the p-adic norm for a fixed prime to give a concrete `AbsoluteValue ℚ ℝ`. -/
-noncomputable def trivialAbsoluteValue : AbsoluteValue ℚ ℝ := Rat.AbsoluteValue.real
+In Mathlib: `AbsoluteValue.trivial`. -/
+noncomputable def trivialAbsoluteValue : AbsoluteValue ℚ ℝ := AbsoluteValue.trivial
 
 /-- The `p`-adic absolute value on `ℚ` for a prime `p` (Example 1.3). -/
 noncomputable def padicAbsoluteValue (p : ℕ) [hp : Fact p.Prime] : AbsoluteValue ℚ ℝ :=

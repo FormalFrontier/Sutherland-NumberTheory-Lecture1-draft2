@@ -17,13 +17,11 @@ In Mathlib: `GCDMonoid.toIsIntegrallyClosed`.
 /-- **Corollary 1.23** (Sutherland). Every UFD is integrally closed. -/
 theorem sutherland_corollary1_23 (A : Type*) [CommRing A] [IsDomain A]
     [UniqueFactorizationMonoid A] :
-    IsIntegrallyClosed A := by
-  -- UniqueFactorizationMonoid.toGCDMonoid is noncomputable; we use it explicitly
-  haveI : GCDMonoid A := UniqueFactorizationMonoid.toGCDMonoid A
-  exact GCDMonoid.toIsIntegrallyClosed
+    IsIntegrallyClosed A :=
+  inferInstance
 
 /-- **Corollary 1.23** (Sutherland). Every PID is integrally closed. -/
 theorem sutherland_corollary1_23_pid (A : Type*) [CommRing A] [IsDomain A]
     [IsPrincipalIdealRing A] :
     IsIntegrallyClosed A :=
-  GCDMonoid.toIsIntegrallyClosed
+  inferInstance
