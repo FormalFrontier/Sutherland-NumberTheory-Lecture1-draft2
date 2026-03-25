@@ -16,22 +16,38 @@ Triage of all 31 `proof_polished` items from Chapter 1 for upstreaming to Mathli
 | **Declaration** | `sutherland_lemma1_4` |
 | **File** | `SutherlandNumberTheoryLecture1/Chapter1/01_04_Lemma.lean` |
 | **Suggested Mathlib module** | `Mathlib.Algebra.Order.AbsoluteValue.Nonarchimedean` (new file) or `Mathlib.Analysis.Normed.Field.Ultra` |
+| **Phase 2 verdict** | **upstream** — confirmed new, bridges a real API gap |
 
 **Lean statement:**
 ```lean
-theorem sutherland_lemma1_4 {k : Type*} [Field k] (f : AbsoluteValue k ℝ)
-    (hf1 : f 1 = 1) :
+theorem sutherland_lemma1_4 {k : Type*} [Field k] (f : AbsoluteValue k ℝ) :
     IsNonarchimedean (⇑f) ↔ ∀ n : ℕ, f n ≤ 1
 ```
 
-**Why it's new:** Mathlib has the forward direction
-(`IsNonarchimedean.apply_natCast_le_one_of_isNonarchimedean`) and the iff at the
-`NormedField` level (`isUltrametricDist_iff_forall_norm_natCast_le_one` in
-`Mathlib.Analysis.Normed.Field.Ultra`), but there is **no iff statement for abstract
-`AbsoluteValue`**. The backward direction (bounded on ℕ → nonarchimedean) for an
-`AbsoluteValue` requires constructing a `NormedField` from the absolute value and
-appealing to `IsUltrametricDist`. This is a gap between the `AbsoluteValue` and
-`NormedField` APIs that is worth closing.
+**Phase 2 deep research:**
+
+*Forward direction (already in Mathlib):*
+- `IsNonarchimedean.apply_natCast_le_one_of_isNonarchimedean` in
+  `Mathlib.Algebra.Order.Ring.IsNonarchimedean` — works for any function satisfying
+  `ZeroHomClass`, `NonnegHomClass`, `OneHomClass`, not just `AbsoluteValue`.
+
+*Backward direction — existing infrastructure:*
+- `AbsoluteValue.toNormedField` in `Mathlib.Analysis.Normed.Field.Basic` (line 359):
+  constructs a `NormedField` from any real `AbsoluteValue` on a field.
+- `IsUltrametricDist.isUltrametricDist_of_forall_norm_natCast_le_one` in
+  `Mathlib.Analysis.Normed.Field.Ultra` (line 103): proves that if `‖(n : R)‖ ≤ 1`
+  for all `n : ℕ` then `IsUltrametricDist R` holds.
+- `IsUltrametricDist.isNonarchimedean_norm` connects `IsUltrametricDist` back to
+  `IsNonarchimedean`.
+
+*The gap:* No theorem in Mathlib assembles these three pieces into an iff for abstract
+`AbsoluteValue`. Our proof does exactly this (3 lines for the backward direction).
+The `NormedField` iff (`isUltrametricDist_iff_forall_norm_natCast_le_one`) exists but
+requires the user to already have a `NormedField` instance. Our version takes a bare
+`AbsoluteValue k ℝ` and handles the `letI : NormedField k := f.toNormedField` step,
+which is the natural API for users working at the `AbsoluteValue` level.
+
+*Suggested Mathlib name:* `AbsoluteValue.isNonarchimedean_iff_natCast_le_one`
 
 ---
 
@@ -43,23 +59,44 @@ appealing to `IsUltrametricDist`. This is a gap between the `AbsoluteValue` and
 | **Declarations** | `sutherland_corollary1_5_posChar`, `sutherland_corollary1_5_finite` |
 | **File** | `SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean` |
 | **Suggested Mathlib module** | `Mathlib.Algebra.Order.AbsoluteValue.Nonarchimedean` (new file) or `Mathlib.Analysis.Normed.Field.Ultra` |
+| **Phase 2 verdict** | **upstream** — confirmed new, fills a clear gap |
 
 **Lean statements:**
 ```lean
 theorem sutherland_corollary1_5_posChar {k : Type*} [Field k] [CharP k p] (hp : 0 < p)
-    (f : AbsoluteValue k ℝ) (hf1 : f 1 = 1) :
+    (f : AbsoluteValue k ℝ) :
     IsNonarchimedean (⇑f)
 
-theorem sutherland_corollary1_5_finite {k : Type*} [Field k] [Fintype k] [DecidableEq k]
-    (f : AbsoluteValue k ℝ) (hf1 : f 1 = 1) :
+theorem sutherland_corollary1_5_finite {k : Type*} [Field k] [Finite k] [DecidableEq k]
+    (f : AbsoluteValue k ℝ) :
     f = AbsoluteValue.trivial
 ```
 
-**Why it's new:** No result in Mathlib connects `CharP` or `Fintype` to
-`IsNonarchimedean` for abstract `AbsoluteValue`. The positive characteristic result
-uses Frobenius (`add_pow_char`) to show `f n ∈ {0,1}`, giving `f n ≤ 1`. The finite
-field result uses `FiniteField.pow_card_sub_one_eq_one` to force `f x = 1` for all
-nonzero `x`. Both are standard textbook results absent from Mathlib's API.
+**Phase 2 deep research:**
+
+*Positive characteristic result:*
+- **No file in Mathlib contains both `AbsoluteValue` and `CharP`.** Zero matches.
+- The proof uses `add_pow_char` from `Mathlib.Algebra.CharP.Lemmas` (Frobenius /
+  "freshman's dream") to show `f(n)^p = f(n)`, then deduces `f(n) ≤ 1` by contradiction.
+- `CharP.char_prime_of_ne_zero` provides primality of the characteristic.
+- All ingredients exist in Mathlib but nobody has assembled them for `AbsoluteValue`.
+
+*Finite field result:*
+- **No file in Mathlib contains both `AbsoluteValue` and `Fintype`/`Finite`.** Zero matches.
+- The proof uses `FiniteField.pow_card_sub_one_eq_one` from
+  `Mathlib.FieldTheory.Finite.Basic` to get `f(x)^(q-1) = 1`, then
+  `pow_eq_one_iff_of_nonneg` to conclude `f(x) = 1`.
+- `AbsoluteValue.trivial` is defined in `Mathlib.Algebra.Order.AbsoluteValue.Basic`
+  (line 298) with `trivial_apply` simp lemma.
+- Related: `isEquiv_trivial_iff_eq_trivial` in `Mathlib.Analysis.AbsoluteValue.Equivalence`
+  characterizes equivalence to the trivial absolute value.
+
+*Both theorems are self-contained (~20 lines each), use only standard Mathlib API, and
+state results that are standard in every algebraic number theory textbook.*
+
+*Suggested Mathlib names:*
+- `AbsoluteValue.isNonarchimedean_of_charP`
+- `AbsoluteValue.eq_trivial_of_finite`
 
 ---
 
@@ -156,6 +193,8 @@ that would fit naturally alongside `GaussianInt` in the `Zsqrtd` namespace.
 
 Searches were performed in `.lake/packages/mathlib/Mathlib` (local source).
 
+### Phase 1 (triage)
+
 - `Mathlib.Algebra.Order.Ring.IsNonarchimedean`: has forward direction
   `apply_natCast_le_one_of_isNonarchimedean` but not the iff for `AbsoluteValue`
 - `Mathlib.Analysis.Normed.Field.Ultra`: has
@@ -167,3 +206,25 @@ Searches were performed in `.lake/packages/mathlib/Mathlib` (local source).
   (confirming 01_05_Corollary results are absent from Mathlib)
 - `Mathlib.NumberTheory.Zsqrtd.*`: no results for `IntegrallyClosed`, `isIntegrallyClosed`,
   or `not_isIntegrallyClosed` — confirming `zsqrtd5_not_integrallyClosed` is absent
+
+### Phase 2 — 01_04_Lemma and 01_05_Corollary deep research
+
+**Key Mathlib files examined:**
+
+| File | Key contents | Relevance |
+|------|-------------|-----------|
+| `Mathlib.Algebra.Order.Ring.IsNonarchimedean` | `apply_natCast_le_one_of_isNonarchimedean` (fwd direction) | 01_04 forward direction |
+| `Mathlib.Analysis.Normed.Field.Basic` (line 359) | `AbsoluteValue.toNormedField` — constructs `NormedField` from `AbsoluteValue k ℝ` | 01_04 backward direction (bridge) |
+| `Mathlib.Analysis.Normed.Field.Ultra` (line 103) | `isUltrametricDist_of_forall_norm_natCast_le_one` — `NormedDivisionRing` iff | 01_04 backward direction (core) |
+| `Mathlib.Analysis.Normed.Field.Ultra` (line 140) | `isUltrametricDist_iff_forall_norm_natCast_le_one` — full iff for `NormedDivisionRing` | 01_04 (NormedField-level iff exists) |
+| `Mathlib.Algebra.CharP.Lemmas` | `add_pow_char`, `add_pow_char_pow` — Frobenius | 01_05 posChar proof |
+| `Mathlib.Algebra.CharP.Basic` | `CharP.char_prime_of_ne_zero` | 01_05 posChar proof |
+| `Mathlib.FieldTheory.Finite.Basic` | `FiniteField.pow_card_sub_one_eq_one`, `pow_card` | 01_05 finite proof |
+| `Mathlib.Algebra.Order.AbsoluteValue.Basic` (line 298) | `AbsoluteValue.trivial`, `trivial_apply` | 01_05 finite proof |
+| `Mathlib.Analysis.AbsoluteValue.Equivalence` (line 97) | `isEquiv_trivial_iff_eq_trivial` | 01_05 related |
+
+**Confirmed gaps:**
+- `grep -r "AbsoluteValue" | grep "CharP"` → 0 matches across all of Mathlib
+- `grep -r "AbsoluteValue" | grep "Fintype\|Finite"` → 0 matches for theorems (only type params)
+- No iff for `IsNonarchimedean` on abstract `AbsoluteValue` (only on `NormedDivisionRing`)
+- All three pieces for the backward direction exist independently but are not composed
