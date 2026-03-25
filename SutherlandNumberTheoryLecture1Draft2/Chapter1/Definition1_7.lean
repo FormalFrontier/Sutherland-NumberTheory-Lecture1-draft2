@@ -22,7 +22,7 @@ def padicValuation (p : ℕ) [hp : Fact p.Prime] (x : ℚ) : ℤ :=
 
 /-- The `p`-adic norm `|·|ₚ : ℚ → ℝ_≥0` (Sutherland Def 1.7).
 In Mathlib, `padicNorm p x` gives `p^{-vₚ(x)}`. -/
-noncomputable def padicNormAt (p : ℕ) [hp : Fact p.Prime] (x : ℚ) : ℝ :=
+noncomputable def padicNormAt (p : ℕ) [Fact p.Prime] (x : ℚ) : ℝ :=
   padicNorm p x
 
 /-- The `p`-adic absolute value on `ℚ` as an `AbsoluteValue ℚ ℝ` (Sutherland Def 1.7). -/

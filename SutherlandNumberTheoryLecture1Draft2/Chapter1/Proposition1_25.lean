@@ -21,8 +21,6 @@ domain is a GCD domain (`GCDMonoid`), and every GCD domain is integrally closed
 /-- **Proposition 1.25** (Sutherland). Every valuation ring is integrally closed. -/
 theorem sutherland_prop1_25 (A : Type*) [CommRing A] [IsDomain A] [ValuationRing A] :
     IsIntegrallyClosed A := by
-  -- ValuationRing → IsBezout → Nonempty (GCDMonoid) → IsIntegrallyClosed
-  haveI : Nonempty (GCDMonoid A) := inferInstance
-  obtain ⟨hg⟩ := ‹Nonempty (GCDMonoid A)›
-  haveI : GCDMonoid A := hg
+  -- ValuationRing → IsBezout → GCDMonoid (noncanonical) → IsIntegrallyClosed
+  haveI : GCDMonoid A := Classical.choice inferInstance
   exact GCDMonoid.toIsIntegrallyClosed
