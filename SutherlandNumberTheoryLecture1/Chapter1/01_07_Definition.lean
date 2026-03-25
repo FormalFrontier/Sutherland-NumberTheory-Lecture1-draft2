@@ -21,3 +21,6 @@ recall padicValRat (p : ℕ) (q : ℚ) : ℤ
 
 /-- **Definition 1.7.** The `p`-adic norm `|x|ₚ = p ^ (-vₚ(x))` as a rational number. -/
 recall padicNorm (p : ℕ) (q : ℚ) : ℚ
+
+/-- **Definition 1.7.** The `p`-adic absolute value `|x|ₚ` bundled as `AbsoluteValue ℚ ℝ`. -/
+recall Rat.AbsoluteValue.padic (p : ℕ) [Fact p.Prime] : AbsoluteValue ℚ ℝ
