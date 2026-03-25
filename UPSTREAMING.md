@@ -2,7 +2,7 @@
 
 Triage of all 28 `proof_polished` items from Chapter 1 for upstreaming to Mathlib.
 
-**Summary:** 3 items are candidates; 25 are rejected.
+**Summary:** 4 items are candidates; 24 are rejected.
 
 ---
 
@@ -92,6 +92,32 @@ completion of the minpoly API.
 
 ---
 
+### Example1_24 — ℤ[√5] is Not Integrally Closed
+
+| Field | Value |
+|-------|-------|
+| **Item ID** | `Chapter1/Example1_24` |
+| **Declaration** | `zsqrtd5_not_integrallyClosed` |
+| **File** | `SutherlandNumberTheoryLecture1/Chapter1/Example1_24.lean` |
+| **Suggested Mathlib module** | `Mathlib.NumberTheory.Zsqrtd.Basic` |
+
+**Lean statement:**
+```lean
+theorem zsqrtd5_not_integrallyClosed :
+    ¬IsIntegrallyClosed (Zsqrtd 5)
+```
+
+**Why it's new:** Mathlib's `Mathlib.NumberTheory.Zsqrtd.Basic` has no result asserting
+that `Zsqrtd 5` (i.e. `ℤ[√5]`) is not integrally closed. A search for
+`IntegrallyClosed`, `isIntegrallyClosed`, or `not_isIntegrallyClosed` in all `Zsqrtd`
+files returns no matches. The proof exhibits the explicit witness `φ = (1 + √5)/2 ∈
+Frac(Zsqrtd 5)` which satisfies `X² - X - 1 = 0` over `Zsqrtd 5` but has no preimage
+in `Zsqrtd 5` (since `2 * a = ⟨1, 1⟩` has no solution — parity contradiction on the
+real part). This is a concrete, self-contained example of a non-integrally-closed ring
+that would fit naturally alongside `GaussianInt` in the `Zsqrtd` namespace.
+
+---
+
 ## Rejected Items
 
 | Item ID | Reason |
@@ -119,7 +145,6 @@ completion of the minpoly API.
 | `Chapter1/Proposition1_25` | Three-line proof chaining `ValuationRing → IsBezout → GCDMonoid → IsIntegrallyClosed`; all steps are existing Mathlib instances |
 | `Chapter1/Definition1_26` | Pure definition; `NumberField`, `RingOfIntegers` already exist in Mathlib |
 | `Chapter1/Remark1_27` | `Module.Free` instance is `inferInstance`; rank result is one-line delegation to `NumberField.RingOfIntegers.rank` |
-| `Chapter1/Example1_24` | Concrete computations (`(1+√5)/2` is integral; `ℤ[√5]` not integrally closed); too specific for Mathlib's API |
 | `Chapter1/Example1_29` | Concrete computation (`(1 + √7)/2 ∉ ℤ`); too specific for Mathlib's API |
 
 ---
@@ -137,3 +162,5 @@ Searches were performed in `.lake/packages/mathlib/Mathlib` (local source).
   `isIntegrallyClosed_eq_field_fractions'` (⟹ direction only); no full iff
 - No results found for: `AbsoluteValue` + `CharP`, `AbsoluteValue` + `Fintype`
   (confirming Corollary1_5 results are absent from Mathlib)
+- `Mathlib.NumberTheory.Zsqrtd.*`: no results for `IntegrallyClosed`, `isIntegrallyClosed`,
+  or `not_isIntegrallyClosed` — confirming `zsqrtd5_not_integrallyClosed` is absent
