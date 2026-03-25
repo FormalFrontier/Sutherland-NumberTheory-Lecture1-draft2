@@ -1,5 +1,6 @@
 import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_2
 import Mathlib.Algebra.Order.AbsoluteValue.Basic
+import Mathlib.Algebra.Order.Ring.IsNonarchimedean
 import Mathlib.NumberTheory.Ostrowski
 import Mathlib.NumberTheory.Padics.PadicNorm
 
@@ -33,4 +34,6 @@ noncomputable def padicAbsoluteValue (p : ℕ) [hp : Fact p.Prime] : AbsoluteVal
 /-- The `p`-adic absolute value is nonarchimedean (Example 1.3). -/
 theorem padicAbsoluteValue_isNonarchimedean (p : ℕ) [hp : Fact p.Prime] :
     IsNonarchimedean (⇑(padicAbsoluteValue p)) := by
-  sorry
+  intro x y
+  simp only [padicAbsoluteValue, Rat.AbsoluteValue.padic_eq_padicNorm]
+  exact_mod_cast padicNorm.nonarchimedean
