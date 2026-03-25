@@ -64,8 +64,8 @@ theorem valuation_trichotomy {K : Type*} [Field K] {Γ₀ : Type*}
     [LinearOrderedCommGroupWithZero Γ₀] (v : Valuation K Γ₀) (x : K) :
     v x = 1 ∨ v x < 1 ∨ 1 < v x := by
   rcases lt_trichotomy (v x) 1 with h | h | h
-  · exact Or.inr (Or.inl h)
-  · exact Or.inl h
-  · exact Or.inr (Or.inr h)
+  · exact .inr (.inl h)
+  · exact .inl h
+  · exact .inr (.inr h)
 
 end ValuationRingProperties
