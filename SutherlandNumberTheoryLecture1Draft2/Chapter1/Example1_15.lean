@@ -1,6 +1,7 @@
 import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_10
 import Mathlib.RingTheory.PowerSeries.Basic
 import Mathlib.RingTheory.PowerSeries.NoZeroDivisors
+import Mathlib.RingTheory.PowerSeries.Inverse
 import Mathlib.RingTheory.DiscreteValuationRing.Basic
 
 /-!
@@ -15,5 +16,5 @@ In Mathlib: `PowerSeries.IsDVR` or the `IsDiscreteValuationRing (PowerSeries k)`
 
 /-- The power series ring `k[[t]]` over a field `k` is a DVR (Example 1.15). -/
 theorem powerSeries_isDVR (k : Type*) [Field k] :
-    IsDiscreteValuationRing (PowerSeries k) := by
-  sorry
+    IsDiscreteValuationRing (PowerSeries k) :=
+  inferInstance
