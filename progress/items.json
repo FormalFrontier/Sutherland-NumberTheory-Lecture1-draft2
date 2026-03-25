@@ -76,8 +76,8 @@
   },
   {
     "id": "Chapter1/01_11a_Discussion",
-    "status": "needs_scaffolding",
-    "reason": "discussion blob with formalizable claims: uniformizer definition, unique factorization x=uπ^n, A is PID, ideal characterization, maximal ideal"
+    "status": "sorry_free",
+    "reason": "all 6 claims formalized: uniformizer characterization, unique factorization, PID+UFD instances, ideal_eq_span_pow_irreducible, total order on ideals, maximal ideal = (π) and unique nonzero prime"
   },
   {
     "id": "Chapter1/01_12_Definition",
