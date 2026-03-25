@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1.Chapter1.«01_19_Definition»
+import Mathlib.Tactic.Recall
 import Mathlib.NumberTheory.NumberField.Basic
 
 /-!
@@ -7,18 +7,14 @@ import Mathlib.NumberTheory.NumberField.Basic
 **Definition 1.26.** A *number field* `K` is a finite extension of `ℚ`.
 The *ring of integers* `𝒪_K` is the integral closure of `ℤ` in `K`.
 
-In Mathlib:
-- `NumberField K` is the class asserting `K` is a number field (finite extension of `ℚ`)
-- `RingOfIntegers K` (or `𝓞 K`) is the ring of integers of `K`
+### Mathlib correspondence
+
+- `NumberField K` — the class asserting `[K : ℚ] < ∞` (with `CharZero K`)
+- `NumberField.RingOfIntegers K` (also written `𝓞 K`) — defined as `integralClosure ℤ K`
 -/
 
-/-- A *number field* (Sutherland Def 1.26) is a finite extension of `ℚ`.
-In Mathlib: `NumberField K`. -/
-def IsNumberField (K : Type*) [Field K] [Algebra ℚ K] : Prop :=
-  NumberField K
+/-- **Definition 1.26.** A *number field* is a field that is a finite extension of `ℚ`. -/
+recall NumberField (K : Type*) [Field K] : Prop
 
-/-- The *ring of integers* `𝒪_K` of a number field `K` (Sutherland Def 1.26)
-is the integral closure of `ℤ` in `K`.
-In Mathlib: `NumberField.RingOfIntegers K` (also written `𝓞 K`). -/
-abbrev RingOfIntegers' (K : Type*) [Field K] [NumberField K] :=
-  NumberField.RingOfIntegers K
+/-- **Definition 1.26.** The *ring of integers* `𝓞 K` is the integral closure of `ℤ` in `K`. -/
+recall NumberField.RingOfIntegers (K : Type*) [Field K] : Type _

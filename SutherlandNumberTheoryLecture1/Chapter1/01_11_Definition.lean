@@ -1,3 +1,4 @@
+import Mathlib.Tactic.Recall
 import Mathlib.RingTheory.Valuation.ValuationRing
 
 /-!
@@ -6,11 +7,12 @@ import Mathlib.RingTheory.Valuation.ValuationRing
 **Definition 1.11.** A *valuation ring* is an integral domain `A` with fraction field `k`
 such that for every `x ∈ k`, either `x ∈ A` or `x⁻¹ ∈ A`.
 
-In Mathlib: `ValuationRing`.
+### Mathlib correspondence
+
+This is `ValuationRing A` in Mathlib, defined via the equivalent condition:
+for every `a b : A`, either `a ∣ b` or `b ∣ a`.
 -/
 
-/-- A *valuation ring* (Sutherland Def 1.11) is an integral domain `A` such that
-for every element of its fraction field, either it or its inverse lies in `A`.
-In Mathlib: `ValuationRing`. -/
-def IsValuationRing (A : Type*) [CommRing A] [IsDomain A] : Prop :=
-  ValuationRing A
+/-- **Definition 1.11.** A *valuation ring* is an integral domain where for every pair
+of elements, one divides the other. -/
+recall ValuationRing (A : Type*) [CommRing A] [IsDomain A] : Prop

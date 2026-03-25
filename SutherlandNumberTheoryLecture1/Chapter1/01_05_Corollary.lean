@@ -20,12 +20,12 @@ For finite fields `|k| = q`, we have `xᵍ = x` for all `x`, so `f(x) ∈ {0,1}`
 /-- **Corollary 1.5** (Sutherland). Every absolute value on a field of positive
 characteristic is nonarchimedean. -/
 theorem sutherland_corollary1_5_posChar {k : Type*} [Field k] [CharP k p] (hp : 0 < p)
-    (f : AbsoluteValue k ℝ) (hf1 : f 1 = 1) :
+    (f : AbsoluteValue k ℝ) :
     IsNonarchimedean (⇑f) := by
   have hp_ne : p ≠ 0 := Nat.pos_iff_ne_zero.mp hp
   have hp_prime : p.Prime := CharP.char_prime_of_ne_zero k hp_ne
   haveI : Fact p.Prime := ⟨hp_prime⟩
-  rw [sutherland_lemma1_4 f hf1]
+  rw [sutherland_lemma1_4 f]
   intro n
   -- In char p, (n : k)^p = n by freshman's dream (induction + add_pow_char)
   have hfn_pow : f n ^ p = f n := by
@@ -45,9 +45,10 @@ theorem sutherland_corollary1_5_posChar {k : Type*} [Field k] [CharP k p] (hp : 
 
 /-- **Corollary 1.5** (Sutherland). The only absolute value on a finite field is
 the trivial one. -/
-theorem sutherland_corollary1_5_finite {k : Type*} [Field k] [Fintype k] [DecidableEq k]
-    (f : AbsoluteValue k ℝ) (hf1 : f 1 = 1) :
+theorem sutherland_corollary1_5_finite {k : Type*} [Field k] [Finite k] [DecidableEq k]
+    (f : AbsoluteValue k ℝ) :
     f = AbsoluteValue.trivial := by
+  haveI : Fintype k := Fintype.ofFinite k
   ext x
   by_cases hx : x = 0
   · simp [hx, f.map_zero]
@@ -56,7 +57,7 @@ theorem sutherland_corollary1_5_finite {k : Type*} [Field k] [Fintype k] [Decida
     have hq : x ^ (Fintype.card k - 1) = 1 := FiniteField.pow_card_sub_one_eq_one x hx
     -- f(x)^(q-1) = f(x^(q-1)) = f(1) = 1
     have hfx_pow : f x ^ (Fintype.card k - 1) = 1 := by
-      rw [← f.map_pow, hq, hf1]
+      rw [← f.map_pow, hq, f.map_one]
     -- q ≥ 2 so q-1 ≥ 1 ≠ 0
     have hn : Fintype.card k - 1 ≠ 0 := by
       have : 1 < Fintype.card k := Fintype.one_lt_card

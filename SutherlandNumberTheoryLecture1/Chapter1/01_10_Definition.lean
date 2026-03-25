@@ -1,3 +1,4 @@
+import Mathlib.Tactic.Recall
 import Mathlib.RingTheory.Valuation.Basic
 import Mathlib.RingTheory.DiscreteValuationRing.Basic
 import Mathlib.RingTheory.Valuation.Integers
@@ -16,14 +17,14 @@ The *valuation ring* is `A = {x ∈ k | v(x) ≥ 0}`.
 A *discrete valuation ring* (DVR) is an integral domain that is the valuation ring
 of its fraction field for a discrete valuation.
 
-In Mathlib:
-- `Valuation k Γ₀` is the Mathlib valuation structure (using a linearly ordered comm. group)
-- `IsDVR` (or `IsDiscreteValuationRing`) is the DVR predicate
-- `Valuation.integer` is the valuation ring
+### Mathlib correspondence
+
+- `Valuation k Γ₀` — a valuation on `k` with values in a linearly ordered group with zero
+- `IsDiscreteValuationRing A` — `A` is a local PID that is not a field
+  (equivalent to being the valuation ring of a discrete valuation on `Frac(A)`)
+- `Valuation.integer v` — the valuation ring `{x | v x ≤ 1}`
 -/
 
-/-- A *discrete valuation ring* (DVR) in the sense of Sutherland Def 1.10
-is an integral domain that is integrally closed, noetherian, and local of dimension 1.
-In Mathlib: `IsDiscreteValuationRing`. -/
-def IsDVR (A : Type*) [CommRing A] [IsDomain A] : Prop :=
-  IsDiscreteValuationRing A
+/-- **Definition 1.10** (DVR). A *discrete valuation ring* is an integral domain that is
+a local PID and not a field. -/
+recall IsDiscreteValuationRing (R : Type*) [CommRing R] [IsDomain R] : Prop

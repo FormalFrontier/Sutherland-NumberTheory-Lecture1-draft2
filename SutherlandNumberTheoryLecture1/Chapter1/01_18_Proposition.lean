@@ -1,28 +1,26 @@
-import SutherlandNumberTheoryLecture1.Chapter1.«01_17_Definition»
+import Mathlib.Tactic.Recall
 import Mathlib.RingTheory.IntegralClosure.IsIntegral.Basic
 import Mathlib.RingTheory.IntegralClosure.Algebra.Basic
 
+set_option autoImplicit true in
 /-!
 ## Proposition 1.18 — Integral Elements are Closed Under + and ×
 
 **Proposition 1.18.** Let `α, β ∈ B` be integral over `A ⊆ B`. Then `α + β` and `αβ`
 are integral over `A`.
 
-*Proof.* Using the fact that roots of monic polynomials `f(α) = 0` and `g(β) = 0`
-can be used to construct monic polynomials annihilating `α + β` and `αβ` via
-resultants/symmetric functions.
+*Proof.* The proof constructs monic polynomials annihilating `α + β` and `αβ` using
+resultants / symmetric functions of the roots of the minimal polynomials.
 
 In Mathlib: `IsIntegral.add` and `IsIntegral.mul`.
 -/
 
-/-- **Proposition 1.18** (Sutherland). The sum of two integral elements is integral. -/
-theorem sutherland_prop1_18_add {A B : Type*} [CommRing A] [CommRing B] [Algebra A B]
-    {α β : B} (hα : IsIntegral A α) (hβ : IsIntegral A β) :
-    IsIntegral A (α + β) :=
-  hα.add hβ
+set_option autoImplicit true in
+/-- **Proposition 1.18** (closure under +). The sum of integral elements is integral. -/
+recall IsIntegral.add [CommRing R] [CommRing A] [Algebra R A]
+    {x y : A} (hx : IsIntegral R x) (hy : IsIntegral R y) : IsIntegral R (x + y)
 
-/-- **Proposition 1.18** (Sutherland). The product of two integral elements is integral. -/
-theorem sutherland_prop1_18_mul {A B : Type*} [CommRing A] [CommRing B] [Algebra A B]
-    {α β : B} (hα : IsIntegral A α) (hβ : IsIntegral A β) :
-    IsIntegral A (α * β) :=
-  hα.mul hβ
+set_option autoImplicit true in
+/-- **Proposition 1.18** (closure under ×). The product of integral elements is integral. -/
+recall IsIntegral.mul [CommRing R] [CommRing A] [Algebra R A]
+    {x y : A} (hx : IsIntegral R x) (hy : IsIntegral R y) : IsIntegral R (x * y)

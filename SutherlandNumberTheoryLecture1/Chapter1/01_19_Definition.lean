@@ -1,5 +1,4 @@
-import SutherlandNumberTheoryLecture1.Chapter1.«01_17_Definition»
-import Mathlib.RingTheory.IntegralClosure.IsIntegral.Basic
+import Mathlib.Tactic.Recall
 import Mathlib.RingTheory.IntegralClosure.Algebra.Basic
 import Mathlib.RingTheory.IntegralClosure.IntegrallyClosed
 
@@ -12,18 +11,17 @@ When `Ã = A`, we say `A` is *integrally closed in `B`*.
 For a domain `A`, its *integral closure* is its integral closure in `Frac(A)`,
 and `A` is *integrally closed* (or *normal*) if it equals its integral closure in `Frac(A)`.
 
-In Mathlib:
-- `integralClosure A B` is the integral closure of `A` in `B`
-- `IsIntegrallyClosed A` means `A` is integrally closed in `Frac(A)`
+### Mathlib correspondence
+
+- `integralClosure A B` — the subalgebra of elements of `B` integral over `A`
+- `IsIntegrallyClosed A` — abbreviation for `IsIntegrallyClosedIn A (FractionRing A)`
 -/
 
-/-- The *integral closure* of `A` in `B` (Sutherland Def 1.19).
-In Mathlib: `integralClosure A B`. -/
-abbrev IntegralClosure' (A B : Type*) [CommRing A] [CommRing B] [Algebra A B] :=
-  integralClosure A B
+/-- **Definition 1.19.** The *integral closure* of `R` in `A` is the subalgebra of
+elements satisfying a monic polynomial over `R`. -/
+recall integralClosure (R A : Type*) [CommRing R] [CommRing A] [Algebra R A] :
+    Subalgebra R A
 
-/-- A domain `A` is *integrally closed* (Sutherland Def 1.19) if it equals
-its integral closure in its fraction field.
-In Mathlib: `IsIntegrallyClosed A`. -/
-def IsNormal (A : Type*) [CommRing A] [IsDomain A] : Prop :=
-  IsIntegrallyClosed A
+/-- **Definition 1.19.** A domain is *integrally closed* (or *normal*) if every element
+of its fraction field that is integral over it already belongs to it. -/
+recall IsIntegrallyClosed (R : Type*) [CommRing R] : Prop

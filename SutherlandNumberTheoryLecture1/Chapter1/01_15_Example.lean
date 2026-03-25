@@ -1,4 +1,3 @@
-import SutherlandNumberTheoryLecture1.Chapter1.«01_10_Definition»
 import Mathlib.RingTheory.PowerSeries.Basic
 import Mathlib.RingTheory.PowerSeries.NoZeroDivisors
 import Mathlib.RingTheory.DiscreteValuationRing.Basic
@@ -11,10 +10,10 @@ import Mathlib.RingTheory.PowerSeries.Inverse
 fraction field `k((t))` (Laurent series). The valuation `v : k((t)) → ℤ ∪ {∞}` sends
 `∑_{n ≥ n₀} aₙ tⁿ` (with `a_{n₀} ≠ 0`) to `n₀`. The valuation ring is `k[[t]]`.
 
-In Mathlib: `IsDiscreteValuationRing (PowerSeries k)` instance in `PowerSeries.Inverse`.
+In Mathlib, the DVR instance for `k⟦X⟧` is automatic.
 -/
 
-/-- The power series ring `k[[t]]` over a field `k` is a DVR (Example 1.15). -/
-theorem powerSeries_isDVR (k : Type*) [Field k] :
-    IsDiscreteValuationRing (PowerSeries k) :=
-  inferInstance
+open PowerSeries in
+set_option backward.isDefEq.respectTransparency false in
+/-- **Example 1.15.** `k⟦X⟧` is a DVR for any field `k`. -/
+example {k : Type*} [Field k] : IsDiscreteValuationRing k⟦X⟧ := inferInstance

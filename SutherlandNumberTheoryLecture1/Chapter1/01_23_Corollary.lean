@@ -1,4 +1,3 @@
-import SutherlandNumberTheoryLecture1.Chapter1.«01_22_Proposition»
 import Mathlib.Algebra.GCDMonoid.IntegrallyClosed
 import Mathlib.RingTheory.UniqueFactorizationDomain.Basic
 import Mathlib.RingTheory.UniqueFactorizationDomain.GCDMonoid
@@ -9,19 +8,15 @@ import Mathlib.RingTheory.UniqueFactorizationDomain.GCDMonoid
 **Corollary 1.23.** Every unique factorization domain is integrally closed.
 In particular, every PID is integrally closed.
 
-*Proof.* The proof of Proposition 1.22 (rational root test) works for any UFD.
+*Proof.* The rational root test generalizes from `ℤ` to any UFD.
 
-In Mathlib: `GCDMonoid.toIsIntegrallyClosed`.
+In Mathlib: the instance chain `UFD → GCDMonoid → IsIntegrallyClosed`.
 -/
 
-/-- **Corollary 1.23** (Sutherland). Every UFD is integrally closed. -/
-theorem sutherland_corollary1_23 (A : Type*) [CommRing A] [IsDomain A]
-    [UniqueFactorizationMonoid A] :
-    IsIntegrallyClosed A :=
-  inferInstance
+/-- **Corollary 1.23.** Every UFD is integrally closed. -/
+example {A : Type*} [CommRing A] [IsDomain A] [UniqueFactorizationMonoid A] :
+    IsIntegrallyClosed A := inferInstance
 
-/-- **Corollary 1.23** (Sutherland). Every PID is integrally closed. -/
-theorem sutherland_corollary1_23_pid (A : Type*) [CommRing A] [IsDomain A]
-    [IsPrincipalIdealRing A] :
-    IsIntegrallyClosed A :=
-  inferInstance
+/-- **Corollary 1.23.** In particular, every PID is integrally closed. -/
+example {A : Type*} [CommRing A] [IsDomain A] [IsPrincipalIdealRing A] :
+    IsIntegrallyClosed A := inferInstance

@@ -18,8 +18,7 @@ The converse needs original proof: use the binomial theorem and take limits.
 
 /-- **Lemma 1.4** (Sutherland). An absolute value on a field is nonarchimedean
 iff it is bounded by 1 on all natural number multiples of 1. -/
-theorem sutherland_lemma1_4 {k : Type*} [Field k] (f : AbsoluteValue k ℝ)
-    (hf1 : f 1 = 1) :
+theorem sutherland_lemma1_4 {k : Type*} [Field k] (f : AbsoluteValue k ℝ) :
     IsNonarchimedean (⇑f) ↔ ∀ n : ℕ, f n ≤ 1 := by
   constructor
   · intro hna n
