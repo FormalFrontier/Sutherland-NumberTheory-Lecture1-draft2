@@ -1,0 +1,15 @@
+# References for Definition1_2
+
+## Mathlib Coverage
+
+**Status:** full
+
+AbsoluteValue covers both archimedean and non-archimedean cases; IsNonarchimedean captures the extra condition.
+
+### Relevant Declarations
+
+- `AbsoluteValue` (Mathlib.Algebra.Order.AbsoluteValue.Basic)
+  Bundled structure for absolute values on a semiring R mapping to an ordered semiring S. Satisfies nonneg, eq_zero iff zero, mul_map, and triangle inequality.
+
+- `IsNonarchimedean` (Mathlib.Algebra.Order.Ring.IsNonarchimedean)
+  Predicate `IsNonarchimedean f` for the strong triangle inequality f(a+b) ≤ max(f a, f b).
