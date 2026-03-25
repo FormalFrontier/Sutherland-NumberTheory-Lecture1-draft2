@@ -2,6 +2,7 @@ import Mathlib.RingTheory.PowerSeries.Basic
 import Mathlib.RingTheory.PowerSeries.NoZeroDivisors
 import Mathlib.RingTheory.DiscreteValuationRing.Basic
 import Mathlib.RingTheory.PowerSeries.Inverse
+import Mathlib.RingTheory.Valuation.ValuationRing
 
 /-!
 ## Example 1.15 — Power Series Ring as DVR
@@ -17,3 +18,8 @@ open PowerSeries in
 set_option backward.isDefEq.respectTransparency false in
 /-- **Example 1.15.** `k⟦X⟧` is a DVR for any field `k`. -/
 example {k : Type*} [Field k] : IsDiscreteValuationRing k⟦X⟧ := inferInstance
+
+open PowerSeries in
+set_option backward.isDefEq.respectTransparency false in
+/-- **Example 1.15.** `k⟦X⟧` is also a valuation ring. -/
+example {k : Type*} [Field k] : ValuationRing k⟦X⟧ := inferInstance

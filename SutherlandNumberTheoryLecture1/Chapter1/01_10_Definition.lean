@@ -2,6 +2,7 @@ import Mathlib.Tactic.Recall
 import Mathlib.RingTheory.Valuation.Basic
 import Mathlib.RingTheory.DiscreteValuationRing.Basic
 import Mathlib.RingTheory.Valuation.Integers
+import Mathlib.RingTheory.Valuation.ValuationRing
 
 /-!
 ## Definition 1.10 — Valuations, Value Groups, Valuation Rings, and DVRs
@@ -25,6 +26,14 @@ of its fraction field for a discrete valuation.
 - `Valuation.integer v` — the valuation ring `{x | v x ≤ 1}`
 -/
 
+/-- **Definition 1.10** (valuation). A valuation on a field in the additive convention. -/
+recall AddValuation (R : Type*) [Ring R] (Γ₀ : Type*)
+    [LinearOrderedAddCommMonoidWithTop Γ₀] : Type _
+
 /-- **Definition 1.10** (DVR). A *discrete valuation ring* is an integral domain that is
 a local PID and not a field. -/
 recall IsDiscreteValuationRing (R : Type*) [CommRing R] [IsDomain R] : Prop
+
+/-- **Definition 1.10** (valuation ring). For every element of `Frac(A)`, either it or its
+inverse lies in `A`. -/
+recall ValuationRing (A : Type*) [CommRing A] [IsDomain A] : Prop

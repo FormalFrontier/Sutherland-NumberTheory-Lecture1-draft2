@@ -1,6 +1,7 @@
 import Mathlib.Tactic.Recall
 import Mathlib.Algebra.Order.AbsoluteValue.Basic
 import Mathlib.Algebra.Order.Ring.IsNonarchimedean
+import Mathlib.Analysis.Normed.Field.Basic
 
 /-!
 ## Example 1.3 — The Trivial Absolute Value
@@ -22,7 +23,7 @@ recall AbsoluteValue.trivial_apply
 
 /-- **Example 1.3.** The trivial absolute value is nonarchimedean. -/
 theorem trivialAbsoluteValue_isNonarchimedean {k : Type*} [DecidableEq k] [Field k] :
-    IsNonarchimedean (⇑(AbsoluteValue.trivial : AbsoluteValue k ℤ)) := by
+    IsNonarchimedean (⇑(AbsoluteValue.trivial : AbsoluteValue k ℝ)) := by
   intro x y
   by_cases hx : x = 0
   · simp [AbsoluteValue.trivial, hx]
