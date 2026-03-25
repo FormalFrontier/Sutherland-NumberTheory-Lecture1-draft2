@@ -1,0 +1,133 @@
+{
+  "notes": "External sources for items that are NOT fully covered by Mathlib and need non-Mathlib support for formalization. Items with full Mathlib coverage are omitted here — see mathlib-coverage.json.",
+  "items": [
+    {
+      "id": "Chapter1/Lemma1_4",
+      "gaps": ["The converse direction: |n| ≤ 1 for all n ∈ ℕ ⟹ absolute value is non-archimedean"],
+      "sources": [
+        {
+          "type": "natural-language",
+          "reference": "Neukirch, Algebraic Number Theory, Chapter II §1",
+          "notes": "Standard proof: if |n| ≤ 1 for all n, then by binomial theorem |x+y|^N = |(x+y)^N| = |∑ C(N,k) x^k y^(N-k)| ≤ (N+1) max(|x|,|y|)^N; take N-th roots and N→∞."
+        },
+        {
+          "type": "natural-language",
+          "reference": "Conrad, K. 'Ostrowski's Theorem for Q' (expository notes)",
+          "url": "https://kconrad.math.uconn.edu/blurbs/gradnumthy/ostrowskilocal.pdf",
+          "notes": "Contains the lemma and its converse."
+        }
+      ]
+    },
+    {
+      "id": "Chapter1/Corollary1_5",
+      "gaps": [
+        "The statement: every absolute value on a field of positive characteristic is non-archimedean",
+        "The statement: the only absolute value on a finite field is the trivial one"
+      ],
+      "sources": [
+        {
+          "type": "natural-language",
+          "reference": "Neukirch, Algebraic Number Theory, Chapter II §1, Remark after Def 1.1",
+          "notes": "Standard result: in characteristic p, n·1 = 0 for some n ≥ 1, so |n| = 0. Then Lemma1_4 applies."
+        }
+      ]
+    },
+    {
+      "id": "Chapter1/Theorem1_16",
+      "gaps": [
+        "The full 7-way equivalence for DVRs as stated in the lecture. Mathlib has several of these but not all bundled as a single theorem."
+      ],
+      "sources": [
+        {
+          "type": "natural-language",
+          "reference": "Sutherland lecture notes, Theorem 1.16",
+          "notes": "The proof of each equivalence is standard algebra. Mathlib contains: DVR = local PID (the base definition), and can build the characterization via Noetherian valuation rings, integrally closed Noetherian local rings of dimension 1, regular Noetherian local rings of dimension 1."
+        },
+        {
+          "type": "natural-language",
+          "reference": "Serre, Local Fields, Chapter I",
+          "notes": "Detailed treatment of DVR characterizations."
+        }
+      ]
+    },
+    {
+      "id": "Chapter1/Example1_24",
+      "gaps": [
+        "Concrete computation: (1+√5)/2 satisfies x² - x - 1 = 0 (integral over ℤ), but is not in ℤ[√5]"
+      ],
+      "sources": [
+        {
+          "type": "natural-language",
+          "reference": "Sutherland lecture notes, Example 1.24",
+          "notes": "The computation x = (1+√5)/2 satisfies x² - x - 1 = 0 showing integrality over ℤ; then argue it lies in the integral closure ℤ[(1+√5)/2] ⊃ ℤ[√5], showing ℤ[√5] ≠ its own integral closure."
+        }
+      ]
+    },
+    {
+      "id": "Chapter1/Example1_29",
+      "gaps": [
+        "Concrete computation: α = (1+√7)/2 has minimal polynomial x² - x - 3/2 ∉ ℤ[x]"
+      ],
+      "sources": [
+        {
+          "type": "natural-language",
+          "reference": "Sutherland lecture notes, Example 1.29",
+          "notes": "Compute: α = (1+√7)/2, α² = (1+2√7+7)/4 = (8+2√7)/4 = 2 + √7/2. Then α² - α = 2 + √7/2 - 1/2 - √7/2 = 3/2. So α satisfies x² - x - 3/2 = 0. Since the constant term 3/2 ∉ ℤ, the min poly has non-integer coefficients and α is not integral over ℤ."
+        }
+      ]
+    },
+    {
+      "id": "Chapter1/Remark1_27",
+      "gaps": [
+        "Formalization of the concept of an 'order' in a finite-dimensional ℚ-algebra (sub-ℤ-algebra that is a free ℤ-module of rank [K:ℚ])",
+        "Proof that 𝒪_K is a maximal order"
+      ],
+      "sources": [
+        {
+          "type": "natural-language",
+          "reference": "Neukirch, Algebraic Number Theory, Chapter I §2",
+          "notes": "Detailed treatment of orders in number fields."
+        },
+        {
+          "type": "natural-language",
+          "reference": "Cohen, A Course in Computational Algebraic Number Theory, Chapter 2",
+          "notes": "Computational perspective on orders."
+        }
+      ]
+    }
+  ],
+  "external_deps": [
+    {
+      "id": "symmetric-functions-resultant",
+      "gaps": [
+        "Specific lemma: if α_1,...,α_n are roots of f ∈ A[x] and β_1,...,β_m are roots of g ∈ A[x] in the algebraic closure, then ∏(z - (α_i + β_j)) ∈ A[z]"
+      ],
+      "sources": [
+        {
+          "type": "natural-language",
+          "reference": "Neukirch, Algebraic Number Theory, Chapter I §2, Proof of Prop 2.2",
+          "notes": "The coefficients of ∏(z-(α_i+β_j)) are symmetric polynomials in the α_i and β_j hence expressible as polynomials in the elementary symmetric polynomials of the α_i and β_j, which lie in A."
+        }
+      ]
+    },
+    {
+      "id": "local-fields-completions",
+      "gaps": [
+        "General theory of local fields as completions of global fields",
+        "Properties of extensions of local fields"
+      ],
+      "sources": [
+        {
+          "type": "natural-language",
+          "reference": "Serre, Local Fields",
+          "notes": "The primary reference [3] cited in the lecture. Develops the full theory."
+        },
+        {
+          "type": "lean-library",
+          "reference": "Mathlib.NumberTheory.Padics",
+          "notes": "ℚ_p and ℤ_p are available; general local field theory is partial in Mathlib."
+        }
+      ]
+    }
+  ]
+}
