@@ -1,6 +1,9 @@
 import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_2
 import Mathlib.Algebra.Order.AbsoluteValue.Basic
 import Mathlib.Algebra.Order.Ring.IsNonarchimedean
+import Mathlib.Analysis.Normed.Field.Basic
+import Mathlib.Analysis.Normed.Field.Ultra
+import Mathlib.Analysis.Normed.Group.Ultra
 
 /-!
 ## Lemma 1.4 — Characterization of Nonarchimedean Absolute Values
@@ -22,4 +25,7 @@ theorem sutherland_lemma1_4 {k : Type*} [Field k] (f : AbsoluteValue k ℝ)
   · intro hna n
     exact IsNonarchimedean.apply_natCast_le_one_of_isNonarchimedean hna
   · intro hbnd
-    sorry
+    letI : NormedField k := f.toNormedField
+    haveI : IsUltrametricDist k :=
+      IsUltrametricDist.isUltrametricDist_of_forall_norm_natCast_le_one hbnd
+    exact IsUltrametricDist.isNonarchimedean_norm
