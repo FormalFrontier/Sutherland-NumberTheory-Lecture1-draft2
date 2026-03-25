@@ -1,4 +1,4 @@
-# References for 01.13.Definition
+# References for 01_13_Definition
 
 ## Mathlib Coverage
 

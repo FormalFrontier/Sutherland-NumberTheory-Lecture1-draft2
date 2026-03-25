@@ -1,4 +1,4 @@
-# References for 01.19.Definition
+# References for 01_19_Definition
 
 ## Mathlib Coverage
 

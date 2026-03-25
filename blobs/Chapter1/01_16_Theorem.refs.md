@@ -1,4 +1,4 @@
-# References for 01.16.Theorem
+# References for 01_16_Theorem
 
 ## Mathlib Coverage
 

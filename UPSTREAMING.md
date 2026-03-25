@@ -8,11 +8,11 @@ Triage of all 28 `proof_polished` items from Chapter 1 for upstreaming to Mathli
 
 ## Candidates
 
-### 01.04.Lemma — Nonarchimedean Absolute Value iff Bounded on ℕ
+### 01_04_Lemma — Nonarchimedean Absolute Value iff Bounded on ℕ
 
 | Field | Value |
 |-------|-------|
-| **Item ID** | `Chapter1/01.04.Lemma` |
+| **Item ID** | `Chapter1/01_04_Lemma` |
 | **Declaration** | `sutherland_lemma1_4` |
 | **File** | `SutherlandNumberTheoryLecture1/Chapter1/01_04_Lemma.lean` |
 | **Suggested Mathlib module** | `Mathlib.Algebra.Order.AbsoluteValue.Nonarchimedean` (new file) or `Mathlib.Analysis.Normed.Field.Ultra` |
@@ -35,11 +35,11 @@ appealing to `IsUltrametricDist`. This is a gap between the `AbsoluteValue` and
 
 ---
 
-### 01.05.Corollary — Absolute Values in Positive Characteristic
+### 01_05_Corollary — Absolute Values in Positive Characteristic
 
 | Field | Value |
 |-------|-------|
-| **Item ID** | `Chapter1/01.05.Corollary` |
+| **Item ID** | `Chapter1/01_05_Corollary` |
 | **Declarations** | `sutherland_corollary1_5_posChar`, `sutherland_corollary1_5_finite` |
 | **File** | `SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean` |
 | **Suggested Mathlib module** | `Mathlib.Algebra.Order.AbsoluteValue.Nonarchimedean` (new file) or `Mathlib.Analysis.Normed.Field.Ultra` |
@@ -63,11 +63,11 @@ nonzero `x`. Both are standard textbook results absent from Mathlib's API.
 
 ---
 
-### 01.28.Proposition — Integrality iff Minimal Polynomial over A
+### 01_28_Proposition — Integrality iff Minimal Polynomial over A
 
 | Field | Value |
 |-------|-------|
-| **Item ID** | `Chapter1/01.28.Proposition` |
+| **Item ID** | `Chapter1/01_28_Proposition` |
 | **Declaration** | `sutherland_prop1_28` |
 | **File** | `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proposition.lean` |
 | **Suggested Mathlib module** | `Mathlib.FieldTheory.Minpoly.IsIntegrallyClosed` |
@@ -92,11 +92,11 @@ completion of the minpoly API.
 
 ---
 
-### 01.24.Example — ℤ[√5] is Not Integrally Closed
+### 01_24_Example — ℤ[√5] is Not Integrally Closed
 
 | Field | Value |
 |-------|-------|
-| **Item ID** | `Chapter1/01.24.Example` |
+| **Item ID** | `Chapter1/01_24_Example` |
 | **Declaration** | `zsqrtd5_not_integrallyClosed` |
 | **File** | `SutherlandNumberTheoryLecture1/Chapter1/01_24_Example.lean` |
 | **Suggested Mathlib module** | `Mathlib.NumberTheory.Zsqrtd.Basic` |
@@ -122,30 +122,30 @@ that would fit naturally alongside `GaussianInt` in the `Zsqrtd` namespace.
 
 | Item ID | Reason |
 |---------|--------|
-| `Chapter1/01.02.Definition` | Pure definition; `AbsoluteValue k ℝ` and `IsNonarchimedean` already exist in Mathlib |
-| `Chapter1/01.03.Example` | `padicAbsoluteValue_isNonarchimedean` is a one-line delegation to `padicNorm.nonarchimedean`; no new content |
-| `Chapter1/01.06.Definition` | Pure definition; `AbsoluteValue.IsEquiv` already exists in Mathlib |
-| `Chapter1/01.07.Definition` | Pure definition; `padicValRat`, `padicNorm`, `Rat.AbsoluteValue.padic` already exist |
-| `Chapter1/01.08.Theorem` | Direct delegation to `Rat.AbsoluteValue.equiv_real_or_padic`; one-line wrapper |
-| `Chapter1/01.09.Theorem` | Direct delegation to `NumberField.prod_abs_eq_one`; one-line wrapper |
-| `Chapter1/01.10.Definition` | Pure definition; `Valuation`, `ValuationRing`, `IsDiscreteValuationRing` already exist |
-| `Chapter1/01.11.Definition` | Pure definition; `ValuationRing` already exists in Mathlib |
-| `Chapter1/01.12.Definition` | Pure definition; `IsLocalRing` already exists in Mathlib |
-| `Chapter1/01.13.Definition` | Pure definition; `IsLocalRing.ResidueField` already exists in Mathlib |
-| `Chapter1/01.14.Example` | `primeIdealZ_isPrime` and `IsLocalRing` for `ℤ_(p)` are trivial Mathlib wrappers; `inferInstance` or near-trivial |
-| `Chapter1/01.15.Example` | `IsDiscreteValuationRing (PowerSeries k)` is `inferInstance`; no new content |
-| `Chapter1/01.16.Theorem` | DVR ↔ local PID is definitionally true in Mathlib (`IsDiscreteValuationRing` is exactly a local PID that is not a field); no new theorem |
-| `Chapter1/01.17.Definition` | Pure definition; `IsIntegral` already exists in Mathlib |
-| `Chapter1/01.18.Proposition` | `IsIntegral.add` and `IsIntegral.mul` are one-line delegations to Mathlib |
-| `Chapter1/01.19.Definition` | Pure definition; `integralClosure`, `IsIntegrallyClosed` already exist |
-| `Chapter1/01.20.Proposition` | One-line delegation to `Algebra.IsIntegral.trans` |
-| `Chapter1/01.21.Corollary` | One-line delegation to `integralClosure.isIntegralClosure` |
-| `Chapter1/01.22.Proposition` | `IsIntegrallyClosed ℤ` is `inferInstance` via `Int.instIsIntegrallyClosed` |
-| `Chapter1/01.23.Corollary` | One-line delegation to `GCDMonoid.toIsIntegrallyClosed`; UFDs integrally closed is already in Mathlib |
-| `Chapter1/01.25.Proposition` | Three-line proof chaining `ValuationRing → IsBezout → GCDMonoid → IsIntegrallyClosed`; all steps are existing Mathlib instances |
-| `Chapter1/01.26.Definition` | Pure definition; `NumberField`, `RingOfIntegers` already exist in Mathlib |
-| `Chapter1/01.27.Remark` | `Module.Free` instance is `inferInstance`; rank result is one-line delegation to `NumberField.RingOfIntegers.rank` |
-| `Chapter1/01.29.Example` | Concrete computation (`(1 + √7)/2 ∉ ℤ`); too specific for Mathlib's API |
+| `Chapter1/01_02_Definition` | Pure definition; `AbsoluteValue k ℝ` and `IsNonarchimedean` already exist in Mathlib |
+| `Chapter1/01_03_Example` | `padicAbsoluteValue_isNonarchimedean` is a one-line delegation to `padicNorm.nonarchimedean`; no new content |
+| `Chapter1/01_06_Definition` | Pure definition; `AbsoluteValue.IsEquiv` already exists in Mathlib |
+| `Chapter1/01_07_Definition` | Pure definition; `padicValRat`, `padicNorm`, `Rat.AbsoluteValue.padic` already exist |
+| `Chapter1/01_08_Theorem` | Direct delegation to `Rat.AbsoluteValue.equiv_real_or_padic`; one-line wrapper |
+| `Chapter1/01_09_Theorem` | Direct delegation to `NumberField.prod_abs_eq_one`; one-line wrapper |
+| `Chapter1/01_10_Definition` | Pure definition; `Valuation`, `ValuationRing`, `IsDiscreteValuationRing` already exist |
+| `Chapter1/01_11_Definition` | Pure definition; `ValuationRing` already exists in Mathlib |
+| `Chapter1/01_12_Definition` | Pure definition; `IsLocalRing` already exists in Mathlib |
+| `Chapter1/01_13_Definition` | Pure definition; `IsLocalRing.ResidueField` already exists in Mathlib |
+| `Chapter1/01_14_Example` | `primeIdealZ_isPrime` and `IsLocalRing` for `ℤ_(p)` are trivial Mathlib wrappers; `inferInstance` or near-trivial |
+| `Chapter1/01_15_Example` | `IsDiscreteValuationRing (PowerSeries k)` is `inferInstance`; no new content |
+| `Chapter1/01_16_Theorem` | DVR ↔ local PID is definitionally true in Mathlib (`IsDiscreteValuationRing` is exactly a local PID that is not a field); no new theorem |
+| `Chapter1/01_17_Definition` | Pure definition; `IsIntegral` already exists in Mathlib |
+| `Chapter1/01_18_Proposition` | `IsIntegral.add` and `IsIntegral.mul` are one-line delegations to Mathlib |
+| `Chapter1/01_19_Definition` | Pure definition; `integralClosure`, `IsIntegrallyClosed` already exist |
+| `Chapter1/01_20_Proposition` | One-line delegation to `Algebra.IsIntegral.trans` |
+| `Chapter1/01_21_Corollary` | One-line delegation to `integralClosure.isIntegralClosure` |
+| `Chapter1/01_22_Proposition` | `IsIntegrallyClosed ℤ` is `inferInstance` via `Int.instIsIntegrallyClosed` |
+| `Chapter1/01_23_Corollary` | One-line delegation to `GCDMonoid.toIsIntegrallyClosed`; UFDs integrally closed is already in Mathlib |
+| `Chapter1/01_25_Proposition` | Three-line proof chaining `ValuationRing → IsBezout → GCDMonoid → IsIntegrallyClosed`; all steps are existing Mathlib instances |
+| `Chapter1/01_26_Definition` | Pure definition; `NumberField`, `RingOfIntegers` already exist in Mathlib |
+| `Chapter1/01_27_Remark` | `Module.Free` instance is `inferInstance`; rank result is one-line delegation to `NumberField.RingOfIntegers.rank` |
+| `Chapter1/01_29_Example` | Concrete computation (`(1 + √7)/2 ∉ ℤ`); too specific for Mathlib's API |
 
 ---
 
@@ -161,6 +161,6 @@ Searches were performed in `.lake/packages/mathlib/Mathlib` (local source).
 - `Mathlib.FieldTheory.Minpoly.IsIntegrallyClosed`: has
   `isIntegrallyClosed_eq_field_fractions'` (⟹ direction only); no full iff
 - No results found for: `AbsoluteValue` + `CharP`, `AbsoluteValue` + `Fintype`
-  (confirming 01.05.Corollary results are absent from Mathlib)
+  (confirming 01_05_Corollary results are absent from Mathlib)
 - `Mathlib.NumberTheory.Zsqrtd.*`: no results for `IntegrallyClosed`, `isIntegrallyClosed`,
   or `not_isIntegrallyClosed` — confirming `zsqrtd5_not_integrallyClosed` is absent

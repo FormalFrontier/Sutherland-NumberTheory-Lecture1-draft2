@@ -1,25 +1,25 @@
 {
   "items": [
     {
-      "id": "Chapter1/01.00.Introduction",
+      "id": "Chapter1/01_00_Introduction",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Contextual introduction to the lecture. No formalizable mathematical content."
     },
     {
-      "id": "Chapter1/01.01.Remark",
+      "id": "Chapter1/01_01_Remark",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Motivating remark about absolute values on number fields. No direct Mathlib coverage."
     },
     {
-      "id": "Chapter1/01.02s.Introduction",
+      "id": "Chapter1/01_02s_Introduction",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Section introduction text. No formalizable content."
     },
     {
-      "id": "Chapter1/01.02.Definition",
+      "id": "Chapter1/01_02_Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -36,7 +36,7 @@
       "notes": "AbsoluteValue covers both archimedean and non-archimedean cases; IsNonarchimedean captures the extra condition."
     },
     {
-      "id": "Chapter1/01.03.Example",
+      "id": "Chapter1/01_03_Example",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -58,7 +58,7 @@
       "notes": "Examples of absolute values: standard |\u00b7|_\u221e, trivial, and p-adic."
     },
     {
-      "id": "Chapter1/01.04.Lemma",
+      "id": "Chapter1/01_04_Lemma",
       "coverage_status": "partial",
       "mathlib_declarations": [
         {
@@ -75,7 +75,7 @@
       "notes": "The forward direction (non-arch \u27f9 |n|\u22641 for all n) is in Mathlib. The converse (|n|\u22641 for all n \u27f9 non-arch) appears implicitly in Ostrowski's proof but is not a standalone lemma. Needs to be formalized here."
     },
     {
-      "id": "Chapter1/01.05.Corollary",
+      "id": "Chapter1/01_05_Corollary",
       "coverage_status": "partial",
       "mathlib_declarations": [
         {
@@ -84,10 +84,10 @@
           "notes": "Character of a ring; used to show n \u00b7 1 = 0 in positive characteristic."
         }
       ],
-      "notes": "The corollary (positive characteristic \u27f9 all absolute values non-archimedean; finite field \u27f9 only trivial absolute value) does not have a direct Mathlib theorem. Follows from 01.04.Lemma + CharP facts. Needs to be formalized here."
+      "notes": "The corollary (positive characteristic \u27f9 all absolute values non-archimedean; finite field \u27f9 only trivial absolute value) does not have a direct Mathlib theorem. Follows from 01_04_Lemma + CharP facts. Needs to be formalized here."
     },
     {
-      "id": "Chapter1/01.06.Definition",
+      "id": "Chapter1/01_06_Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -99,13 +99,13 @@
       "notes": "IsEquiv formalizes the equivalence relation on absolute values."
     },
     {
-      "id": "Chapter1/01.03s.Introduction",
+      "id": "Chapter1/01_03s_Introduction",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Section introduction. No formalizable content."
     },
     {
-      "id": "Chapter1/01.07.Definition",
+      "id": "Chapter1/01_07_Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -137,7 +137,7 @@
       "notes": "Full Mathlib coverage of the p-adic valuation and absolute value on \u211a."
     },
     {
-      "id": "Chapter1/01.08.Theorem",
+      "id": "Chapter1/01_08_Theorem",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -149,7 +149,7 @@
       "notes": "Ostrowski's theorem is fully proved in Mathlib for \u211a."
     },
     {
-      "id": "Chapter1/01.09.Theorem",
+      "id": "Chapter1/01_09_Theorem",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -161,13 +161,13 @@
       "notes": "The product formula for \u211a is a special case of the number field product formula. The lecture statement (\u220f_{p\u2264\u221e} |x|_p = 1 for x \u2208 \u211a\u00d7) follows directly."
     },
     {
-      "id": "Chapter1/01.04s.Introduction",
+      "id": "Chapter1/01_04s_Introduction",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Section introduction. No formalizable content."
     },
     {
-      "id": "Chapter1/01.10.Definition",
+      "id": "Chapter1/01_10_Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -189,13 +189,13 @@
       "notes": "Valuation and DVR are both fully covered in Mathlib."
     },
     {
-      "id": "Chapter1/01.10a.Discussion",
+      "id": "Chapter1/01_10a_Discussion",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Discussion text explaining connection between valuations and absolute values. No formalizable content."
     },
     {
-      "id": "Chapter1/01.11.Definition",
+      "id": "Chapter1/01_11_Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -212,13 +212,13 @@
       "notes": "ValuationRing matches the lecture definition (A is a valuation ring iff for all x \u2208 K, x \u2208 A or x\u207b\u00b9 \u2208 A)."
     },
     {
-      "id": "Chapter1/01.11a.Discussion",
+      "id": "Chapter1/01_11a_Discussion",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Discussion text. No formalizable content."
     },
     {
-      "id": "Chapter1/01.12.Definition",
+      "id": "Chapter1/01_12_Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -230,7 +230,7 @@
       "notes": "Local ring is fully covered."
     },
     {
-      "id": "Chapter1/01.13.Definition",
+      "id": "Chapter1/01_13_Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -247,13 +247,13 @@
       "notes": "Residue field is fully covered."
     },
     {
-      "id": "Chapter1/01.13a.Discussion",
+      "id": "Chapter1/01_13a_Discussion",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Discussion text. No formalizable content."
     },
     {
-      "id": "Chapter1/01.14.Example",
+      "id": "Chapter1/01_14_Example",
       "coverage_status": "partial",
       "mathlib_declarations": [
         {
@@ -270,7 +270,7 @@
       "notes": "The construction of \u2124_(p) as a localization is in Mathlib; the identification of maximal ideal as (p) and residue field as \ud835\udd3d_p needs to be made explicit."
     },
     {
-      "id": "Chapter1/01.15.Example",
+      "id": "Chapter1/01_15_Example",
       "coverage_status": "partial",
       "mathlib_declarations": [
         {
@@ -292,13 +292,13 @@
       "notes": "Basic constructions are in Mathlib. The specific valuation on k((t)) with value group \u2124 and valuation ring k[[t]] can be assembled from these pieces."
     },
     {
-      "id": "Chapter1/01.05s.Introduction",
+      "id": "Chapter1/01_05s_Introduction",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Section introduction. No formalizable content."
     },
     {
-      "id": "Chapter1/01.16.Theorem",
+      "id": "Chapter1/01_16_Theorem",
       "coverage_status": "partial",
       "mathlib_declarations": [
         {
@@ -320,13 +320,13 @@
       "notes": "Several of the equivalences in Theorem 1.16 are provable from Mathlib. The full 7-way equivalence stated in the lecture needs to be assembled from multiple Mathlib lemmas."
     },
     {
-      "id": "Chapter1/01.06s.Introduction",
+      "id": "Chapter1/01_06s_Introduction",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Section introduction. No formalizable content."
     },
     {
-      "id": "Chapter1/01.17.Definition",
+      "id": "Chapter1/01_17_Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -343,7 +343,7 @@
       "notes": "Full Mathlib coverage."
     },
     {
-      "id": "Chapter1/01.18.Proposition",
+      "id": "Chapter1/01_18_Proposition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -360,7 +360,7 @@
       "notes": "The lecture proof uses algebraic closure and symmetric polynomials (external deps); Mathlib's proofs are self-contained and direct."
     },
     {
-      "id": "Chapter1/01.19.Definition",
+      "id": "Chapter1/01_19_Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -377,7 +377,7 @@
       "notes": "Full Mathlib coverage."
     },
     {
-      "id": "Chapter1/01.20.Proposition",
+      "id": "Chapter1/01_20_Proposition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -389,7 +389,7 @@
       "notes": "Transitivity of integrality is fully in Mathlib."
     },
     {
-      "id": "Chapter1/01.21.Corollary",
+      "id": "Chapter1/01_21_Corollary",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -401,7 +401,7 @@
       "notes": "The corollary (integral closure is integrally closed) is in Mathlib."
     },
     {
-      "id": "Chapter1/01.22.Proposition",
+      "id": "Chapter1/01_22_Proposition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -418,7 +418,7 @@
       "notes": "\u2124 is a GCDMonoid in Mathlib, so IsIntegrallyClosed \u2124 follows automatically. The lecture proves it directly using the rational root test."
     },
     {
-      "id": "Chapter1/01.23.Corollary",
+      "id": "Chapter1/01_23_Corollary",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -435,19 +435,19 @@
       "notes": "UFD \u27f9 integrally closed follows from these two instances."
     },
     {
-      "id": "Chapter1/01.24.Example",
+      "id": "Chapter1/01_24_Example",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Counterexample showing \u2124[\u221a5] is not integrally closed (since (1+\u221a5)/2 is integral over \u2124 but not in \u2124[\u221a5]). No direct Mathlib coverage; needs concrete computation."
     },
     {
-      "id": "Chapter1/01.24a.Discussion",
+      "id": "Chapter1/01_24a_Discussion",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Discussion text. No formalizable content."
     },
     {
-      "id": "Chapter1/01.25.Proposition",
+      "id": "Chapter1/01_25_Proposition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -464,7 +464,7 @@
       "notes": "Full Mathlib coverage."
     },
     {
-      "id": "Chapter1/01.26.Definition",
+      "id": "Chapter1/01_26_Definition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -481,7 +481,7 @@
       "notes": "Number fields and their rings of integers are fully covered in Mathlib."
     },
     {
-      "id": "Chapter1/01.27.Remark",
+      "id": "Chapter1/01_27_Remark",
       "coverage_status": "partial",
       "mathlib_declarations": [
         {
@@ -493,7 +493,7 @@
       "notes": "The remark discusses \ud835\udcaa_K as the maximal order (free \u2124-module of rank [K:\u211a]). The finiteness/freeness of \ud835\udcaa_K as a \u2124-module is in Mathlib. The 'order' concept (sub-\u2124-algebra that is a free \u2124-module of rank n) is not a standalone Mathlib type."
     },
     {
-      "id": "Chapter1/01.28.Proposition",
+      "id": "Chapter1/01_28_Proposition",
       "coverage_status": "full",
       "mathlib_declarations": [
         {
@@ -515,13 +515,13 @@
       "notes": "The key result (\u03b1 integral over A iff min poly \u2208 A[x]) is covered by these lemmas."
     },
     {
-      "id": "Chapter1/01.29.Example",
+      "id": "Chapter1/01_29_Example",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Computation showing (1+\u221a7)/2 has minimal polynomial x\u00b2 - x - 3/2 \u2209 \u2124[x], hence not integral over \u2124. No direct Mathlib coverage; needs a concrete computation."
     },
     {
-      "id": "Chapter1/01.99.References",
+      "id": "Chapter1/01_99_References",
       "coverage_status": "none",
       "mathlib_declarations": [],
       "notes": "Reference list. No formalizable content."

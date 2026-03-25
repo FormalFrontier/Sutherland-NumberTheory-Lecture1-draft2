@@ -1,4 +1,4 @@
-# References for 01.04.Lemma
+# References for 01_04_Lemma
 
 ## Mathlib Coverage
 

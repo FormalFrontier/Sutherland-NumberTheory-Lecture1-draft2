@@ -1,4 +1,4 @@
-# References for 01.09.Theorem
+# References for 01_09_Theorem
 
 ## Mathlib Coverage
 

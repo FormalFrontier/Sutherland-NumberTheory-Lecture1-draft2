@@ -1,4 +1,4 @@
-# References for 01.08.Theorem
+# References for 01_08_Theorem
 
 ## Mathlib Coverage
 

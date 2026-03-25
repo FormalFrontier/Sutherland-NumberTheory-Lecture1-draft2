@@ -1,10 +1,10 @@
-# References for 01.05.Corollary
+# References for 01_05_Corollary
 
 ## Mathlib Coverage
 
 **Status:** partial
 
-The corollary (positive characteristic ⟹ all absolute values non-archimedean; finite field ⟹ only trivial absolute value) does not have a direct Mathlib theorem. Follows from 01.04.Lemma + CharP facts. Needs to be formalized here.
+The corollary (positive characteristic ⟹ all absolute values non-archimedean; finite field ⟹ only trivial absolute value) does not have a direct Mathlib theorem. Follows from 01_04_Lemma + CharP facts. Needs to be formalized here.
 
 ### Relevant Declarations
 
@@ -19,4 +19,4 @@ The corollary (positive characteristic ⟹ all absolute values non-archimedean; 
 ## External Sources
 
 - **Neukirch, Algebraic Number Theory, Chapter II §1, Remark after Def 1.1**
-  Standard result: in characteristic p, n·1 = 0 for some n ≥ 1, so |n| = 0. Then 01.04.Lemma applies.
+  Standard result: in characteristic p, n·1 = 0 for some n ≥ 1, so |n| = 0. Then 01_04_Lemma applies.

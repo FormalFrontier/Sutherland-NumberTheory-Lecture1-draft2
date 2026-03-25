@@ -1,115 +1,115 @@
 {
-  "Chapter1/01.00.Introduction": [],
-  "Chapter1/01.01.Remark": [
-    "Chapter1/01.00.Introduction"
+  "Chapter1/01_00_Introduction": [],
+  "Chapter1/01_01_Remark": [
+    "Chapter1/01_00_Introduction"
   ],
-  "Chapter1/01.02s.Introduction": [
-    "Chapter1/01.01.Remark"
+  "Chapter1/01_02s_Introduction": [
+    "Chapter1/01_01_Remark"
   ],
-  "Chapter1/01.02.Definition": [],
-  "Chapter1/01.03.Example": [
-    "Chapter1/01.02.Definition"
+  "Chapter1/01_02_Definition": [],
+  "Chapter1/01_03_Example": [
+    "Chapter1/01_02_Definition"
   ],
-  "Chapter1/01.04.Lemma": [
-    "Chapter1/01.02.Definition"
+  "Chapter1/01_04_Lemma": [
+    "Chapter1/01_02_Definition"
   ],
-  "Chapter1/01.05.Corollary": [
-    "Chapter1/01.04.Lemma"
+  "Chapter1/01_05_Corollary": [
+    "Chapter1/01_04_Lemma"
   ],
-  "Chapter1/01.06.Definition": [
-    "Chapter1/01.02.Definition"
+  "Chapter1/01_06_Definition": [
+    "Chapter1/01_02_Definition"
   ],
-  "Chapter1/01.03s.Introduction": [
-    "Chapter1/01.06.Definition"
+  "Chapter1/01_03s_Introduction": [
+    "Chapter1/01_06_Definition"
   ],
-  "Chapter1/01.07.Definition": [
-    "Chapter1/01.02.Definition"
+  "Chapter1/01_07_Definition": [
+    "Chapter1/01_02_Definition"
   ],
-  "Chapter1/01.08.Theorem": [
-    "Chapter1/01.06.Definition",
-    "Chapter1/01.07.Definition"
+  "Chapter1/01_08_Theorem": [
+    "Chapter1/01_06_Definition",
+    "Chapter1/01_07_Definition"
   ],
-  "Chapter1/01.09.Theorem": [
-    "Chapter1/01.07.Definition"
+  "Chapter1/01_09_Theorem": [
+    "Chapter1/01_07_Definition"
   ],
-  "Chapter1/01.04s.Introduction": [
-    "Chapter1/01.09.Theorem"
+  "Chapter1/01_04s_Introduction": [
+    "Chapter1/01_09_Theorem"
   ],
-  "Chapter1/01.10.Definition": [],
-  "Chapter1/01.10a.Discussion": [
-    "Chapter1/01.10.Definition"
+  "Chapter1/01_10_Definition": [],
+  "Chapter1/01_10a_Discussion": [
+    "Chapter1/01_10_Definition"
   ],
-  "Chapter1/01.11.Definition": [],
-  "Chapter1/01.11a.Discussion": [
-    "Chapter1/01.11.Definition"
+  "Chapter1/01_11_Definition": [],
+  "Chapter1/01_11a_Discussion": [
+    "Chapter1/01_11_Definition"
   ],
-  "Chapter1/01.12.Definition": [],
-  "Chapter1/01.13.Definition": [
-    "Chapter1/01.12.Definition"
+  "Chapter1/01_12_Definition": [],
+  "Chapter1/01_13_Definition": [
+    "Chapter1/01_12_Definition"
   ],
-  "Chapter1/01.13a.Discussion": [
-    "Chapter1/01.13.Definition"
+  "Chapter1/01_13a_Discussion": [
+    "Chapter1/01_13_Definition"
   ],
-  "Chapter1/01.14.Example": [
-    "Chapter1/01.10.Definition",
-    "Chapter1/01.13.Definition"
+  "Chapter1/01_14_Example": [
+    "Chapter1/01_10_Definition",
+    "Chapter1/01_13_Definition"
   ],
-  "Chapter1/01.15.Example": [
-    "Chapter1/01.10.Definition"
+  "Chapter1/01_15_Example": [
+    "Chapter1/01_10_Definition"
   ],
-  "Chapter1/01.05s.Introduction": [
-    "Chapter1/01.15.Example"
+  "Chapter1/01_05s_Introduction": [
+    "Chapter1/01_15_Example"
   ],
-  "Chapter1/01.16.Theorem": [
-    "Chapter1/01.10.Definition"
+  "Chapter1/01_16_Theorem": [
+    "Chapter1/01_10_Definition"
   ],
-  "Chapter1/01.06s.Introduction": [
-    "Chapter1/01.16.Theorem"
+  "Chapter1/01_06s_Introduction": [
+    "Chapter1/01_16_Theorem"
   ],
-  "Chapter1/01.17.Definition": [],
-  "Chapter1/01.18.Proposition": [
-    "Chapter1/01.17.Definition"
+  "Chapter1/01_17_Definition": [],
+  "Chapter1/01_18_Proposition": [
+    "Chapter1/01_17_Definition"
   ],
-  "Chapter1/01.19.Definition": [
-    "Chapter1/01.17.Definition"
+  "Chapter1/01_19_Definition": [
+    "Chapter1/01_17_Definition"
   ],
-  "Chapter1/01.20.Proposition": [
-    "Chapter1/01.17.Definition",
-    "Chapter1/01.19.Definition"
+  "Chapter1/01_20_Proposition": [
+    "Chapter1/01_17_Definition",
+    "Chapter1/01_19_Definition"
   ],
-  "Chapter1/01.21.Corollary": [
-    "Chapter1/01.19.Definition",
-    "Chapter1/01.20.Proposition"
+  "Chapter1/01_21_Corollary": [
+    "Chapter1/01_19_Definition",
+    "Chapter1/01_20_Proposition"
   ],
-  "Chapter1/01.22.Proposition": [
-    "Chapter1/01.19.Definition"
+  "Chapter1/01_22_Proposition": [
+    "Chapter1/01_19_Definition"
   ],
-  "Chapter1/01.23.Corollary": [
-    "Chapter1/01.22.Proposition"
+  "Chapter1/01_23_Corollary": [
+    "Chapter1/01_22_Proposition"
   ],
-  "Chapter1/01.24.Example": [
-    "Chapter1/01.19.Definition"
+  "Chapter1/01_24_Example": [
+    "Chapter1/01_19_Definition"
   ],
-  "Chapter1/01.24a.Discussion": [
-    "Chapter1/01.24.Example"
+  "Chapter1/01_24a_Discussion": [
+    "Chapter1/01_24_Example"
   ],
-  "Chapter1/01.25.Proposition": [
-    "Chapter1/01.11.Definition",
-    "Chapter1/01.19.Definition"
+  "Chapter1/01_25_Proposition": [
+    "Chapter1/01_11_Definition",
+    "Chapter1/01_19_Definition"
   ],
-  "Chapter1/01.26.Definition": [
-    "Chapter1/01.19.Definition"
+  "Chapter1/01_26_Definition": [
+    "Chapter1/01_19_Definition"
   ],
-  "Chapter1/01.27.Remark": [
-    "Chapter1/01.26.Definition"
+  "Chapter1/01_27_Remark": [
+    "Chapter1/01_26_Definition"
   ],
-  "Chapter1/01.28.Proposition": [
-    "Chapter1/01.19.Definition"
+  "Chapter1/01_28_Proposition": [
+    "Chapter1/01_19_Definition"
   ],
-  "Chapter1/01.29.Example": [
-    "Chapter1/01.28.Proposition"
+  "Chapter1/01_29_Example": [
+    "Chapter1/01_28_Proposition"
   ],
-  "Chapter1/01.99.References": [
-    "Chapter1/01.29.Example"
+  "Chapter1/01_99_References": [
+    "Chapter1/01_29_Example"
   ]
 }

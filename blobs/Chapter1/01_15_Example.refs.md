@@ -1,4 +1,4 @@
-# References for 01.15.Example
+# References for 01_15_Example
 
 ## Mathlib Coverage
 

@@ -1,4 +1,4 @@
-# References for 01.18.Proposition
+# References for 01_18_Proposition
 
 ## Mathlib Coverage
 

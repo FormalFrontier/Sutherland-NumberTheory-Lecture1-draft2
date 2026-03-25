@@ -1,6 +1,6 @@
 [
   {
-    "id": "Chapter1/01.00.Introduction",
+    "id": "Chapter1/01_00_Introduction",
     "type": "introduction",
     "title": "Chapter 1 Introduction: Absolute values and discrete valuations",
     "start_page": "1",
@@ -9,7 +9,7 @@
     "end_line": 16
   },
   {
-    "id": "Chapter1/01.01.Remark",
+    "id": "Chapter1/01_01_Remark",
     "type": "remark",
     "title": "Remark 1.1 (Rings)",
     "start_page": "1",
@@ -18,7 +18,7 @@
     "end_line": 18
   },
   {
-    "id": "Chapter1/01.02s.Introduction",
+    "id": "Chapter1/01_02s_Introduction",
     "type": "introduction",
     "title": "Section 1.2 Introduction: Absolute values",
     "start_page": "1",
@@ -27,7 +27,7 @@
     "end_line": 22
   },
   {
-    "id": "Chapter1/01.02.Definition",
+    "id": "Chapter1/01_02_Definition",
     "type": "definition",
     "title": "Definition 1.2 (Absolute value)",
     "start_page": "1",
@@ -36,7 +36,7 @@
     "end_line": 33
   },
   {
-    "id": "Chapter1/01.03.Example",
+    "id": "Chapter1/01_03_Example",
     "type": "example",
     "title": "Example 1.3 (Trivial absolute value)",
     "start_page": "2",
@@ -45,7 +45,7 @@
     "end_line": 6
   },
   {
-    "id": "Chapter1/01.04.Lemma",
+    "id": "Chapter1/01_04_Lemma",
     "type": "lemma",
     "title": "Lemma 1.4 (Nonarchimedean characterization)",
     "start_page": "2",
@@ -54,7 +54,7 @@
     "end_line": 14
   },
   {
-    "id": "Chapter1/01.05.Corollary",
+    "id": "Chapter1/01_05_Corollary",
     "type": "corollary",
     "title": "Corollary 1.5 (Positive characteristic fields)",
     "start_page": "2",
@@ -63,7 +63,7 @@
     "end_line": 18
   },
   {
-    "id": "Chapter1/01.06.Definition",
+    "id": "Chapter1/01_06_Definition",
     "type": "definition",
     "title": "Definition 1.6 (Equivalent absolute values)",
     "start_page": "2",
@@ -72,7 +72,7 @@
     "end_line": 20
   },
   {
-    "id": "Chapter1/01.03s.Introduction",
+    "id": "Chapter1/01_03s_Introduction",
     "type": "introduction",
     "title": "Section 1.3 Introduction: Absolute values on Q",
     "start_page": "2",
@@ -81,7 +81,7 @@
     "end_line": 24
   },
   {
-    "id": "Chapter1/01.07.Definition",
+    "id": "Chapter1/01_07_Definition",
     "type": "definition",
     "title": "Definition 1.7 (p-adic valuation and absolute value)",
     "start_page": "2",
@@ -90,7 +90,7 @@
     "end_line": 34
   },
   {
-    "id": "Chapter1/01.08.Theorem",
+    "id": "Chapter1/01_08_Theorem",
     "type": "theorem",
     "title": "Theorem 1.8 (Ostrowski's Theorem)",
     "start_page": "2",
@@ -99,7 +99,7 @@
     "end_line": 38
   },
   {
-    "id": "Chapter1/01.09.Theorem",
+    "id": "Chapter1/01_09_Theorem",
     "type": "theorem",
     "title": "Theorem 1.9 (Product Formula)",
     "start_page": "2",
@@ -108,7 +108,7 @@
     "end_line": 43
   },
   {
-    "id": "Chapter1/01.04s.Introduction",
+    "id": "Chapter1/01_04s_Introduction",
     "type": "introduction",
     "title": "Section 1.4 Introduction: Discrete valuations",
     "start_page": "3",
@@ -117,7 +117,7 @@
     "end_line": 2
   },
   {
-    "id": "Chapter1/01.10.Definition",
+    "id": "Chapter1/01_10_Definition",
     "type": "definition",
     "title": "Definition 1.10 (Valuation, discrete valuation, DVR)",
     "start_page": "3",
@@ -126,7 +126,7 @@
     "end_line": 12
   },
   {
-    "id": "Chapter1/01.10a.Discussion",
+    "id": "Chapter1/01_10a_Discussion",
     "type": "discussion",
     "title": "Discussion: Properties of valuation rings",
     "start_page": "3",
@@ -135,7 +135,7 @@
     "end_line": 18
   },
   {
-    "id": "Chapter1/01.11.Definition",
+    "id": "Chapter1/01_11_Definition",
     "type": "definition",
     "title": "Definition 1.11 (Valuation ring)",
     "start_page": "3",
@@ -144,7 +144,7 @@
     "end_line": 20
   },
   {
-    "id": "Chapter1/01.11a.Discussion",
+    "id": "Chapter1/01_11a_Discussion",
     "type": "discussion",
     "title": "Discussion: Uniformizers and ideals in DVRs",
     "start_page": "3",
@@ -153,7 +153,7 @@
     "end_line": 33
   },
   {
-    "id": "Chapter1/01.12.Definition",
+    "id": "Chapter1/01_12_Definition",
     "type": "definition",
     "title": "Definition 1.12 (Local ring)",
     "start_page": "4",
@@ -162,7 +162,7 @@
     "end_line": 2
   },
   {
-    "id": "Chapter1/01.13.Definition",
+    "id": "Chapter1/01_13_Definition",
     "type": "definition",
     "title": "Definition 1.13 (Residue field)",
     "start_page": "4",
@@ -171,7 +171,7 @@
     "end_line": 4
   },
   {
-    "id": "Chapter1/01.13a.Discussion",
+    "id": "Chapter1/01_13a_Discussion",
     "type": "discussion",
     "title": "Discussion: Determining valuation from a DVR",
     "start_page": "4",
@@ -180,7 +180,7 @@
     "end_line": 8
   },
   {
-    "id": "Chapter1/01.14.Example",
+    "id": "Chapter1/01_14_Example",
     "type": "example",
     "title": "Example 1.14 (Z_(p) for p-adic valuation)",
     "start_page": "4",
@@ -189,7 +189,7 @@
     "end_line": 14
   },
   {
-    "id": "Chapter1/01.15.Example",
+    "id": "Chapter1/01_15_Example",
     "type": "example",
     "title": "Example 1.15 (Laurent series valuation)",
     "start_page": "4",
@@ -198,7 +198,7 @@
     "end_line": 20
   },
   {
-    "id": "Chapter1/01.05s.Introduction",
+    "id": "Chapter1/01_05s_Introduction",
     "type": "introduction",
     "title": "Section 1.5 Introduction: Properties of DVRs",
     "start_page": "4",
@@ -207,7 +207,7 @@
     "end_line": 4
   },
   {
-    "id": "Chapter1/01.16.Theorem",
+    "id": "Chapter1/01_16_Theorem",
     "type": "theorem",
     "title": "Theorem 1.16 (Characterizations of DVRs)",
     "start_page": "5",
@@ -216,7 +216,7 @@
     "end_line": 16
   },
   {
-    "id": "Chapter1/01.06s.Introduction",
+    "id": "Chapter1/01_06s_Introduction",
     "type": "introduction",
     "title": "Section 1.6 Introduction: Integral extensions",
     "start_page": "5",
@@ -225,7 +225,7 @@
     "end_line": 20
   },
   {
-    "id": "Chapter1/01.17.Definition",
+    "id": "Chapter1/01_17_Definition",
     "type": "definition",
     "title": "Definition 1.17 (Integral element and integral ring extension)",
     "start_page": "5",
@@ -234,7 +234,7 @@
     "end_line": 22
   },
   {
-    "id": "Chapter1/01.18.Proposition",
+    "id": "Chapter1/01_18_Proposition",
     "type": "proposition",
     "title": "Proposition 1.18 (Sum and product of integral elements)",
     "start_page": "5",
@@ -243,7 +243,7 @@
     "end_line": 40
   },
   {
-    "id": "Chapter1/01.19.Definition",
+    "id": "Chapter1/01_19_Definition",
     "type": "definition",
     "title": "Definition 1.19 (Integral closure)",
     "start_page": "6",
@@ -252,7 +252,7 @@
     "end_line": 2
   },
   {
-    "id": "Chapter1/01.20.Proposition",
+    "id": "Chapter1/01_20_Proposition",
     "type": "proposition",
     "title": "Proposition 1.20 (Transitivity of integrality)",
     "start_page": "6",
@@ -261,7 +261,7 @@
     "end_line": 6
   },
   {
-    "id": "Chapter1/01.21.Corollary",
+    "id": "Chapter1/01_21_Corollary",
     "type": "corollary",
     "title": "Corollary 1.21 (Integral closure is integrally closed)",
     "start_page": "6",
@@ -270,7 +270,7 @@
     "end_line": 10
   },
   {
-    "id": "Chapter1/01.22.Proposition",
+    "id": "Chapter1/01_22_Proposition",
     "type": "proposition",
     "title": "Proposition 1.22 (Z is integrally closed)",
     "start_page": "6",
@@ -279,7 +279,7 @@
     "end_line": 22
   },
   {
-    "id": "Chapter1/01.23.Corollary",
+    "id": "Chapter1/01_23_Corollary",
     "type": "corollary",
     "title": "Corollary 1.23 (UFDs are integrally closed)",
     "start_page": "6",
@@ -288,7 +288,7 @@
     "end_line": 26
   },
   {
-    "id": "Chapter1/01.24.Example",
+    "id": "Chapter1/01_24_Example",
     "type": "example",
     "title": "Example 1.24 (Z[sqrt(5)] is not integrally closed)",
     "start_page": "6",
@@ -297,7 +297,7 @@
     "end_line": 28
   },
   {
-    "id": "Chapter1/01.24a.Discussion",
+    "id": "Chapter1/01_24a_Discussion",
     "type": "discussion",
     "title": "Discussion: DVRs and valuation rings are integrally closed",
     "start_page": "6",
@@ -306,7 +306,7 @@
     "end_line": 30
   },
   {
-    "id": "Chapter1/01.25.Proposition",
+    "id": "Chapter1/01_25_Proposition",
     "type": "proposition",
     "title": "Proposition 1.25 (Valuation rings are integrally closed)",
     "start_page": "6",
@@ -315,7 +315,7 @@
     "end_line": 41
   },
   {
-    "id": "Chapter1/01.26.Definition",
+    "id": "Chapter1/01_26_Definition",
     "type": "definition",
     "title": "Definition 1.26 (Number field and ring of integers)",
     "start_page": "7",
@@ -324,7 +324,7 @@
     "end_line": 2
   },
   {
-    "id": "Chapter1/01.27.Remark",
+    "id": "Chapter1/01_27_Remark",
     "type": "remark",
     "title": "Remark 1.27 (Notation for ring of integers)",
     "start_page": "7",
@@ -333,7 +333,7 @@
     "end_line": 4
   },
   {
-    "id": "Chapter1/01.28.Proposition",
+    "id": "Chapter1/01_28_Proposition",
     "type": "proposition",
     "title": "Proposition 1.28 (Minimal polynomial and integrality)",
     "start_page": "7",
@@ -342,7 +342,7 @@
     "end_line": 12
   },
   {
-    "id": "Chapter1/01.29.Example",
+    "id": "Chapter1/01_29_Example",
     "type": "example",
     "title": "Example 1.29 (Integral check for (1+sqrt(7))/2)",
     "start_page": "7",
@@ -351,7 +351,7 @@
     "end_line": 14
   },
   {
-    "id": "Chapter1/01.99.References",
+    "id": "Chapter1/01_99_References",
     "type": "bibliography",
     "title": "References",
     "start_page": "7",

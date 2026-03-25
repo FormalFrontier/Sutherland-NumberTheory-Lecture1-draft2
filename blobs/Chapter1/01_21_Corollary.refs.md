@@ -1,4 +1,4 @@
-# References for 01.21.Corollary
+# References for 01_21_Corollary
 
 ## Mathlib Coverage
 

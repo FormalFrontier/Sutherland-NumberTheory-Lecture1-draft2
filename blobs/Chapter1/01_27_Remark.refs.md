@@ -1,4 +1,4 @@
-# References for 01.27.Remark
+# References for 01_27_Remark
 
 ## Mathlib Coverage
 
