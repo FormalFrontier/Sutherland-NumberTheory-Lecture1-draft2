@@ -33,4 +33,6 @@ noncomputable def padicAbsoluteValue (p : ℕ) [hp : Fact p.Prime] : AbsoluteVal
 /-- The `p`-adic absolute value is nonarchimedean (Example 1.3). -/
 theorem padicAbsoluteValue_isNonarchimedean (p : ℕ) [hp : Fact p.Prime] :
     IsNonarchimedean (⇑(padicAbsoluteValue p)) := by
-  sorry
+  intro x y
+  simp only [padicAbsoluteValue, Rat.AbsoluteValue.padic, AbsoluteValue.coe_mk, MulHom.coe_mk]
+  exact_mod_cast padicNorm.nonarchimedean
