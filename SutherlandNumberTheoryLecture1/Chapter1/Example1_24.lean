@@ -58,10 +58,8 @@ theorem zsqrtd5_not_integrallyClosed :
           algebraMap (Zsqrtd 5) (FractionRing (Zsqrtd 5)) 2 -
           algebraMap (Zsqrtd 5) (FractionRing (Zsqrtd 5)) 2 ^ 2 = 0 := by
         have h : (⟨1, 1⟩ : Zsqrtd 5) ^ 2 - ⟨1, 1⟩ * 2 - 2 ^ 2 = 0 := by decide
-        have h1 := congr_arg (algebraMap (Zsqrtd 5) (FractionRing (Zsqrtd 5))) h
-        rw [map_zero] at h1
-        simp only [map_sub, map_pow, map_mul] at h1
-        exact h1
+        simpa [map_sub, map_pow, map_mul] using
+          congr_arg (algebraMap (Zsqrtd 5) (FractionRing (Zsqrtd 5))) h
       -- Expand aeval φ (X^2 - X - 1) and clear denominators
       simp only [eval₂_sub, eval₂_pow, eval₂_X, eval₂_one, φ]
       field_simp [h2']
@@ -79,7 +77,7 @@ theorem zsqrtd5_not_integrallyClosed :
   -- But (2 * a).re = 2 * a.re = 1 is impossible in ℤ
   have hre := congr_arg Zsqrtd.re h2a
   simp only [Zsqrtd.re_mul,
-             show (2 : Zsqrtd 5).re = (2 : ℤ) from by decide,
-             show (2 : Zsqrtd 5).im = (0 : ℤ) from by decide,
+             show (2 : Zsqrtd 5).re = (2 : ℤ) from rfl,
+             show (2 : Zsqrtd 5).im = (0 : ℤ) from rfl,
              mul_zero, zero_mul, add_zero] at hre
   omega

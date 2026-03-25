@@ -2,8 +2,8 @@
 
 Triage of all 27 `proof_polished` items from Chapter 1 for upstreaming to Mathlib.
 
-**Summary:** 3 items are candidates; 24 are rejected. `Example1_24` is `definition_verified`
-(not yet `proof_polished`) and is not covered here.
+**Summary:** 4 items are candidates; 24 are rejected. `Example1_24` has been added as a
+candidate following proof completion (Stage 3.5 addendum).
 
 ---
 
@@ -93,6 +93,32 @@ completion of the minpoly API.
 
 ---
 
+### Example1_24 — ℤ[√5] is Not Integrally Closed
+
+| Field | Value |
+|-------|-------|
+| **Item ID** | `Chapter1/Example1_24` |
+| **Declaration** | `zsqrtd5_not_integrallyClosed` |
+| **File** | `SutherlandNumberTheoryLecture1/Chapter1/Example1_24.lean` |
+| **Suggested Mathlib module** | `Mathlib.NumberTheory.Zsqrtd.Basic` |
+
+**Lean statement:**
+```lean
+theorem zsqrtd5_not_integrallyClosed :
+    ¬IsIntegrallyClosed (Zsqrtd 5)
+```
+
+**Why it's new:** Mathlib's `Mathlib.NumberTheory.Zsqrtd.Basic` has no result asserting
+that `Zsqrtd 5` (i.e. `ℤ[√5]`) is not integrally closed. A search for
+`IntegrallyClosed`, `isIntegrallyClosed`, or `not_isIntegrallyClosed` in all `Zsqrtd`
+files returns no matches. The proof exhibits the explicit witness `φ = (1 + √5)/2 ∈
+Frac(Zsqrtd 5)` which satisfies `X² - X - 1 = 0` over `Zsqrtd 5` but has no preimage
+in `Zsqrtd 5` (since `2 * a = ⟨1, 1⟩` has no solution — parity contradiction on the
+real part). This is a concrete, self-contained example of a non-integrally-closed ring
+that would fit naturally alongside `GaussianInt` in the `Zsqrtd` namespace.
+
+---
+
 ## Rejected Items
 
 | Item ID | Reason |
@@ -137,3 +163,5 @@ Searches were performed in `.lake/packages/mathlib/Mathlib` (local source).
   `isIntegrallyClosed_eq_field_fractions'` (⟹ direction only); no full iff
 - No results found for: `AbsoluteValue` + `CharP`, `AbsoluteValue` + `Fintype`
   (confirming Corollary1_5 results are absent from Mathlib)
+- `Mathlib.NumberTheory.Zsqrtd.*`: no results for `IntegrallyClosed`, `isIntegrallyClosed`,
+  or `not_isIntegrallyClosed` — confirming `zsqrtd5_not_integrallyClosed` is absent
