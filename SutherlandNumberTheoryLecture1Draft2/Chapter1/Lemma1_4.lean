@@ -1,6 +1,9 @@
 import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_2
 import Mathlib.Algebra.Order.AbsoluteValue.Basic
 import Mathlib.Algebra.Order.Ring.IsNonarchimedean
+import Mathlib.Analysis.Normed.Field.WithAbs
+import Mathlib.Analysis.Normed.Field.Ultra
+import Mathlib.Analysis.Normed.Group.Ultra
 
 /-!
 ## Lemma 1.4 — Characterization of Nonarchimedean Absolute Values
@@ -10,7 +13,8 @@ import Mathlib.Algebra.Order.Ring.IsNonarchimedean
 
 The forward direction (nonarchimedean ⟹ bounded on ℕ) is in Mathlib as
 `IsNonarchimedean.apply_natCast_le_one_of_isNonarchimedean`.
-The converse needs original proof: use the binomial theorem and take limits.
+The converse uses the `WithAbs` type synonym to equip `k` with the norm from `f`,
+then applies `isUltrametricDist_of_forall_norm_natCast_le_one`.
 -/
 
 /-- **Lemma 1.4** (Sutherland). An absolute value on a field is nonarchimedean
@@ -22,4 +26,7 @@ theorem sutherland_lemma1_4 {k : Type*} [Field k] (f : AbsoluteValue k ℝ)
   · intro hna n
     exact IsNonarchimedean.apply_natCast_le_one_of_isNonarchimedean hna
   · intro hbnd
-    sorry
+    -- Equip k with the norm from f via WithAbs, then use the Mathlib ultrametric criterion
+    haveI : IsUltrametricDist (WithAbs f) :=
+      IsUltrametricDist.isUltrametricDist_of_forall_norm_natCast_le_one (fun n => hbnd n)
+    exact @IsUltrametricDist.isNonarchimedean_norm (WithAbs f) _ _
