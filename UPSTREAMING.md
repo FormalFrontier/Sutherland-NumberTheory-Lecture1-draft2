@@ -1,8 +1,8 @@
 # Upstreaming Analysis — Stage 3.6
 
-Triage of all 28 `proof_polished` items from Chapter 1 for upstreaming to Mathlib.
+Triage of all 31 `proof_polished` items from Chapter 1 for upstreaming to Mathlib.
 
-**Summary:** 4 items are candidates; 24 are rejected.
+**Summary:** 4 items are candidates; 27 are rejected.
 
 ---
 
@@ -129,9 +129,12 @@ that would fit naturally alongside `GaussianInt` in the `Zsqrtd` namespace.
 | `Chapter1/01_08_Theorem` | Direct delegation to `Rat.AbsoluteValue.equiv_real_or_padic`; one-line wrapper |
 | `Chapter1/01_09_Theorem` | Direct delegation to `NumberField.prod_abs_eq_one`; one-line wrapper |
 | `Chapter1/01_10_Definition` | Pure definition; `Valuation`, `ValuationRing`, `IsDiscreteValuationRing` already exist |
+| `Chapter1/01_10a_Discussion` | Mostly recall (`AddValuation.map_inv`, `isUnit_iff_valuation_eq_one`); `valuation_trichotomy` is trivial glue over linear order |
 | `Chapter1/01_11_Definition` | Pure definition; `ValuationRing` already exists in Mathlib |
+| `Chapter1/01_11a_Discussion` | Mostly recall; `maximalIdeal_eq_span_uniformizer` is simple application of `irreducible_iff_uniformizer` |
 | `Chapter1/01_12_Definition` | Pure definition; `IsLocalRing` already exists in Mathlib |
 | `Chapter1/01_13_Definition` | Pure definition; `IsLocalRing.ResidueField` already exists in Mathlib |
+| `Chapter1/01_13a_Discussion` | Pure recall of DVR valuation properties (`addVal`, `maximalIdeal`, `equivValuationSubring`, `isRankOneDiscrete`) |
 | `Chapter1/01_14_Example` | `primeIdealZ_isPrime` and `IsLocalRing` for `ℤ_(p)` are trivial Mathlib wrappers; `inferInstance` or near-trivial |
 | `Chapter1/01_15_Example` | `IsDiscreteValuationRing (PowerSeries k)` is `inferInstance`; no new content |
 | `Chapter1/01_16_Theorem` | DVR ↔ local PID is definitionally true in Mathlib (`IsDiscreteValuationRing` is exactly a local PID that is not a field); no new theorem |
