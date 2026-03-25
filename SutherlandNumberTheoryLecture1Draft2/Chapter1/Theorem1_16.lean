@@ -24,13 +24,9 @@ so conditions (1) and (3) are definitionally equivalent.
 This is the definition of DVR in Mathlib: `IsDiscreteValuationRing`. -/
 theorem sutherland_theorem1_16_localPID_isDVR (A : Type*) [CommRing A] [IsDomain A]
     [IsLocalRing A] [IsPrincipalIdealRing A] (hfield : ¬IsField A) :
-    IsDiscreteValuationRing A := by
-  constructor
-  -- need: maximalIdeal A ≠ ⊥, which holds iff A is not a field
-  intro h
-  apply hfield
-  rw [IsLocalRing.isField_iff_maximalIdeal_eq]
-  exact h
+    IsDiscreteValuationRing A :=
+  -- maximalIdeal A ≠ ⊥ follows from ¬IsField A via isField_iff_maximalIdeal_eq
+  ⟨mt IsLocalRing.isField_iff_maximalIdeal_eq.mpr hfield⟩
 
 /-- **Theorem 1.16** (Sutherland). A DVR is a local PID that is not a field. -/
 theorem sutherland_theorem1_16_isDVR_implies_localPID (A : Type*) [CommRing A] [IsDomain A]
