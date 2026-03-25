@@ -13,23 +13,23 @@
   },
   {
     "id": "Chapter1/Definition1_2",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Example1_3",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Lemma1_4",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Corollary1_5",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Definition1_6",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Section1_3_Intro",
@@ -37,15 +37,15 @@
   },
   {
     "id": "Chapter1/Definition1_7",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Theorem1_8",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Theorem1_9",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Section1_4_Intro",
@@ -53,7 +53,7 @@
   },
   {
     "id": "Chapter1/Definition1_10",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Discussion_after_Definition1_10",
@@ -61,7 +61,7 @@
   },
   {
     "id": "Chapter1/Definition1_11",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Discussion_after_Definition1_11",
@@ -69,11 +69,11 @@
   },
   {
     "id": "Chapter1/Definition1_12",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Definition1_13",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Discussion_after_Definition1_13",
@@ -81,11 +81,11 @@
   },
   {
     "id": "Chapter1/Example1_14",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Example1_15",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Section1_5_Intro",
@@ -93,7 +93,7 @@
   },
   {
     "id": "Chapter1/Theorem1_16",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Section1_6_Intro",
@@ -101,35 +101,35 @@
   },
   {
     "id": "Chapter1/Definition1_17",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Proposition1_18",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Definition1_19",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Proposition1_20",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Corollary1_21",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Proposition1_22",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Corollary1_23",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Example1_24",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Discussion_after_Example1_24",
@@ -137,23 +137,23 @@
   },
   {
     "id": "Chapter1/Proposition1_25",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Definition1_26",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Remark1_27",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Proposition1_28",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/Example1_29",
-    "status": "extracted"
+    "status": "scaffolded"
   },
   {
     "id": "Chapter1/References",

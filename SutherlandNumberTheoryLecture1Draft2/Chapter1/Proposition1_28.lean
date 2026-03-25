@@ -1,0 +1,31 @@
+import SutherlandNumberTheoryLecture1Draft2.Chapter1.Definition1_19
+import Mathlib.FieldTheory.Minpoly.IsIntegrallyClosed
+
+/-!
+## Proposition 1.28 — Integrality and Minimal Polynomials
+
+**Proposition 1.28.** Let `A` be an integrally closed domain with fraction field `K`.
+Let `α` be an element of a finite extension `L/K`, with minimal polynomial `f ∈ K[x]`.
+Then `α` is integral over `A` if and only if `f ∈ A[x]`.
+
+*Proof (⟹).* Each conjugate `αᵢ` of `α` is also integral over `A` (via the same monic poly).
+The coefficients of `f` are symmetric functions of the `αᵢ`, hence in `integralClosure A K̄ ∩ K = A`.
+
+In Mathlib: `IsIntegrallyClosed.isIntegral_iff` and related lemmas in `Minpoly.IsIntegrallyClosed`.
+-/
+
+/-- **Proposition 1.28** (Sutherland). For an integrally closed domain `A` with fraction
+field `K`, an element `α` of a finite extension `L/K` is integral over `A` iff
+its minimal polynomial over `K` has coefficients in `A`.
+
+Uses `minpoly.isIntegrallyClosed_eq_field_fractions` and related Mathlib results. -/
+theorem sutherland_prop1_28 {A K L : Type*} [CommRing A] [IsDomain A] [IsIntegrallyClosed A]
+    [Field K] [Field L] [Algebra A K] [IsFractionRing A K]
+    [Algebra K L] [Algebra A L] [IsScalarTower A K L]
+    [FiniteDimensional K L] (α : L) :
+    IsIntegral A α ↔
+      (minpoly A α).map (algebraMap A K) = minpoly K α := by
+  -- The minimal polynomial of α over K lies in A[x] iff α is integral over A.
+  -- In Mathlib: `minpoly.isIntegrallyClosed_eq_field_fractions` and
+  --   `IsIntegrallyClosed.isIntegral_iff_leadingCoeff_dvd`.
+  sorry
