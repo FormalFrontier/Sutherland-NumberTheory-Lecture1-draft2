@@ -66,8 +66,8 @@
   },
   {
     "id": "Chapter1/01_10a_Discussion",
-    "status": "needs_scaffolding",
-    "reason": "discussion blob with formalizable claims: unit group characterization, v(1/x)=-v(x), partition by valuation sign"
+    "status": "sorry_free",
+    "reason": "all 6 claims formalized: IsDomain instance, AddValuation.map_inv, ValuationRing property, isUnit_iff_valuation_eq_one, unit group, valuation_trichotomy"
   },
   {
     "id": "Chapter1/01_11_Definition",
