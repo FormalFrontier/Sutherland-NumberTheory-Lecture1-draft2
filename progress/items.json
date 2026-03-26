@@ -64,7 +64,7 @@
     "id": "Chapter1/01_10_Definition",
     "status": "proof_polished",
     "upstreaming_status": "mathlib_covered",
-    "reason": "recalls Valuation, AddValuation, valueGroup, IsRankOneDiscrete, IsDiscreteValuationRing, ValuationRing, not_isField \u2014 sorry-free"
+    "reason": "recalls Valuation, AddValuation, valueGroup, IsRankOneDiscrete, IsDiscreteValuationRing, ValuationRing, not_isField; DVREquivalence section bridges book definition (valuation ring of discrete valuation) with Mathlib definition (local PID, not a field) \u2014 sorry-free"
   },
   {
     "id": "Chapter1/01_10a_Discussion",
