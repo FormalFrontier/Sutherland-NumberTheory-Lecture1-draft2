@@ -1,5 +1,4 @@
-import Mathlib.Algebra.Order.AbsoluteValue.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.AbsoluteValue.Equivalence
 
 /-!
 ## Definition 1.6 — Equivalence of Absolute Values
@@ -11,13 +10,10 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 Mathlib's `AbsoluteValue.IsEquiv v w` uses an equivalent characterization via
 order-preservation: `∀ x y, v x ≤ v y ↔ w x ≤ w y`. For real-valued absolute values
-this is equivalent to the power-law definition above.
+on a field, this is equivalent to the book's power-law definition: if one absolute value
+is a positive real power of the other, then they preserve the same ordering, and conversely.
 
-We formalize the book's definition directly.
+We use Mathlib's `AbsoluteValue.IsEquiv` throughout this formalization rather than
+defining a separate notion, since Ostrowski's Theorem (1.8) is proved in Mathlib using
+`IsEquiv`. The book's Definition 1.6 corresponds exactly to `AbsoluteValue.IsEquiv`.
 -/
-
-/-- **Definition 1.6.** Two absolute values on `k` are *equivalent* if one is a positive
-real power of the other: `∃ α > 0, ∀ x, g x = (f x) ^ α`. -/
-def AbsoluteValue.AreEquivalent {k : Type*} [Field k]
-    (f g : AbsoluteValue k ℝ) : Prop :=
-  ∃ α : ℝ, 0 < α ∧ ∀ x : k, g x = (f x) ^ α
